@@ -21,7 +21,7 @@ export const columns: TableColumn<Job>[] = [
     accessor: "contactNumber",
   },
   {
-    header: "Ordered by time",
+    header: "Scheduled time",
     accessor: "orderedByTime",
   },
   {

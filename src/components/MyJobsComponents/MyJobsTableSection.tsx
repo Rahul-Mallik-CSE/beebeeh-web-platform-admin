@@ -6,13 +6,13 @@ import { columns, jobsData } from "@/data/AllData";
 import { Job } from "@/types/AllTypes";
 import { useRouter } from "next/navigation";
 
-const TodaysJobsTableSection = () => {
+const MyJobsTableSection = () => {
   const router = useRouter();
 
   const handleAction = (job: Job) => {
     // Remove # from job ID for URL
     const jobId = job.id.replace("#", "");
-    router.push(`/todays-jobs/${jobId}`);
+    router.push(`/my-jobs/${jobId}`);
   };
 
   return (
@@ -26,4 +26,4 @@ const TodaysJobsTableSection = () => {
   );
 };
 
-export default TodaysJobsTableSection;
+export default MyJobsTableSection;

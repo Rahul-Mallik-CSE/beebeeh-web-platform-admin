@@ -16,14 +16,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { usePathname, useRouter } from "next/navigation";
-import {
-  LayoutGrid,
-  Briefcase,
-  Calendar,
-  Bell,
-  Settings,
-  LogOut,
-} from "lucide-react";
+import { LayoutGrid, Briefcase, Bell, Settings, LogOut } from "lucide-react";
 import { LuChartNoAxesCombined } from "react-icons/lu";
 import { Button } from "../ui/button";
 import LogoutModal from "./LogOutModal";
