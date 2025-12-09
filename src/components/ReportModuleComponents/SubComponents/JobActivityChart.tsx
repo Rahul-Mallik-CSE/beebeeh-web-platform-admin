@@ -14,56 +14,68 @@ import { weeklyJobActivityData } from "@/data/ReportModuleData";
 
 const JobActivityChart = () => {
   return (
-    <div className="bg-transparent ">
+    <div className=" bg-transparent ">
       <h2 className="text-lg font-semibold text-gray-800 mb-6">
         Weekly Jobs Activity
       </h2>
-      <div className="bg-white rounded-2xl py-4">
-        <ResponsiveContainer width="100%" height={300}>
-          <BarChart data={weeklyJobActivityData} barGap={-15}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+      <div className="bg-white rounded-2xl py-6 shadow-sm ">
+        <ResponsiveContainer width="100%" height={280}>
+          <BarChart
+            data={weeklyJobActivityData}
+            barCategoryGap="20%"
+            barGap={3}
+          >
+            <CartesianGrid
+              strokeDasharray="3 3"
+              stroke="#e5e7eb"
+              vertical={false}
+            />
             <XAxis
               dataKey="day"
-              tick={{ fill: "#9CA3AF", fontSize: 12 }}
+              tick={{ fill: "#9CA3AF", fontSize: 13 }}
               axisLine={false}
               tickLine={false}
+              tickMargin={10}
             />
             <YAxis
               tick={{ fill: "#9CA3AF", fontSize: 12 }}
               axisLine={false}
               tickLine={false}
+              domain={[0, 600]}
               ticks={[0, 100, 200, 300, 400, 500, 600]}
+              tickMargin={10}
             />
             <Legend
               verticalAlign="top"
-              height={50}
+              height={45}
               iconType="circle"
-              iconSize={8}
+              iconSize={10}
               wrapperStyle={{
-                paddingBottom: "20px",
-                fontSize: "13px",
+                paddingBottom: "15px",
+                fontSize: "18px",
                 color: "#6B7280",
               }}
+              align="right"
             />
             <Bar
               dataKey="installation"
-              fill="#DC2626"
-              radius={[4, 4, 0, 0]}
-              barSize={20}
+              fill="#B91C1C"
+              radius={[8, 8, 8, 8]}
+              barSize={14}
               name="Installation"
             />
             <Bar
               dataKey="repair"
-              fill="#D4A5A5"
-              radius={[4, 4, 0, 0]}
-              barSize={20}
+              fill="#E9C8C8"
+              radius={[8, 8, 8, 8]}
+              barSize={14}
               name="Repair"
             />
             <Bar
               dataKey="maintenance"
               fill="#7C3434"
-              radius={[4, 4, 0, 0]}
-              barSize={20}
+              radius={[8, 8, 8, 8]}
+              barSize={14}
               name="Maintenance"
             />
           </BarChart>
