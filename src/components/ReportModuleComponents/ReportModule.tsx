@@ -3,6 +3,7 @@
 import React from "react";
 import StatsSection from "./StatsSection";
 import ChartSection from "./ChartSection";
+import TableSection from "./TableSection";
 
 const ReportModule = () => {
   return (
@@ -10,6 +11,7 @@ const ReportModule = () => {
       <StatsSection />
 
       <ChartSection />
+      <TableSection />
     </div>
   );
 };

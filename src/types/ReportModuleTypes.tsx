@@ -26,3 +26,36 @@ export interface JobDistribution {
   percentage: number;
   color: string;
 }
+
+export interface TechnicianPerformance {
+  id: string;
+  technician: string;
+  complete: number;
+  avgTime: string;
+  rating: number;
+}
+
+export interface PartsUsage {
+  id: string;
+  partsName: string;
+  usedQty: string;
+  jobs: string;
+}
+
+export interface ProductStock {
+  id: string;
+  productName: string;
+  productId: string;
+  availableUnits: number;
+  status: "Stock Out" | "Low Stock" | "In Stock";
+  lastStock: string;
+}
+
+export interface PartsStock {
+  id: string;
+  partName: string;
+  partId: string;
+  availableUnits: number;
+  status: "Stock Out" | "Low Stock" | "In Stock";
+  lastStock: string;
+}

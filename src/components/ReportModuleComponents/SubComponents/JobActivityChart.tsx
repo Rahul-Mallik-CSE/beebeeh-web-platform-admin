@@ -15,7 +15,7 @@ import { weeklyJobActivityData } from "@/data/ReportModuleData";
 const JobActivityChart = () => {
   return (
     <div className=" bg-transparent ">
-      <h2 className="text-lg font-semibold text-gray-800 mb-4">
+      <h2 className="text-2xl font-bold text-[#535F72] mb-4">
         Weekly Jobs Activity
       </h2>
       <div className="bg-white rounded-2xl py-6 shadow-sm ">
