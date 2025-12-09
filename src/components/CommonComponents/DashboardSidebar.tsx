@@ -27,6 +27,7 @@ import {
 import { LuChartNoAxesCombined } from "react-icons/lu";
 import { Button } from "../ui/button";
 import LogoutModal from "./LogOutModal";
+import { PiSuitcaseSimple } from "react-icons/pi";
 
 export default function DashboardSidebar() {
   const { state } = useSidebar();
@@ -43,9 +44,9 @@ export default function DashboardSidebar() {
       label: "Overview",
     },
     {
-      href: "/todays-jobs",
-      icon: Calendar,
-      label: "Today's Jobs",
+      href: "/my-jobs",
+      icon: PiSuitcaseSimple,
+      label: "My Jobs",
     },
     {
       href: "/all-jobs",
