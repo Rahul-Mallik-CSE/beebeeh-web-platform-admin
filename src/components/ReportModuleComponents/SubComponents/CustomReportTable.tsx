@@ -52,13 +52,15 @@ const CustomReportTable: React.FC<CustomReportTableProps> = ({
     <div className="bg-transparent">
       <h2 className="text-lg font-semibold text-gray-800  pb-4">{title}</h2>
       <ScrollArea className="h-[380px]">
-        <Table className="bg-white rounded-2xl">
+        <Table className="bg-white rounded-2xl overflow-hidden">
           <TableHeader>
-            <TableRow className="bg-[#5C2E2E] hover:bg-[#5C2E2E] rounded-t-2xl">
-              {columns.map((column) => (
+            <TableRow className="bg-[#5C2E2E] hover:bg-[#5C2E2E]">
+              {columns.map((column, index) => (
                 <TableHead
                   key={column.key}
-                  className="text-white font-semibold text-sm h-12 "
+                  className={`text-white font-semibold text-sm h-12 ${
+                    index === 0 ? "rounded-tl-2xl" : ""
+                  } ${index === columns.length - 1 ? "rounded-tr-2xl" : ""}`}
                   style={{ width: column.width }}
                 >
                   {column.label}
