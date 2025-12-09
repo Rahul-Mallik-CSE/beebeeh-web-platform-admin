@@ -13,7 +13,7 @@ export const weeklyJobActivityData: WeeklyJobActivity[] = [
 ];
 
 export const jobDistributionData: JobDistribution[] = [
-  { name: "Installation", value: 45, percentage: 45, color: "#7C3434" },
-  { name: "Repair", value: 35, percentage: 35, color: "#D4A5A5" },
-  { name: "Maintenance", value: 35, percentage: 35, color: "#A04545" },
+  { name: "Installation", value: 45, percentage: 45, color: "#6B3838" },
+  { name: "Repair", value: 35, percentage: 35, color: "#E8D4D4" },
+  { name: "Maintenance", value: 35, percentage: 35, color: "#A14545" },
 ];

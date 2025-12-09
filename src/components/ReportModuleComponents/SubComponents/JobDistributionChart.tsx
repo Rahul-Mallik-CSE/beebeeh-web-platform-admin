@@ -6,23 +6,24 @@ import { jobDistributionData } from "@/data/ReportModuleData";
 
 const JobDistributionChart = () => {
   const renderCustomLabel = (entry: any) => {
+    const RADIAN = Math.PI / 180;
+    const radius = entry.outerRadius * 0.65;
+    const x = entry.cx + radius * Math.cos(-entry.midAngle * RADIAN);
+    const y = entry.cy + radius * Math.sin(-entry.midAngle * RADIAN);
+
     return (
       <text
-        x={entry.x}
-        y={entry.y}
+        x={x}
+        y={y}
         fill="white"
-        textAnchor={entry.x > entry.cx ? "start" : "end"}
+        textAnchor="middle"
         dominantBaseline="central"
-        style={{ fontSize: "14px", fontWeight: "bold" }}
+        className="font-semibold"
       >
-        <tspan x={entry.x} dy="0">
+        <tspan x={x} dy="-8" fontSize="16" fontWeight="bold">
           {entry.percentage}%
         </tspan>
-        <tspan
-          x={entry.x}
-          dy="18"
-          style={{ fontSize: "12px", fontWeight: "normal" }}
-        >
+        <tspan x={x} dy="18" fontSize="13" fontWeight="500">
           {entry.name}
         </tspan>
       </text>
@@ -31,7 +32,7 @@ const JobDistributionChart = () => {
 
   return (
     <div className="bg-transparent ">
-      <h2 className="text-lg font-semibold text-gray-800 mb-6">
+      <h2 className="text-lg font-semibold text-gray-800 mb-4">
         Job Distribution by Category
       </h2>
       <div className="bg-white rounded-2xl py-4">
@@ -43,25 +44,22 @@ const JobDistributionChart = () => {
               cy="50%"
               labelLine={false}
               label={renderCustomLabel}
-              outerRadius={110}
+              outerRadius={100}
+              innerRadius={0}
               fill="#8884d8"
               dataKey="value"
+              startAngle={90}
+              endAngle={450}
             >
               {jobDistributionData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={entry.color} />
+                <Cell
+                  key={`cell-${index}`}
+                  fill={entry.color}
+                  stroke="white"
+                  strokeWidth={3}
+                />
               ))}
             </Pie>
-            <Legend
-              verticalAlign="top"
-              height={40}
-              iconType="circle"
-              iconSize={8}
-              wrapperStyle={{
-                paddingBottom: "10px",
-                fontSize: "13px",
-                color: "#6B7280",
-              }}
-            />
           </PieChart>
         </ResponsiveContainer>
       </div>
