@@ -50,7 +50,7 @@ const CustomReportTable: React.FC<CustomReportTableProps> = ({
 
   return (
     <div className="bg-transparent">
-      <h2 className="text-lg font-semibold text-gray-800  pb-4">{title}</h2>
+      <h2 className="text-2xl font-bold text-[#535F72]  pb-4">{title}</h2>
       <ScrollArea className="h-[380px]">
         <Table className="bg-white rounded-2xl overflow-hidden">
           <TableHeader>
