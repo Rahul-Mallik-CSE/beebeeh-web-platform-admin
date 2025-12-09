@@ -2,7 +2,53 @@
 
 import React from "react";
 import StatsCard from "./SubComponents/StatsCard";
-import { statsCardsData } from "@/data/ReportModuleData";
+
+/** @format */
+
+import { StatsCardData } from "@/types/ReportModuleTypes";
+
+export const statsCardsData: StatsCardData[] = [
+  {
+    id: "1",
+    icon: "🔧",
+    title: "Parts Used",
+    value: 123,
+    trend: "up",
+    percentage: 10,
+    bgColor: "bg-yellow-50",
+    iconColor: "bg-yellow-100",
+  },
+  {
+    id: "2",
+    icon: "❌",
+    title: "Total Installations",
+    value: 568,
+    trend: "down",
+    percentage: 5,
+    bgColor: "bg-pink-50",
+    iconColor: "bg-pink-100",
+  },
+  {
+    id: "3",
+    icon: "🔧",
+    title: "Total Repairs",
+    value: 123,
+    trend: "up",
+    percentage: 10,
+    bgColor: "bg-purple-50",
+    iconColor: "bg-purple-100",
+  },
+  {
+    id: "4",
+    icon: "⚙️",
+    title: "Total Maintenance",
+    value: 568,
+    trend: "down",
+    percentage: 5,
+    bgColor: "bg-orange-50",
+    iconColor: "bg-orange-100",
+  },
+];
 
 const StatsSection = () => {
   return (

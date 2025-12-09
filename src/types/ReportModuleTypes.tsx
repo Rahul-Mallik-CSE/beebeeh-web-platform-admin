@@ -8,5 +8,5 @@ export interface StatsCardData {
   trend: "up" | "down";
   percentage: number;
   bgColor: string;
-  iconBg: string;
+  iconColor: string;
 }

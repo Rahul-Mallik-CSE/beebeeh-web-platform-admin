@@ -9,7 +9,7 @@ interface StatsCardProps {
 }
 
 const StatsCard: React.FC<StatsCardProps> = ({ data }) => {
-  const { icon, title, value, trend, percentage, bgColor, iconBg } = data;
+  const { icon, title, value, trend, percentage, bgColor, iconColor } = data;
 
   return (
     <div
@@ -17,7 +17,7 @@ const StatsCard: React.FC<StatsCardProps> = ({ data }) => {
     >
       <div className="flex items-center gap-4">
         <div
-          className={`${iconBg} w-12 h-12 rounded-xl flex items-center justify-center text-2xl`}
+          className={`${iconColor} w-12 h-12 rounded-xl flex items-center justify-center text-2xl`}
         >
           {icon}
         </div>
