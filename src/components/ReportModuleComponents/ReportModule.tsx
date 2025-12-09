@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import StatsSection from "../OverviewComponents/StatsSection";
+import StatsSection from "./StatsSection";
 
 const ReportModule = () => {
   return (

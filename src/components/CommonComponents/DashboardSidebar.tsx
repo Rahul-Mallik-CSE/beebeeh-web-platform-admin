@@ -24,6 +24,7 @@ import {
   Settings,
   LogOut,
 } from "lucide-react";
+import { LuChartNoAxesCombined } from "react-icons/lu";
 import { Button } from "../ui/button";
 import LogoutModal from "./LogOutModal";
 
@@ -50,6 +51,11 @@ export default function DashboardSidebar() {
       href: "/all-jobs",
       icon: Briefcase,
       label: "All Jobs",
+    },
+    {
+      href: "/report-module",
+      icon: LuChartNoAxesCombined,
+      label: "Report Module",
     },
     {
       href: "/notifications",
