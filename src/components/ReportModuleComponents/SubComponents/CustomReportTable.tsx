@@ -38,13 +38,13 @@ const CustomReportTable: React.FC<CustomReportTableProps> = ({
     };
 
     return (
-      <span
-        className={`px-3 py-1 rounded-md text-xs font-medium ${
+      <div
+        className={`px-3 py-1 w-20 flex items-center justify-center rounded-md text-xs font-medium ${
           statusStyles[status] || ""
         }`}
       >
         {status}
-      </span>
+      </div>
     );
   };
 
