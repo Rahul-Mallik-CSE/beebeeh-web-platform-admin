@@ -55,7 +55,6 @@ const UploadArea: React.FC<UploadAreaProps> = ({
       <input
         id={`file-${type}`}
         type="file"
-        multiple
         accept=".jpg,.png,.svg"
         className="hidden"
         onChange={(e) => onFileUpload(e, type)}
@@ -69,8 +68,8 @@ const UploadArea: React.FC<UploadAreaProps> = ({
             key={file.id}
             className="border border-gray-200 rounded-lg p-3 flex items-center gap-3 bg-white"
           >
-            <div className="w-10 h-10 bg-gray-100 rounded flex items-center justify-center shrink-0 overflow-hidden">
-              {file.preview ? (
+            {file.preview && (
+              <div className="w-10 h-10 bg-gray-100 rounded flex items-center justify-center shrink-0 overflow-hidden">
                 <Image
                   src={file.preview}
                   alt="preview"
@@ -78,16 +77,8 @@ const UploadArea: React.FC<UploadAreaProps> = ({
                   height={40}
                   className="w-full h-full object-cover rounded"
                 />
-              ) : (
-                <Image
-                  src="/logo.png"
-                  alt="preview"
-                  width={40}
-                  height={40}
-                  className="rounded object-cover"
-                />
-              )}
-            </div>
+              </div>
+            )}
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium text-gray-700 truncate">
                 {file.name}
@@ -111,39 +102,33 @@ const UploadArea: React.FC<UploadAreaProps> = ({
 );
 
 const ImageUploadSection = () => {
-  const [beforeImages, setBeforeImages] = useState<UploadedFile[]>([
-    { id: 1, name: "Installation potrait.jpg", size: "500kb" },
-  ]);
-  const [afterImages, setAfterImages] = useState<UploadedFile[]>([
-    { id: 1, name: "Installation potrait.jpg", size: "500kb" },
-  ]);
+  const [beforeImages, setBeforeImages] = useState<UploadedFile[]>([]);
+  const [afterImages, setAfterImages] = useState<UploadedFile[]>([]);
 
   const handleFileUpload = (
     e: React.ChangeEvent<HTMLInputElement>,
     type: "before" | "after"
   ) => {
     const files = e.target.files;
-    if (files) {
-      const newFiles: UploadedFile[] = [];
-
-      Array.from(files).forEach((file, index) => {
-        const reader = new FileReader();
-        reader.onload = (event) => {
-          const newFile: UploadedFile = {
-            id: Date.now() + index,
-            name: file.name,
-            size: `${Math.round(file.size / 1024)}kb`,
-            preview: event.target?.result as string,
-          };
-
-          if (type === "before") {
-            setBeforeImages((prev) => [...prev, newFile]);
-          } else {
-            setAfterImages((prev) => [...prev, newFile]);
-          }
+    if (files && files.length > 0) {
+      const file = files[0]; // Only take the first file
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const newFile: UploadedFile = {
+          id: Date.now(),
+          name: file.name,
+          size: `${Math.round(file.size / 1024)}kb`,
+          preview: event.target?.result as string,
         };
-        reader.readAsDataURL(file);
-      });
+
+        // Replace the existing image with the new one
+        if (type === "before") {
+          setBeforeImages([newFile]);
+        } else {
+          setAfterImages([newFile]);
+        }
+      };
+      reader.readAsDataURL(file);
     }
   };
 
@@ -153,25 +138,25 @@ const ImageUploadSection = () => {
   ) => {
     e.preventDefault();
     const files = e.dataTransfer.files;
-    if (files) {
-      Array.from(files).forEach((file, index) => {
-        const reader = new FileReader();
-        reader.onload = (event) => {
-          const newFile: UploadedFile = {
-            id: Date.now() + index,
-            name: file.name,
-            size: `${Math.round(file.size / 1024)}kb`,
-            preview: event.target?.result as string,
-          };
-
-          if (type === "before") {
-            setBeforeImages((prev) => [...prev, newFile]);
-          } else {
-            setAfterImages((prev) => [...prev, newFile]);
-          }
+    if (files && files.length > 0) {
+      const file = files[0]; // Only take the first file
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const newFile: UploadedFile = {
+          id: Date.now(),
+          name: file.name,
+          size: `${Math.round(file.size / 1024)}kb`,
+          preview: event.target?.result as string,
         };
-        reader.readAsDataURL(file);
-      });
+
+        // Replace the existing image with the new one
+        if (type === "before") {
+          setBeforeImages([newFile]);
+        } else {
+          setAfterImages([newFile]);
+        }
+      };
+      reader.readAsDataURL(file);
     }
   };
 
