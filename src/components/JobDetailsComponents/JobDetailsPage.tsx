@@ -83,13 +83,13 @@ const JobDetailsPage = ({
                     <p className="text-base font-bold text-gray-800">
                       Before Image
                     </p>
-                    <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 flex flex-col items-center justify-center">
+                    <div className="border-2 border-dashed border-gray-300 rounded-xl  flex flex-col items-center justify-center h-64">
                       {staticImages.beforeImage && (
                         <Image
                           src={staticImages.beforeImage}
                           alt="preview"
-                          width={40}
-                          height={40}
+                          width={600}
+                          height={400}
                           className="w-full h-full object-cover rounded"
                         />
                       )}
@@ -101,13 +101,13 @@ const JobDetailsPage = ({
                     <p className="text-base font-bold text-gray-800">
                       After Image
                     </p>
-                    <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 flex flex-col items-center justify-center">
+                    <div className="border-2 border-dashed border-gray-300 rounded-xl  flex flex-col items-center justify-center h-64">
                       {staticImages.afterImage && (
                         <Image
                           src={staticImages.afterImage}
                           alt="preview"
-                          width={40}
-                          height={40}
+                          width={600}
+                          height={400}
                           className="w-full h-full object-cover rounded"
                         />
                       )}
@@ -157,8 +157,8 @@ const JobDetailsPage = ({
                       <Image
                         src={staticImages.signatureImage}
                         alt="Customer signature"
-                        width={200}
-                        height={64}
+                        width={400}
+                        height={128}
                         className="max-h-full max-w-full object-contain"
                       />
                     </div>
