@@ -26,6 +26,19 @@ export interface OverviewJob {
   status: OverviewJobStatus;
 }
 
+export type InstallationJobStatus = "Assign" | "In Progress" | "Complete";
+
+export interface InstallationJob {
+  id: string;
+  jobId: string;
+  client: string;
+  model: string;
+  serial: string;
+  technician: string;
+  scheduled: string;
+  status: InstallationJobStatus;
+}
+
 export interface Job {
   id: string;
   jobType: JobType;
