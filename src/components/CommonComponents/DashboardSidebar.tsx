@@ -22,6 +22,7 @@ import { VscTools } from "react-icons/vsc";
 import { Button } from "../ui/button";
 import LogoutModal from "./LogOutModal";
 import { PiSuitcaseSimple } from "react-icons/pi";
+import { GiAutoRepair } from "react-icons/gi";
 
 export default function DashboardSidebar() {
   const { state } = useSidebar();
@@ -51,6 +52,11 @@ export default function DashboardSidebar() {
       href: "/installation",
       icon: VscTools,
       label: "Installation",
+    },
+    {
+      href: "/repairs",
+      icon: GiAutoRepair,
+      label: "Repairs",
     },
     {
       href: "/report-module",
