@@ -23,9 +23,9 @@ const JobDetailsOverviewPage = ({ params }: PageProps) => {
             showImageUpload={false}
             showSignature={false}
             staticImages={{
-              beforeImage: "/logo.png",
-              afterImage: "/logo.png",
-              signatureImage: "/logo.png",
+              beforeImage: "/workingImage.jpg",
+              afterImage: "/workingImage.jpg",
+              signatureImage: "/signature.png",
             }}
           />
         </div>
