@@ -164,7 +164,7 @@ const JobDetailsPage = ({
                     </div>
                     <div className="border border-black w-full"></div>
                     <Button className="w-full bg-[#5C3D2E] hover:bg-[#4A2F22] text-white rounded-lg cursor-default">
-                      Collect
+                      Signature
                     </Button>
                   </div>
                 </div>
