@@ -154,10 +154,12 @@ const JobDetailsPage = ({
                   {/* Right side - Signature area */}
                   <div className="space-y-4">
                     <div className="border-2 border-dashed border-gray-300 rounded-lg h-16 flex items-center justify-center">
-                      <img
+                      <Image
                         src={staticImages.signatureImage}
                         alt="Customer signature"
-                        className="max-h-full max-w-full object-contain px-4"
+                        width={200}
+                        height={64}
+                        className="max-h-full max-w-full object-contain"
                       />
                     </div>
                     <div className="border border-black w-full"></div>
