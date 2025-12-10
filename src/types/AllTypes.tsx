@@ -8,6 +8,24 @@ export type JobType =
   | "Installation"
   | "Inspection";
 
+export type OverviewJobStatus = "Pending" | "In Progress" | "Scheduled";
+
+export type OverviewJobType =
+  | "Repair"
+  | "Maintenance"
+  | "Installations"
+  | "Inspection";
+
+export interface OverviewJob {
+  id: string;
+  jobId: string;
+  client: string;
+  technician: string;
+  type: OverviewJobType;
+  orderByDate: string;
+  status: OverviewJobStatus;
+}
+
 export interface Job {
   id: string;
   jobType: JobType;

@@ -17,7 +17,17 @@ const JobDetailsOverviewPage = ({ params }: PageProps) => {
       <div className="max-w-[2500px] rounded-2xl mx-auto space-y-4">
         <div className="bg-white border border-gray-200 rounded-2xl p-6">
           {" "}
-          <JobDetailsPage jobId={jobId} />
+          <JobDetailsPage
+            jobId={jobId}
+            isOverview={true}
+            showImageUpload={false}
+            showSignature={false}
+            staticImages={{
+              beforeImage: "/logo.png",
+              afterImage: "/logo.png",
+              signatureImage: "/logo.png",
+            }}
+          />
         </div>
       </div>
     </div>

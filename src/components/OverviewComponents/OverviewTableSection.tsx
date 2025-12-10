@@ -2,24 +2,22 @@
 "use client";
 import React from "react";
 import CustomTable from "../CommonComponents/CustomTable";
-import { columns, jobsData } from "@/data/AllData";
-import type { Job } from "@/types/AllTypes";
+import { overviewColumns, overviewJobsData } from "@/data/AllData";
+import type { OverviewJob } from "@/types/AllTypes";
 import { useRouter } from "next/navigation";
 
 const OverviewTableSection = () => {
   const router = useRouter();
 
-  const handleAction = (job: Job) => {
-    // Remove # from job ID for URL
-    const jobId = job.id.replace("#", "");
-    router.push(`/overview/${jobId}`);
+  const handleAction = (job: OverviewJob) => {
+    router.push(`/overview/${job.jobId}`);
   };
 
   return (
     <div className="bg-white border border-gray-200 rounded-2xl py-6 px-8">
       <CustomTable
-        data={jobsData}
-        columns={columns}
+        data={overviewJobsData}
+        columns={overviewColumns}
         onAction={handleAction}
         title="Recent Jobs"
         additionalCount={5}
