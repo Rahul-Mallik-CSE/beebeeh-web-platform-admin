@@ -20,6 +20,10 @@ const RepairsTableSection = () => {
     router.push(`/installation/${job.jobId}`);
   };
 
+  const handleAddRepairs = () => {
+    router.push("/repairs/add-repairs");
+  };
+
   const filteredData = installationJobsData.filter(
     (job) =>
       job.client.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -44,7 +48,10 @@ const RepairsTableSection = () => {
               className="pl-10 pr-4 py-2 w-full border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent"
             />
           </div>
-          <Button className="bg-red-800 hover:bg-red-700 text-white px-6 py-2 rounded-lg flex items-center gap-2">
+          <Button
+            onClick={handleAddRepairs}
+            className="bg-red-800 hover:bg-red-700 text-white px-6 py-2 rounded-lg flex items-center gap-2"
+          >
             <Plus className="w-5 h-5" />
             Add Repairs
           </Button>
