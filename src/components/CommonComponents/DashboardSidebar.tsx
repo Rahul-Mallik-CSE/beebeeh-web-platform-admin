@@ -19,6 +19,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { LayoutGrid, Briefcase, Bell, Settings, LogOut } from "lucide-react";
 import { LuChartNoAxesCombined } from "react-icons/lu";
 import { VscTools } from "react-icons/vsc";
+import { LiaUserCogSolid } from "react-icons/lia";
 import { Button } from "../ui/button";
 import LogoutModal from "./LogOutModal";
 import { PiSuitcaseSimple } from "react-icons/pi";
@@ -42,6 +43,11 @@ export default function DashboardSidebar() {
       href: "/my-jobs",
       icon: PiSuitcaseSimple,
       label: "My Jobs",
+    },
+    {
+      href: "/clients",
+      icon: LiaUserCogSolid,
+      label: "Clients",
     },
     {
       href: "/all-jobs",
