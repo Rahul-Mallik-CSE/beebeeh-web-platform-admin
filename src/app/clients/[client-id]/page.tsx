@@ -2,6 +2,7 @@
 "use client";
 
 import ClientDetailsSection from "@/components/ClientsComponents/ClientDetailsSection";
+import ClientDetailsTableSection from "@/components/ClientsComponents/ClientDetailsTableSection";
 import { clientDetailsData } from "@/data/ClientsData";
 import { ArrowLeft } from "lucide-react";
 import { useRouter, useParams } from "next/navigation";
@@ -25,7 +26,7 @@ const ClientDetailsPage = () => {
   return (
     <div className="w-full p-4">
       <div className="max-w-[2500px] rounded-2xl mx-auto space-y-4">
-        <div className="bg-white border border-gray-200 rounded-2xl p-6">
+        <div className="bg-white border border-gray-200 rounded-2xl p-6 space-y-6">
           {/* Header */}
           <div className="flex items-center justify-between mb-4">
             <div className="flex gap-2">
@@ -45,6 +46,9 @@ const ClientDetailsPage = () => {
             onEdit={handleEdit}
             onDisable={handleDisable}
           />
+
+          {/* Client related tables section */}
+          <ClientDetailsTableSection />
         </div>
       </div>
     </div>

@@ -63,7 +63,7 @@ const ClientDetailsSection: React.FC<ClientDetailsSectionProps> = ({
             <h2 className="text-2xl font-bold text-gray-800">{client.name}</h2>
             <p className="text-sm text-gray-600">ID: {client.clientId}</p>
             <div
-              className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(
+              className={`inline-flex items-center px-3 py-1 rounded-sm text-xs font-medium ${getStatusColor(
                 client.status
               )}`}
             >
