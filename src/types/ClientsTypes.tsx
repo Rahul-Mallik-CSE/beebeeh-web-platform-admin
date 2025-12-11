@@ -33,3 +33,18 @@ export interface InfoCard {
   iconBgColor: string;
   iconColor: string;
 }
+
+export interface JobHistory {
+  jobId: string;
+  technician: string;
+  contactNumber: string;
+  type: string;
+  orderByDate: string;
+  completeDate: string;
+}
+
+export interface JobHistoryColumn {
+  header: string;
+  accessor: keyof JobHistory | ((row: JobHistory) => React.ReactNode);
+  className?: string;
+}

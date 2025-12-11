@@ -134,3 +134,65 @@ export const clientsColumns: ClientColumn[] = [
   { header: "Last Service", accessor: "lastService" },
   { header: "create", accessor: "created" },
 ];
+
+import { JobHistory, JobHistoryColumn } from "@/types/ClientsTypes";
+
+export const jobHistoryData: JobHistory[] = [
+  {
+    jobId: "J-9021",
+    technician: "Jhon Carter",
+    contactNumber: "+1 (555) 123-4567",
+    type: "Repair",
+    orderByDate: "25 Jun, 2024",
+    completeDate: "25 Jun, 2024",
+  },
+  {
+    jobId: "J-9021",
+    technician: "Jhon Carter",
+    contactNumber: "+1 (555) 123-4567",
+    type: "Installations",
+    orderByDate: "25 Jun, 2024",
+    completeDate: "25 Jun, 2024",
+  },
+  {
+    jobId: "J-9021",
+    technician: "Jhon Carter",
+    contactNumber: "+1 (555) 123-4567",
+    type: "Maintenance",
+    orderByDate: "25 Jun, 2024",
+    completeDate: "25 Jun, 2024",
+  },
+  {
+    jobId: "J-9021",
+    technician: "Jhon Carter",
+    contactNumber: "+1 (555) 123-4567",
+    type: "Repair",
+    orderByDate: "25 Jun, 2024",
+    completeDate: "25 Jun, 2024",
+  },
+  {
+    jobId: "J-9021",
+    technician: "Jhon Carter",
+    contactNumber: "+1 (555) 123-4567",
+    type: "Maintenance",
+    orderByDate: "25 Jun, 2024",
+    completeDate: "25 Jun, 2024",
+  },
+  {
+    jobId: "J-9021",
+    technician: "Jhon Carter",
+    contactNumber: "+1 (555) 123-4567",
+    type: "Repair",
+    orderByDate: "25 Jun, 2024",
+    completeDate: "25 Jun, 2024",
+  },
+];
+
+export const jobHistoryColumns: JobHistoryColumn[] = [
+  { header: "Job ID", accessor: "jobId" },
+  { header: "Technician", accessor: "technician" },
+  { header: "Contact Number", accessor: "contactNumber" },
+  { header: "Type", accessor: "type" },
+  { header: "Order by Date", accessor: "orderByDate" },
+  { header: "Complete Date", accessor: "completeDate" },
+];
