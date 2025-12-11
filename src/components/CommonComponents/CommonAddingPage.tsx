@@ -65,24 +65,24 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
   };
 
   return (
-    <div className="w-full space-y-6  p-8 max-w-2xl">
+    <div className="w-full space-y-4 sm:space-y-6 p-4 sm:p-6 md:p-8 max-w-2xl">
       {/* Header */}
       <div className="flex items-center gap-2">
         <button
           onClick={() => router.back()}
-          className="flex cursor-pointer items-center font-bold gap-2 text-gray-800 hover:text-gray-900"
+          className="flex cursor-pointer items-center font-bold gap-1 sm:gap-2 text-gray-800 hover:text-gray-900"
         >
-          <ArrowLeft className="w-6 h-6" />
+          <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
-        <h1 className="text-2xl font-bold text-gray-800">{title}</h1>
+        <h1 className="text-xl sm:text-2xl font-bold text-gray-800">{title}</h1>
       </div>
 
       {/* Form Container */}
-      <div className="">
-        <div className="space-y-6">
+      <div>
+        <div className="space-y-4 sm:space-y-6">
           {/* Search Client ID or Name */}
           <div className="space-y-2">
-            <label className="text-lg font-medium text-gray-700">
+            <label className="text-sm sm:text-base md:text-lg font-medium text-gray-700">
               Search Client ID or Name
             </label>
             <Input
@@ -96,7 +96,7 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
 
           {/* Client Name */}
           <div className="space-y-2">
-            <label className="text-lg font-medium text-gray-700">
+            <label className="text-sm sm:text-base md:text-lg font-medium text-gray-700">
               Client name
             </label>
             <div className="relative">
@@ -113,7 +113,7 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
 
           {/* Product ID or Model Name */}
           <div className="space-y-2">
-            <label className="text-lg font-medium text-gray-700">
+            <label className="text-sm sm:text-base md:text-lg font-medium text-gray-700">
               Product ID or Model Name
             </label>
             <Input
@@ -127,7 +127,7 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
 
           {/* Product Model Name */}
           <div className="space-y-2">
-            <label className="text-lg font-medium text-gray-700">
+            <label className="text-sm sm:text-base md:text-lg font-medium text-gray-700">
               Product Model Name
             </label>
             <div className="relative">
@@ -144,7 +144,7 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
 
           {/* Serial Number */}
           <div className="space-y-2">
-            <label className="text-lg font-medium text-gray-700">
+            <label className="text-sm sm:text-base md:text-lg font-medium text-gray-700">
               Serial Number
             </label>
             <div className="relative">
@@ -160,9 +160,11 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
           </div>
 
           {/* Date and Time */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="space-y-2">
-              <label className="text-lg font-medium text-gray-700">Date</label>
+              <label className="text-sm sm:text-base md:text-lg font-medium text-gray-700">
+                Date
+              </label>
               <div className="relative">
                 <Input
                   type="date"
@@ -174,7 +176,9 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
               </div>
             </div>
             <div className="space-y-2">
-              <label className="text-lg font-medium text-gray-700">Time</label>
+              <label className="text-sm sm:text-base md:text-lg font-medium text-gray-700">
+                Time
+              </label>
               <div className="relative">
                 <Input
                   type="time"
@@ -190,7 +194,7 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
           {/* Maintenance Frequency - Only for non-repairs */}
           {!isRepairs && (
             <div className="space-y-2">
-              <label className="text-lg font-medium text-gray-700">
+              <label className="text-sm sm:text-base md:text-lg font-medium text-gray-700">
                 Maintenance Frequency
               </label>
               <Input
@@ -207,7 +211,7 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
 
           {/* Priority */}
           <div className="space-y-2">
-            <label className="text-lg font-medium text-gray-700">
+            <label className="text-sm sm:text-base md:text-lg font-medium text-gray-700">
               Priority
             </label>
             <Select
@@ -228,7 +232,7 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
 
           {/* Technician Name */}
           <div className="space-y-2">
-            <label className="text-lg font-medium text-gray-700">
+            <label className="text-sm sm:text-base md:text-lg font-medium text-gray-700">
               {isRepairs ? "Technician name and email" : "Technician name"}
             </label>
             <div className="relative">
@@ -246,7 +250,7 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
           {/* Problem Type - Only for repairs */}
           {isRepairs && (
             <div className="space-y-2">
-              <label className="text-lg font-medium text-gray-700">
+              <label className="text-sm sm:text-base md:text-lg font-medium text-gray-700">
                 Problem Type
               </label>
               <Select
@@ -268,7 +272,7 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
 
           {/* Problem Description / Notes */}
           <div className="space-y-2">
-            <label className="text-lg font-medium text-gray-700">
+            <label className="text-sm sm:text-base md:text-lg font-medium text-gray-700">
               {isRepairs ? "Problem Description" : "Notes"}
             </label>
             <Textarea
@@ -291,17 +295,17 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
       </div>
 
       {/* Action Buttons */}
-      <div className="flex justify-center gap-4 max-w-2xl">
+      <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-2xl">
         <Button
           variant="outline"
           onClick={handleCancel}
-          className="px-12 py-2 text-gray-700 border-gray-300 hover:bg-gray-50"
+          className="w-full sm:w-auto px-8 sm:px-12 py-2 text-sm sm:text-base text-gray-700 border-gray-300 hover:bg-gray-50"
         >
           Cancel
         </Button>
         <Button
           onClick={handleSubmit}
-          className="px-12 py-2 bg-red-800 hover:bg-red-700 text-white"
+          className="w-full sm:w-auto px-8 sm:px-12 py-2 text-sm sm:text-base bg-red-800 hover:bg-red-700 text-white"
         >
           Create Job
         </Button>
