@@ -50,20 +50,22 @@ const NotificationCard = ({ notification }: NotificationCardProps) => {
   const { icon: Icon, bgColor, iconColor } = getIconAndColor(notification.type);
 
   return (
-    <div className="bg-white rounded-xl p-4 flex items-center gap-4 hover:shadow-md transition-shadow">
+    <div className="bg-white rounded-xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 hover:shadow-md transition-shadow">
       <div
         className={cn(
-          "w-12 h-12 rounded-xl flex items-center justify-center shrink-0",
+          "w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shrink-0",
           bgColor
         )}
       >
-        <Icon className={cn("w-6 h-6", iconColor)} />
+        <Icon className={cn("w-5 h-5 sm:w-6 sm:h-6", iconColor)} />
       </div>
-      <div className="flex-1">
-        <p className="text-gray-800 text-2xl font-medium leading-relaxed">
+      <div className="flex-1 min-w-0">
+        <p className="text-gray-800 text-base sm:text-lg md:text-xl lg:text-2xl font-medium leading-relaxed">
           {notification.title}
         </p>
-        <p className="text-gray-500 text-base ">{notification.time}</p>
+        <p className="text-gray-500 text-xs sm:text-sm md:text-base">
+          {notification.time}
+        </p>
       </div>
     </div>
   );
