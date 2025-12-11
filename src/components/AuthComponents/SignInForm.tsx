@@ -15,43 +15,43 @@ export const SignInForm = () => {
     router.push("/overview");
   };
   return (
-    <div className="relative z-10 w-full max-w-lg bg-white rounded-2xl shadow-lg py-8 px-6">
+    <div className="relative z-10 w-full max-w-[90vw] sm:max-w-lg bg-white rounded-2xl shadow-lg py-6 sm:py-8 px-4 sm:px-6">
       {/* Logo dots */}
-      <div className="flex gap-2 mb-6">
-        <div className="w-8 h-4 rounded-full bg-[#9E2729]"></div>
-        <div className="w-4 h-4 rounded-full bg-[#9E2729]"></div>
-        <div className="w-4 h-4 rounded-full bg-[#9E2729]"></div>
-        <div className="w-4 h-4 rounded-full bg-[#9E2729]"></div>
+      <div className="flex gap-1.5 sm:gap-2 mb-4 sm:mb-6">
+        <div className="w-7 h-3.5 sm:w-8 sm:h-4 rounded-full bg-[#9E2729]"></div>
+        <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-[#9E2729]"></div>
+        <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-[#9E2729]"></div>
+        <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-[#9E2729]"></div>
       </div>
       {/* Welcome Text */}
-      <h1 className="text-4xl font-bold text-[#9E2729] mb-1">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#9E2729] mb-1">
         Welcome to Beebeeh
       </h1>
-      <p className="text-base text-[#9E2729] mb-6">
+      <p className="text-sm sm:text-base text-[#9E2729] mb-4 sm:mb-6">
         Sign in to access your Beebeeh dashboard and continue your work.
       </p>
 
       {/* Email Input */}
-      <div className="mb-5">
-        <label className="block text-base font-medium text-[#9E2729] mb-2">
+      <div className="mb-4 sm:mb-5">
+        <label className="block text-sm sm:text-base font-medium text-[#9E2729] mb-1.5 sm:mb-2">
           Email Address
         </label>
         <input
           type="email"
           placeholder="Enter your email address"
-          className="w-full px-4 py-2 border border-[#E8D5D8] rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#8B3A3A] focus:ring-1 focus:ring-[#8B3A3A]"
+          className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-[#E8D5D8] rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#8B3A3A] focus:ring-1 focus:ring-[#8B3A3A]"
         />
       </div>
 
       {/* Password Input */}
       <div className="mb-2">
-        <div className="flex justify-between items-center mb-2">
-          <label className="block text-base font-medium text-[#9E2729]">
+        <div className="flex justify-between items-center mb-1.5 sm:mb-2">
+          <label className="block text-sm sm:text-base font-medium text-[#9E2729]">
             Password
           </label>
           <Link
             href="/reset-pass"
-            className="text-base text-[#9E2729] hover:underline"
+            className="text-xs sm:text-sm text-[#9E2729] hover:underline"
           >
             Forgot Password?
           </Link>
@@ -60,18 +60,18 @@ export const SignInForm = () => {
           <input
             type={showPassword ? "text" : "password"}
             placeholder="••••••••"
-            className="w-full px-4 py-2 border border-[#E8D5D8] rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#8B3A3A] focus:ring-1 focus:ring-[#8B3A3A]"
+            className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-[#E8D5D8] rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#8B3A3A] focus:ring-1 focus:ring-[#8B3A3A]"
           />
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+            className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
             aria-label={showPassword ? "Hide password" : "Show password"}
           >
             {showPassword ? (
-              <EyeOff className="w-5 h-5" />
+              <EyeOff className="w-4 h-4 sm:w-5 sm:h-5" />
             ) : (
-              <Eye className="w-5 h-5" />
+              <Eye className="w-4 h-4 sm:w-5 sm:h-5" />
             )}
           </button>
         </div>

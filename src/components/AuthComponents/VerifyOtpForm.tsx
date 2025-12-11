@@ -61,25 +61,25 @@ const VerifyOtpForm = () => {
   };
 
   return (
-    <div className="relative z-10 w-full max-w-lg bg-white rounded-2xl shadow-lg py-8 px-6">
+    <div className="relative z-10 w-full max-w-[90vw] sm:max-w-lg bg-white rounded-2xl shadow-lg py-6 sm:py-8 px-4 sm:px-6">
       {/* Logo dots */}
-      <div className="flex gap-2 mb-6">
-        <div className="w-8 h-4 rounded-full bg-[#9E2729]"></div>
-        <div className="w-4 h-4 rounded-full bg-[#9E2729]"></div>
-        <div className="w-4 h-4 rounded-full bg-[#9E2729]"></div>
-        <div className="w-4 h-4 rounded-full bg-[#9E2729]"></div>
+      <div className="flex gap-1.5 sm:gap-2 mb-4 sm:mb-6">
+        <div className="w-7 h-3.5 sm:w-8 sm:h-4 rounded-full bg-[#9E2729]"></div>
+        <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-[#9E2729]"></div>
+        <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-[#9E2729]"></div>
+        <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-[#9E2729]"></div>
       </div>
 
       {/* Welcome Text */}
-      <h1 className="text-4xl font-bold text-[#9E2729] mb-1">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#9E2729] mb-1">
         Verify with OTP
       </h1>
-      <p className="text-base text-[#9E2729] mb-8">
+      <p className="text-sm sm:text-base text-[#9E2729] mb-6 sm:mb-8">
         Enter the OTP sent to your email
       </p>
 
       {/* OTP Input Boxes */}
-      <div className="flex justify-center gap-3 mb-6">
+      <div className="flex justify-center gap-2 sm:gap-3 mb-5 sm:mb-6">
         {otp.map((digit, index) => (
           <input
             key={index}
@@ -89,7 +89,7 @@ const VerifyOtpForm = () => {
             onChange={(e) => handleChange(index, e.target.value)}
             onKeyDown={(e) => handleKeyDown(index, e)}
             onPaste={handlePaste}
-            className="w-12 h-12 text-center text-xl font-semibold border border-[#E8D5D8] rounded-lg bg-white text-gray-800 focus:outline-none focus:border-[#8B3A3A] focus:ring-2 focus:ring-[#8B3A3A]"
+            className="w-10 h-10 sm:w-12 sm:h-12 text-center text-lg sm:text-xl font-semibold border border-[#E8D5D8] rounded-lg bg-white text-gray-800 focus:outline-none focus:border-[#8B3A3A] focus:ring-2 focus:ring-[#8B3A3A]"
           />
         ))}
       </div>

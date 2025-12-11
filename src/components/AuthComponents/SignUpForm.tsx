@@ -19,90 +19,92 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="relative z-10 w-full max-w-lg bg-white rounded-2xl shadow-lg py-8 px-6">
+    <div className="relative z-10 w-full max-w-[90vw] sm:max-w-lg bg-white rounded-2xl shadow-lg py-6 sm:py-8 px-4 sm:px-6">
       {/* Logo dots */}
-      <div className="flex gap-2 mb-6">
-        <div className="w-8 h-4 rounded-full bg-[#9E2729]"></div>
-        <div className="w-4 h-4 rounded-full bg-[#9E2729]"></div>
-        <div className="w-4 h-4 rounded-full bg-[#9E2729]"></div>
-        <div className="w-4 h-4 rounded-full bg-[#9E2729]"></div>
+      <div className="flex gap-1.5 sm:gap-2 mb-4 sm:mb-6">
+        <div className="w-7 h-3.5 sm:w-8 sm:h-4 rounded-full bg-[#9E2729]"></div>
+        <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-[#9E2729]"></div>
+        <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-[#9E2729]"></div>
+        <div className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-[#9E2729]"></div>
       </div>
 
       {/* Welcome Text */}
-      <h1 className="text-4xl font-bold text-[#9E2729] mb-1">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#9E2729] mb-1">
         Create an Account
       </h1>
-      <p className="text-base text-[#9E2729] mb-2">Get started with Beebeeh</p>
+      <p className="text-sm sm:text-base text-[#9E2729] mb-2">
+        Get started with Beebeeh
+      </p>
 
       {/* Full Name Input */}
       <div className="mb-2">
-        <label className="block text-base font-medium text-[#9E2729] mb-1">
+        <label className="block text-sm sm:text-base font-medium text-[#9E2729] mb-1">
           Full Name
         </label>
         <input
           type="text"
           placeholder="Enter your full name"
-          className="w-full px-4 py-2 border border-[#E8D5D8] rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#8B3A3A] focus:ring-1 focus:ring-[#8B3A3A]"
+          className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-[#E8D5D8] rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#8B3A3A] focus:ring-1 focus:ring-[#8B3A3A]"
         />
       </div>
 
       {/* Email Input */}
       <div className="mb-2">
-        <label className="block text-base font-medium text-[#9E2729] mb-1">
+        <label className="block text-sm sm:text-base font-medium text-[#9E2729] mb-1">
           Email Address
         </label>
         <input
           type="email"
           placeholder="Enter your email address"
-          className="w-full px-4 py-2 border border-[#E8D5D8] rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#8B3A3A] focus:ring-1 focus:ring-[#8B3A3A]"
+          className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-[#E8D5D8] rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#8B3A3A] focus:ring-1 focus:ring-[#8B3A3A]"
         />
       </div>
 
       {/* Contact Number Input */}
       <div className="mb-2">
-        <label className="block text-base font-medium text-[#9E2729] mb-1">
+        <label className="block text-sm sm:text-base font-medium text-[#9E2729] mb-1">
           Contact Number
         </label>
         <input
           type="tel"
           placeholder="Enter your contact number"
-          className="w-full px-4 py-2 border border-[#E8D5D8] rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#8B3A3A] focus:ring-1 focus:ring-[#8B3A3A]"
+          className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-[#E8D5D8] rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#8B3A3A] focus:ring-1 focus:ring-[#8B3A3A]"
         />
       </div>
 
       {/* Address Input */}
       <div className="mb-2">
-        <label className="block text-base font-medium text-[#9E2729] mb-1">
+        <label className="block text-sm sm:text-base font-medium text-[#9E2729] mb-1">
           Address
         </label>
         <input
           type="text"
           placeholder="Enter your address"
-          className="w-full px-4 py-2 border border-[#E8D5D8] rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#8B3A3A] focus:ring-1 focus:ring-[#8B3A3A]"
+          className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-[#E8D5D8] rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#8B3A3A] focus:ring-1 focus:ring-[#8B3A3A]"
         />
       </div>
 
       {/* Password Input */}
       <div className="mb-2">
-        <label className="block text-base font-medium text-[#9E2729] mb-1">
+        <label className="block text-sm sm:text-base font-medium text-[#9E2729] mb-1">
           Password
         </label>
         <div className="relative">
           <input
             type={showPassword ? "text" : "password"}
             placeholder="Create a password"
-            className="w-full px-4 py-2 border border-[#E8D5D8] rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#8B3A3A] focus:ring-1 focus:ring-[#8B3A3A]"
+            className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-[#E8D5D8] rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#8B3A3A] focus:ring-1 focus:ring-[#8B3A3A]"
           />
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+            className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
             aria-label={showPassword ? "Hide password" : "Show password"}
           >
             {showPassword ? (
-              <EyeOff className="w-5 h-5" />
+              <EyeOff className="w-4 h-4 sm:w-5 sm:h-5" />
             ) : (
-              <Eye className="w-5 h-5" />
+              <Eye className="w-4 h-4 sm:w-5 sm:h-5" />
             )}
           </button>
         </div>
@@ -110,25 +112,25 @@ const SignUpForm = () => {
 
       {/* Confirm Password Input */}
       <div className="mb-2">
-        <label className="block text-base font-medium text-[#9E2729] mb-1">
+        <label className="block text-sm sm:text-base font-medium text-[#9E2729] mb-1">
           Confirm Password
         </label>
         <div className="relative">
           <input
             type={showConfirmPassword ? "text" : "password"}
             placeholder="Re-enter password"
-            className="w-full px-4 py-2 border border-[#E8D5D8] rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#8B3A3A] focus:ring-1 focus:ring-[#8B3A3A]"
+            className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-[#E8D5D8] rounded-lg bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#8B3A3A] focus:ring-1 focus:ring-[#8B3A3A]"
           />
           <button
             type="button"
             onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+            className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
             aria-label={showConfirmPassword ? "Hide password" : "Show password"}
           >
             {showConfirmPassword ? (
-              <EyeOff className="w-5 h-5" />
+              <EyeOff className="w-4 h-4 sm:w-5 sm:h-5" />
             ) : (
-              <Eye className="w-5 h-5" />
+              <Eye className="w-4 h-4 sm:w-5 sm:h-5" />
             )}
           </button>
         </div>
