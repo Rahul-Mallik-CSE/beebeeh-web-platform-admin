@@ -30,18 +30,18 @@ const ClientsTableSections = () => {
     {
       header: "Action",
       accessor: (row: Client) => (
-        <div className="flex items-center justify-end gap-2">
+        <div className="flex items-center justify-end gap-1 sm:gap-2">
           <button
             onClick={() => handleViewClient(row)}
-            className="p-2 cursor-pointer hover:bg-gray-100 rounded-full transition-colors"
+            className="p-1.5 sm:p-2 cursor-pointer hover:bg-gray-100 rounded-full transition-colors"
           >
-            <Eye className="w-5 h-5 text-gray-600" />
+            <Eye className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600" />
           </button>
           <button
             onClick={() => console.log("Delete", row.clientId)}
-            className="p-2 cursor-pointer hover:bg-red-50 rounded-full transition-colors"
+            className="p-1.5 sm:p-2 cursor-pointer hover:bg-red-50 rounded-full transition-colors"
           >
-            <Trash2 className="w-5 h-5 text-red-600" />
+            <Trash2 className="w-4 h-4 sm:w-5 sm:h-5 text-red-600" />
           </button>
         </div>
       ),
@@ -50,29 +50,31 @@ const ClientsTableSections = () => {
   ];
 
   return (
-    <div className="w-full space-y-4">
+    <div className="w-full space-y-3 sm:space-y-4">
       {/* Header Section */}
-      <div className="flex items-center justify-between">
-        <h2 className="text-3xl font-semibold text-gray-800">Clients</h2>
-        <div className="flex items-center gap-4">
+      <div className="flex flex-wrap items-center justify-between gap-3 sm:gap-4">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800">
+          Clients
+        </h2>
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4">
           {/* Search */}
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-400" />
             <Input
               type="text"
               placeholder="Search"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 w-64"
+              className="pl-9 sm:pl-10 w-40 sm:w-48 md:w-56 lg:w-64 text-sm"
             />
           </div>
           {/* Add Button */}
           <Button
             onClick={() => router.push("/clients/add-client")}
-            className="bg-red-800 hover:bg-red-700 text-white flex items-center gap-2"
+            className="bg-red-800 hover:bg-red-700 text-white flex items-center gap-1.5 sm:gap-2 text-sm px-3 sm:px-4 py-2"
           >
-            <Plus className="w-4 h-4" />
-            Add New Client
+            <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            <span className="whitespace-nowrap">Add New Client</span>
           </Button>
         </div>
       </div>

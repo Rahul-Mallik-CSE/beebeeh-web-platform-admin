@@ -3,10 +3,10 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, MapPin, Briefcase, Edit } from "lucide-react";
+import { Edit } from "lucide-react";
 import { MdBlockFlipped, MdEmail, MdLocalPhone } from "react-icons/md";
-import { ClientDetails, InfoCard } from "@/types/ClientsTypes";
-import { FaMapMarkerAlt, FaPhone } from "react-icons/fa";
+import { ClientDetails } from "@/types/ClientsTypes";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { TbSquareRoundedCheck } from "react-icons/tb";
 
 interface ClientDetailsSectionProps {
