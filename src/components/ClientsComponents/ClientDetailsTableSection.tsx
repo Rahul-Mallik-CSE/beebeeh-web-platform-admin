@@ -31,8 +31,8 @@ const ClientDetailsTableSection = () => {
   ];
 
   return (
-    <div className="w-full bg-white rounded-lg p-6 border border-gray-200">
-      <h3 className="text-xl font-semibold text-gray-800 mb-4">
+    <div className="w-full bg-white rounded-lg p-3 sm:p-4 md:p-6 border border-gray-200">
+      <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-3 sm:mb-4">
         All Job History
       </h3>
       <CustomTable
