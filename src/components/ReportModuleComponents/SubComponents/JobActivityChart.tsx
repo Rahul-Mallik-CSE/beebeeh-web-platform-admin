@@ -14,11 +14,11 @@ import { weeklyJobActivityData } from "@/data/ReportModuleData";
 
 const JobActivityChart = () => {
   return (
-    <div className=" bg-transparent ">
-      <h2 className="text-2xl font-bold text-[#535F72] mb-4">
+    <div className="bg-transparent">
+      <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#535F72] mb-3 sm:mb-4">
         Weekly Jobs Activity
       </h2>
-      <div className="bg-white rounded-2xl py-6 shadow-sm ">
+      <div className="bg-white rounded-2xl py-4 sm:py-6 shadow-sm px-2 sm:px-0">
         <ResponsiveContainer width="100%" height={280}>
           <BarChart
             data={weeklyJobActivityData}

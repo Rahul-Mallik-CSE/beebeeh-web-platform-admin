@@ -40,9 +40,9 @@ const TableSection = () => {
   ];
 
   return (
-    <div className="w-full space-y-6">
+    <div className="w-full space-y-4 sm:space-y-6">
       {/* First Row - Technician Performance and Parts Usage */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
         <CustomReportTable
           title="Technician Performance Table"
           columns={technicianColumns}
@@ -56,7 +56,7 @@ const TableSection = () => {
       </div>
 
       {/* Second Row - Product Stock and Parts Stock */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
         <CustomReportTable
           title="Product Stock Levels Table"
           columns={productStockColumns}

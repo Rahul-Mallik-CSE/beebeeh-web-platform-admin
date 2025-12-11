@@ -31,11 +31,11 @@ const JobDistributionChart = () => {
   };
 
   return (
-    <div className="bg-transparent ">
-      <h2 className="text-2xl font-bold text-[#535F72] mb-4">
+    <div className="bg-transparent">
+      <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#535F72] mb-3 sm:mb-4">
         Job Distribution by Category
       </h2>
-      <div className="bg-white rounded-2xl py-4">
+      <div className="bg-white rounded-2xl py-3 sm:py-4">
         <ResponsiveContainer width="100%" height={300}>
           <PieChart>
             <Pie

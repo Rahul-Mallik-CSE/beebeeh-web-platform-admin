@@ -55,15 +55,17 @@ export const statsCardsData: StatsCardData[] = [
 const StatsSection = () => {
   return (
     <div className="w-full">
-      <div className="flex items-center justify-between mb-4">
-        <h1 className="text-2xl font-bold text-[#535F72]">Report Module</h1>
-        <select className="px-4 py-2 border border-gray-300 rounded-lg text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-3 sm:mb-4">
+        <h1 className="text-xl sm:text-2xl font-bold text-[#535F72]">
+          Report Module
+        </h1>
+        <select className="px-3 sm:px-4 py-2 border border-gray-300 rounded-lg text-xs sm:text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-auto">
           <option value="this-month">This Month</option>
           <option value="last-month">Last Month</option>
           <option value="this-year">This Year</option>
         </select>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         {statsCardsData.map((cardData) => (
           <StatsCard key={cardData.id} data={cardData} />
         ))}

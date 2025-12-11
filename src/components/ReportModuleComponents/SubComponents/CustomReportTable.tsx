@@ -39,7 +39,7 @@ const CustomReportTable: React.FC<CustomReportTableProps> = ({
 
     return (
       <div
-        className={`px-3 py-1 w-20 flex items-center justify-center rounded-md text-xs font-medium ${
+        className={`px-2 sm:px-3 py-1 w-16 sm:w-20 flex items-center justify-center rounded-md text-[10px] sm:text-xs font-medium ${
           statusStyles[status] || ""
         }`}
       >
@@ -50,7 +50,9 @@ const CustomReportTable: React.FC<CustomReportTableProps> = ({
 
   return (
     <div className="bg-transparent">
-      <h2 className="text-2xl font-bold text-[#535F72]  pb-4">{title}</h2>
+      <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#535F72] pb-3 sm:pb-4">
+        {title}
+      </h2>
       <ScrollArea className="h-[380px]">
         <Table className="bg-white rounded-2xl overflow-hidden">
           <TableHeader>
@@ -58,7 +60,7 @@ const CustomReportTable: React.FC<CustomReportTableProps> = ({
               {columns.map((column, index) => (
                 <TableHead
                   key={column.key}
-                  className={`text-white font-semibold text-sm h-12 ${
+                  className={`text-white font-semibold text-xs sm:text-sm h-10 sm:h-12 px-2 sm:px-4 ${
                     index === 0 ? "rounded-tl-2xl" : ""
                   } ${index === columns.length - 1 ? "rounded-tr-2xl" : ""}`}
                   style={{ width: column.width }}
@@ -77,7 +79,7 @@ const CustomReportTable: React.FC<CustomReportTableProps> = ({
                 {columns.map((column) => (
                   <TableCell
                     key={column.key}
-                    className="py-4 text-sm text-gray-700"
+                    className="py-3 sm:py-4 text-xs sm:text-sm text-gray-700 px-2 sm:px-4"
                   >
                     {renderCell ? (
                       renderCell(column.key, row[column.key], row)
