@@ -36,7 +36,7 @@ const NavBar = () => {
   )
     return null;
   return (
-    <div className="w-full sticky top-0 z-50 px-2 sm:px-4">
+    <div className="w-full sticky top-0 z-9 px-2 sm:px-4">
       <div className="max-w-[2500px] rounded-2xl mx-auto flex items-center justify-between bg-white border border-gray-200 px-3 sm:px-4 md:px-6 py-3">
         {/* Left side - Title */}
         <h1 className="text-sm sm:text-base md:text-lg lg:text-2xl 2xl:text-3xl font-bold text-gray-800 truncate">
