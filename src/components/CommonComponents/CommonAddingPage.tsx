@@ -26,6 +26,10 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
   onCancel,
 }) => {
   const router = useRouter();
+
+  // Determine if this is a repairs page
+  const isRepairs = title.toLowerCase().includes("repair");
+
   const [formData, setFormData] = useState({
     searchClient: "",
     clientName: "",
@@ -37,6 +41,8 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
     maintenanceFrequency: "",
     priority: "",
     technicianName: "",
+    problemType: "",
+    problemDescription: "",
     notes: "",
   });
 
@@ -181,21 +187,23 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
             </div>
           </div>
 
-          {/* Maintenance Frequency */}
-          <div className="space-y-2">
-            <label className="text-lg font-medium text-gray-700">
-              Maintenance Frequency
-            </label>
-            <Input
-              type="text"
-              placeholder="enter maintenance frequency month"
-              value={formData.maintenanceFrequency}
-              onChange={(e) =>
-                handleChange("maintenanceFrequency", e.target.value)
-              }
-              className="w-full"
-            />
-          </div>
+          {/* Maintenance Frequency - Only for non-repairs */}
+          {!isRepairs && (
+            <div className="space-y-2">
+              <label className="text-lg font-medium text-gray-700">
+                Maintenance Frequency
+              </label>
+              <Input
+                type="text"
+                placeholder="enter maintenance frequency month"
+                value={formData.maintenanceFrequency}
+                onChange={(e) =>
+                  handleChange("maintenanceFrequency", e.target.value)
+                }
+                className="w-full"
+              />
+            </div>
+          )}
 
           {/* Priority */}
           <div className="space-y-2">
@@ -221,7 +229,7 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
           {/* Technician Name */}
           <div className="space-y-2">
             <label className="text-lg font-medium text-gray-700">
-              Technician name
+              {isRepairs ? "Technician name and email" : "Technician name"}
             </label>
             <div className="relative">
               <Input
@@ -235,13 +243,47 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
             </div>
           </div>
 
-          {/* Notes */}
+          {/* Problem Type - Only for repairs */}
+          {isRepairs && (
+            <div className="space-y-2">
+              <label className="text-lg font-medium text-gray-700">
+                Problem Type
+              </label>
+              <Select
+                value={formData.problemType}
+                onValueChange={(value) => handleChange("problemType", value)}
+              >
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="select problem type" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="electrical">Cooling issue</SelectItem>
+                  <SelectItem value="mechanical">Noise, Gas</SelectItem>
+                  <SelectItem value="software">Electrical</SelectItem>
+                  <SelectItem value="other">Other</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          )}
+
+          {/* Problem Description / Notes */}
           <div className="space-y-2">
-            <label className="text-lg font-medium text-gray-700">Notes</label>
+            <label className="text-lg font-medium text-gray-700">
+              {isRepairs ? "Problem Description" : "Notes"}
+            </label>
             <Textarea
-              placeholder="enter installation job note"
-              value={formData.notes}
-              onChange={(e) => handleChange("notes", e.target.value)}
+              placeholder={
+                isRepairs
+                  ? "enter problem description"
+                  : "enter installation job note"
+              }
+              value={isRepairs ? formData.problemDescription : formData.notes}
+              onChange={(e) =>
+                handleChange(
+                  isRepairs ? "problemDescription" : "notes",
+                  e.target.value
+                )
+              }
               className="w-full min-h-[100px] resize-none"
             />
           </div>
