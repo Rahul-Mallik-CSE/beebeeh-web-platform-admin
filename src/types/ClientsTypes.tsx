@@ -24,3 +24,12 @@ export interface ClientColumn {
   accessor: keyof Client | ((row: Client) => React.ReactNode);
   className?: string;
 }
+
+export interface InfoCard {
+  id: string;
+  label: string;
+  value: string | number;
+  icon: React.ComponentType<{ className?: string }>;
+  iconBgColor: string;
+  iconColor: string;
+}

@@ -3,8 +3,11 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, MapPin, Briefcase, Edit, UserX } from "lucide-react";
-import { ClientDetails } from "@/types/ClientsTypes";
+import { Phone, Mail, MapPin, Briefcase, Edit } from "lucide-react";
+import { MdBlockFlipped, MdEmail, MdLocalPhone } from "react-icons/md";
+import { ClientDetails, InfoCard } from "@/types/ClientsTypes";
+import { FaMapMarkerAlt, FaPhone } from "react-icons/fa";
+import { TbSquareRoundedCheck } from "react-icons/tb";
 
 interface ClientDetailsSectionProps {
   client: ClientDetails;
@@ -31,13 +34,13 @@ const ClientDetailsSection: React.FC<ClientDetailsSectionProps> = ({
   };
 
   return (
-    <div className="w-full bg-white rounded-lg p-6 space-y-6">
+    <div className="w-full bg-white rounded-lg border border-gray-200 p-6 space-y-6">
       {/* Header Section */}
       <div className="flex items-start justify-between">
         {/* Profile Section */}
         <div className="flex items-center gap-4">
           {/* Profile Image */}
-          <div className="relative w-20 h-20 rounded-full overflow-hidden bg-gradient-to-br from-pink-400 to-purple-500">
+          <div className="relative w-20 h-20 rounded-full overflow-hidden bg-linear-to-br from-pink-400 to-purple-500">
             {client.profileImage ? (
               <Image
                 src={client.profileImage}
@@ -71,26 +74,6 @@ const ClientDetailsSection: React.FC<ClientDetailsSectionProps> = ({
 
         {/* Avatar and Buttons */}
         <div className="flex items-center gap-3">
-          {/* Small Avatar */}
-          <div className="w-12 h-12 rounded-full overflow-hidden bg-gradient-to-br from-pink-400 to-purple-500">
-            {client.profileImage ? (
-              <Image
-                src={client.profileImage}
-                alt={client.name}
-                width={48}
-                height={48}
-                className="object-cover"
-              />
-            ) : (
-              <div className="w-full h-full flex items-center justify-center text-white text-sm font-bold">
-                {client.name
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")}
-              </div>
-            )}
-          </div>
-
           {/* Edit Client Button */}
           <Button
             onClick={onEdit}
@@ -104,9 +87,9 @@ const ClientDetailsSection: React.FC<ClientDetailsSectionProps> = ({
           <Button
             onClick={onDisable}
             variant="outline"
-            className="border-gray-300 text-gray-700 hover:bg-gray-50 flex items-center gap-2"
+            className="border-gray-300 text-gray-700  bg-gray-50 hover:bg-gray-100 flex items-center gap-2"
           >
-            <UserX className="w-4 h-4" />
+            <MdBlockFlipped className="w-4 h-4" />
             Disable Account
           </Button>
         </div>
@@ -114,55 +97,63 @@ const ClientDetailsSection: React.FC<ClientDetailsSectionProps> = ({
 
       {/* Info Cards Grid */}
       <div className="grid grid-cols-4 gap-4">
-        {/* Phone Card */}
-        <div className="bg-blue-50 rounded-lg p-4 space-y-2">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-              <Phone className="w-4 h-4 text-blue-600" />
+        {[
+          {
+            id: "phone",
+            label: "Phone",
+            value: client.contactNumber,
+            icon: MdLocalPhone,
+            iconBgColor: "bg-blue-100",
+            iconColor: "text-blue-600",
+          },
+          {
+            id: "email",
+            label: "Email",
+            value: client.email,
+            icon: MdEmail,
+            iconBgColor: "bg-purple-100",
+            iconColor: "text-purple-600",
+          },
+          {
+            id: "address",
+            label: "Address",
+            value: client.address,
+            icon: FaMapMarkerAlt,
+            iconBgColor: "bg-green-100",
+            iconColor: "text-green-600",
+          },
+          {
+            id: "totalJob",
+            label: "Total Job",
+            value: client.totalJobs,
+            icon: TbSquareRoundedCheck,
+            iconBgColor: "bg-cyan-100",
+            iconColor: "text-cyan-600",
+          },
+        ].map((card) => {
+          const IconComponent = card.icon;
+          return (
+            <div key={card.id} className="bg-gray-50 rounded-lg p-4 space-y-2">
+              <div className="flex items-center gap-2">
+                <div
+                  className={`w-8 h-8 ${card.iconBgColor} rounded-lg flex items-center justify-center`}
+                >
+                  <IconComponent className={`w-4 h-4 ${card.iconColor}`} />
+                </div>
+                <span className="text-sm font-medium text-gray-600">
+                  {card.label}
+                </span>
+              </div>
+              <p
+                className={`${
+                  card.id === "totalJob" ? "text-2xl" : "text-base"
+                } font-semibold text-gray-800`}
+              >
+                {card.value}
+              </p>
             </div>
-            <span className="text-sm font-medium text-gray-600">Phone</span>
-          </div>
-          <p className="text-base font-semibold text-gray-800">
-            {client.contactNumber}
-          </p>
-        </div>
-
-        {/* Email Card */}
-        <div className="bg-purple-50 rounded-lg p-4 space-y-2">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-              <Mail className="w-4 h-4 text-purple-600" />
-            </div>
-            <span className="text-sm font-medium text-gray-600">Email</span>
-          </div>
-          <p className="text-base font-semibold text-gray-800">
-            {client.email}
-          </p>
-        </div>
-
-        {/* Address Card */}
-        <div className="bg-green-50 rounded-lg p-4 space-y-2">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-              <MapPin className="w-4 h-4 text-green-600" />
-            </div>
-            <span className="text-sm font-medium text-gray-600">Address</span>
-          </div>
-          <p className="text-base font-semibold text-gray-800">
-            {client.address}
-          </p>
-        </div>
-
-        {/* Total Job Card */}
-        <div className="bg-cyan-50 rounded-lg p-4 space-y-2">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-cyan-100 rounded-lg flex items-center justify-center">
-              <Briefcase className="w-4 h-4 text-cyan-600" />
-            </div>
-            <span className="text-sm font-medium text-gray-600">Total Job</span>
-          </div>
-          <p className="text-2xl font-bold text-gray-800">{client.totalJobs}</p>
-        </div>
+          );
+        })}
       </div>
     </div>
   );

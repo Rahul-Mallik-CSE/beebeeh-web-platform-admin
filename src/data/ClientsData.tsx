@@ -13,7 +13,7 @@ export const clientDetailsData: Record<string, ClientDetails> = {
     installations: 5,
     lastService: "25 Jan, 2024",
     created: "25 Jun, 2023",
-    profileImage: "/logo.png",
+    profileImage: "/workingImage.jpg",
     email: "malik.ahmed@service.com",
     address: "123 Main St, New York",
     status: "Available",

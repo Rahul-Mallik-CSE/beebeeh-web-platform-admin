@@ -15,9 +15,7 @@ const ClientDetailsPage = () => {
   // Get client data based on the ID from URL
   const client = clientDetailsData[clientId] || clientDetailsData["C-501"];
 
-  const handleEdit = () => {
-    router.push(`/clients/${clientId}/edit`);
-  };
+  const handleEdit = () => {};
 
   const handleDisable = () => {
     console.log("Disable account:", clientId);
@@ -29,7 +27,7 @@ const ClientDetailsPage = () => {
       <div className="max-w-[2500px] rounded-2xl mx-auto space-y-4">
         <div className="bg-white border border-gray-200 rounded-2xl p-6">
           {/* Header */}
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between mb-4">
             <div className="flex gap-2">
               <button
                 onClick={() => router.back()}
