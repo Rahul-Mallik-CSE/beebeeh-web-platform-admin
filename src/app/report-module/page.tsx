@@ -5,8 +5,8 @@ import React from "react";
 
 const ReportModulePage = () => {
   return (
-    <div className="w-full p-4">
-      <div className="max-w-[2500px] rounded-2xl mx-auto ">
+    <div className="w-full p-2 sm:p-4 overflow-x-hidden">
+      <div className="max-w-[2500px] rounded-2xl mx-auto">
         <ReportModule />
       </div>
     </div>
