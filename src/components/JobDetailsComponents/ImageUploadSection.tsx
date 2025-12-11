@@ -34,22 +34,22 @@ const UploadArea: React.FC<UploadAreaProps> = ({
   onDragOver,
   onRemove,
 }) => (
-  <div className="space-y-4 min-h-[326px]">
-    <p className="text-base font-bold text-gray-800">
+  <div className="space-y-3 sm:space-y-4 min-h-[280px] sm:min-h-[326px]">
+    <p className="text-sm sm:text-base font-bold text-gray-800">
       {type === "before" ? "Before Image" : "After Image"}
     </p>
     <div
-      className="border-2 border-dashed border-gray-300 rounded-xl p-8 flex flex-col items-center justify-center hover:border-blue-400 transition-colors cursor-pointer "
+      className="border-2 border-dashed border-gray-300 rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center justify-center hover:border-blue-400 transition-colors cursor-pointer"
       onDrop={(e) => onDrop(e, type)}
       onDragOver={onDragOver}
       onClick={() => document.getElementById(`file-${type}`)?.click()}
     >
-      <CloudUpload className="w-12 h-14 text-blue-500 mb-3" />
-      <p className="text-base text-gray-700">
+      <CloudUpload className="w-10 h-12 sm:w-12 sm:h-14 text-blue-500 mb-2 sm:mb-3" />
+      <p className="text-sm sm:text-base text-gray-700 text-center">
         Drag your file(s) or{" "}
         <span className="text-blue-600 font-medium">browse</span>
       </p>
-      <p className="text-base text-gray-400 mt-2">
+      <p className="text-xs sm:text-base text-gray-400 mt-1 sm:mt-2">
         Max 10 MB files are allowed
       </p>
       <input
@@ -66,10 +66,10 @@ const UploadArea: React.FC<UploadAreaProps> = ({
         {images.map((file) => (
           <div
             key={file.id}
-            className="border border-gray-200 rounded-lg p-3 flex items-center gap-3 bg-white"
+            className="border border-gray-200 rounded-lg p-2 sm:p-3 flex items-center gap-2 sm:gap-3 bg-white"
           >
             {file.preview && (
-              <div className="w-10 h-10 bg-gray-100 rounded flex items-center justify-center shrink-0 overflow-hidden">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded flex items-center justify-center shrink-0 overflow-hidden">
                 <Image
                   src={file.preview}
                   alt="preview"
@@ -80,19 +80,21 @@ const UploadArea: React.FC<UploadAreaProps> = ({
               </div>
             )}
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-gray-700 truncate">
+              <p className="text-xs sm:text-sm font-medium text-gray-700 truncate">
                 {file.name}
               </p>
-              <p className="text-xs text-gray-400">{file.size}</p>
+              <p className="text-[10px] sm:text-xs text-gray-400">
+                {file.size}
+              </p>
             </div>
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 onRemove(file.id, type);
               }}
-              className="w-6 h-6 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center shrink-0"
+              className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center shrink-0"
             >
-              <X className="w-4 h-4 text-gray-600" />
+              <X className="w-3 h-3 sm:w-4 sm:h-4 text-gray-600" />
             </button>
           </div>
         ))}
@@ -174,16 +176,16 @@ const ImageUploadSection = () => {
 
   return (
     <div className="bg-white">
-      <div className="flex items-center justify-between mb-3">
-        <h3 className="text-lg font-semibold text-gray-800">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-2 sm:mb-3">
+        <h3 className="text-base sm:text-lg font-semibold text-gray-800">
           Image Upload Section:
         </h3>
-        <p className="text-xs text-gray-400">
+        <p className="text-[10px] sm:text-xs text-gray-400">
           Only support .jpg, .png and .svg files.
         </p>
       </div>
-      <div className="border border-gray-200 rounded-2xl p-6">
-        <div className="grid grid-cols-2 gap-6 ">
+      <div className="border border-gray-200 rounded-2xl p-3 sm:p-4 md:p-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           <UploadArea
             type="before"
             images={beforeImages}

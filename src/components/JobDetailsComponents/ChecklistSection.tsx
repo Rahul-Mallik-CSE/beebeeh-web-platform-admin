@@ -68,7 +68,7 @@ const ChecklistSection = () => {
 
   return (
     <div className="bg-white">
-      <h3 className="text-lg font-semibold text-gray-800 mb-3">
+      <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">
         Checklist Section:
       </h3>
       <div className="rounded-2xl border border-gray-200">
@@ -76,16 +76,16 @@ const ChecklistSection = () => {
           <Table>
             <TableHeader>
               <TableRow className="bg-gray-50 hover:bg-gray-50">
-                <TableHead className="font-semibold text-gray-700">
+                <TableHead className="font-semibold text-gray-700 text-xs sm:text-sm">
                   Step
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700">
+                <TableHead className="font-semibold text-gray-700 text-xs sm:text-sm">
                   Part Code
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700">
+                <TableHead className="font-semibold text-gray-700 text-xs sm:text-sm">
                   Status
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700 text-center">
+                <TableHead className="font-semibold text-gray-700 text-center text-xs sm:text-sm">
                   Action
                 </TableHead>
               </TableRow>
@@ -93,22 +93,26 @@ const ChecklistSection = () => {
             <TableBody>
               {checklist.map((item) => (
                 <TableRow key={item.id}>
-                  <TableCell className="text-gray-700">{item.step}</TableCell>
-                  <TableCell className="text-gray-700">
+                  <TableCell className="text-gray-700 text-xs sm:text-sm">
+                    {item.step}
+                  </TableCell>
+                  <TableCell className="text-gray-700 text-xs sm:text-sm">
                     {item.partCode}
                   </TableCell>
                   <TableCell
-                    className={`font-medium ${getStatusColor(item.status)}`}
+                    className={`font-medium text-xs sm:text-sm ${getStatusColor(
+                      item.status
+                    )}`}
                   >
                     {item.status}
                   </TableCell>
                   <TableCell>
-                    <div className="flex justify-center gap-2">
-                      <button className="w-6 h-6 rounded flex items-center justify-center hover:bg-green-50 text-green-500">
-                        <Check className="w-5 h-5" />
+                    <div className="flex justify-center gap-1 sm:gap-2">
+                      <button className="w-5 h-5 sm:w-6 sm:h-6 rounded flex items-center justify-center hover:bg-green-50 text-green-500">
+                        <Check className="w-4 h-4 sm:w-5 sm:h-5" />
                       </button>
-                      <button className="w-6 h-6 rounded flex items-center justify-center hover:bg-red-50 text-red-500">
-                        <X className="w-5 h-5" />
+                      <button className="w-5 h-5 sm:w-6 sm:h-6 rounded flex items-center justify-center hover:bg-red-50 text-red-500">
+                        <X className="w-4 h-4 sm:w-5 sm:h-5" />
                       </button>
                     </div>
                   </TableCell>

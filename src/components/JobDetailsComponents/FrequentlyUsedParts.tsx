@@ -43,7 +43,7 @@ const FrequentlyUsedParts = () => {
 
   return (
     <div className="bg-white">
-      <h3 className="text-lg font-semibold text-gray-800 mb-3">
+      <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">
         Frequently Used Parts:
       </h3>
       <div className="rounded-2xl border border-gray-200">
@@ -51,16 +51,16 @@ const FrequentlyUsedParts = () => {
           <Table>
             <TableHeader>
               <TableRow className="bg-gray-50 hover:bg-gray-50">
-                <TableHead className="font-semibold text-gray-700">
+                <TableHead className="font-semibold text-gray-700 text-xs sm:text-sm">
                   Part Name
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700">
+                <TableHead className="font-semibold text-gray-700 text-xs sm:text-sm">
                   Part Code
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700">
+                <TableHead className="font-semibold text-gray-700 text-xs sm:text-sm">
                   Part Code
                 </TableHead>
-                <TableHead className="font-semibold text-gray-700">
+                <TableHead className="font-semibold text-gray-700 text-xs sm:text-sm">
                   Stock Required
                 </TableHead>
               </TableRow>
@@ -68,16 +68,20 @@ const FrequentlyUsedParts = () => {
             <TableBody>
               {parts.map((part, index) => (
                 <TableRow key={index}>
-                  <TableCell className="text-gray-700">
+                  <TableCell className="text-gray-700 text-xs sm:text-sm">
                     {part.partName}
                   </TableCell>
-                  <TableCell className="text-gray-700">
+                  <TableCell className="text-gray-700 text-xs sm:text-sm">
                     {part.partCode}
                   </TableCell>
-                  <TableCell className={getStockColor(part.stock)}>
+                  <TableCell
+                    className={`${getStockColor(
+                      part.stock
+                    )} text-xs sm:text-sm`}
+                  >
                     {part.stock}
                   </TableCell>
-                  <TableCell className="text-gray-700">
+                  <TableCell className="text-gray-700 text-xs sm:text-sm">
                     {part.stockRequired}
                   </TableCell>
                 </TableRow>

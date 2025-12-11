@@ -35,34 +35,36 @@ const JobDetailsPage = ({
   const router = useRouter();
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div className="flex gap-2">
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex gap-1.5 sm:gap-2 items-center">
           <button
             onClick={() => router.back()}
-            className="flex cursor-pointer items-center font-bold gap-2 text-gray-800 hover:text-gray-900"
+            className="flex cursor-pointer items-center font-bold gap-1 sm:gap-2 text-gray-800 hover:text-gray-900"
           >
-            <ArrowLeft className="w-6 h-6" />
+            <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
-          <span className="text-2xl font-bold">Job Details</span>
+          <span className="text-lg sm:text-xl md:text-2xl font-bold">
+            Job Details
+          </span>
         </div>
 
-        <Button className="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-medium px-6">
+        <Button className="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-medium px-3 sm:px-4 md:px-6 text-sm sm:text-base">
           Pending
         </Button>
       </div>
 
       {/* Main Content Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-5 xl:grid-cols-7 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-5 xl:grid-cols-7 gap-4 sm:gap-6">
         {/* Left Column - 2/3 */}
-        <div className="lg:col-span-2 xl:col-span-2 space-y-6">
+        <div className="lg:col-span-2 xl:col-span-2 space-y-4 sm:space-y-6">
           <HeaderSummaryCard jobId={jobId} />
           <ClientInfoSection />
           <ProductDetailsSection />
         </div>
         {/* Right Column - 1/3 */}
-        <div className="lg:col-span-3 xl:col-span-5  space-y-6">
+        <div className="lg:col-span-3 xl:col-span-5 space-y-4 sm:space-y-6">
           <FrequentlyUsedParts />
           <ChecklistSection />
           {showImageUpload && !isOverview && <ImageUploadSection />}
@@ -176,26 +178,26 @@ const JobDetailsPage = ({
 
       {/* Action Buttons */}
       {isOverview ? (
-        <div className="flex justify-center gap-4 pt-6">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 pt-4 sm:pt-6">
           <Button
             variant="outline"
-            className="px-8 py-4 text-red-800 border-red-800 hover:bg-red-50"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base text-red-800 border-red-800 hover:bg-red-50"
           >
             Cancel Job
           </Button>
-          <Button className="px-8 py-4 bg-red-800 hover:bg-red-700 text-white">
+          <Button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base bg-red-800 hover:bg-red-700 text-white">
             Rescheduled
           </Button>
         </div>
       ) : (
-        <div className="flex justify-center gap-4 pt-6">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 pt-4 sm:pt-6">
           <Button
             variant="outline"
-            className="px-8 py-4 text-red-800 border-red-800 hover:bg-red-50"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base text-red-800 border-red-800 hover:bg-red-50"
           >
             Cancel Job
           </Button>
-          <Button className="px-8 py-4 bg-red-800 hover:bg-red-700 text-white">
+          <Button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base bg-red-800 hover:bg-red-700 text-white">
             Start Job
           </Button>
         </div>

@@ -24,31 +24,33 @@ const CustomerSignatureSection = () => {
 
   return (
     <div className="bg-white">
-      <h3 className="text-lg font-semibold text-gray-800 mb-3">
+      <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">
         Customer Signature Section:
       </h3>
-      <div className="border border-gray-200 rounded-2xl p-6">
-        <div className="grid grid-cols-2 gap-6">
+      <div className="border border-gray-200 rounded-2xl p-3 sm:p-4 md:p-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {/* Left side - Client info */}
-          <div className="space-y-4">
-            <div className="flex items-center justify-between py-2">
-              <p className="text-gray-800 font-medium text-base">
+          <div className="space-y-3 sm:space-y-4">
+            <div className="flex items-center justify-between py-1.5 sm:py-2">
+              <p className="text-gray-800 font-medium text-sm sm:text-base">
                 Client Name :
               </p>
-              <p className="text-gray-500 text-sm">John Doe</p>
+              <p className="text-gray-500 text-xs sm:text-sm">John Doe</p>
             </div>
-            <div className="flex items-center justify-between py-2">
-              <p className="text-gray-800 font-medium text-base">
+            <div className="flex items-center justify-between py-1.5 sm:py-2">
+              <p className="text-gray-800 font-medium text-sm sm:text-base">
                 Signature time :
               </p>
-              <p className="text-gray-500 text-sm">24 Nov 2025, 2:30 PM</p>
+              <p className="text-gray-500 text-xs sm:text-sm">
+                24 Nov 2025, 2:30 PM
+              </p>
             </div>
-            <div className="flex items-center justify-between py-2">
-              <p className="text-gray-800 font-medium text-base">
+            <div className="flex items-center justify-between py-1.5 sm:py-2">
+              <p className="text-gray-800 font-medium text-sm sm:text-base">
                 Signature Status :
               </p>
               <p
-                className={`font-medium text-sm ${
+                className={`font-medium text-xs sm:text-sm ${
                   signatureImage ? "text-teal-500" : "text-red-500"
                 }`}
               >
@@ -58,8 +60,8 @@ const CustomerSignatureSection = () => {
           </div>
 
           {/* Right side - Signature area and button */}
-          <div className="space-y-4">
-            <div className="border-2 border-dashed border-gray-300 rounded-lg h-16 flex items-center justify-center ">
+          <div className="space-y-3 sm:space-y-4">
+            <div className="border-2 border-dashed border-gray-300 rounded-lg h-16 flex items-center justify-center">
               {signatureImage ? (
                 <Image
                   src={signatureImage}
