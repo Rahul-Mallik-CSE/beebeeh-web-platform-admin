@@ -34,13 +34,13 @@ const ClientDetailsSection: React.FC<ClientDetailsSectionProps> = ({
   };
 
   return (
-    <div className="w-full bg-white rounded-lg border border-gray-200 p-6 space-y-6">
+    <div className="w-full bg-white rounded-lg border border-gray-200 p-3 sm:p-4 md:p-6 space-y-4 sm:space-y-6">
       {/* Header Section */}
-      <div className="flex items-start justify-between">
+      <div className="flex flex-col sm:flex-row items-start sm:items-start justify-between gap-4">
         {/* Profile Section */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
           {/* Profile Image */}
-          <div className="relative w-20 h-20 rounded-full overflow-hidden bg-linear-to-br from-pink-400 to-purple-500">
+          <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-linear-to-br from-pink-400 to-purple-500 flex-shrink-0">
             {client.profileImage ? (
               <Image
                 src={client.profileImage}
@@ -49,7 +49,7 @@ const ClientDetailsSection: React.FC<ClientDetailsSectionProps> = ({
                 className="object-cover"
               />
             ) : (
-              <div className="w-full h-full flex items-center justify-center text-white text-2xl font-bold">
+              <div className="w-full h-full flex items-center justify-center text-white text-xl sm:text-2xl font-bold">
                 {client.name
                   .split(" ")
                   .map((n) => n[0])
@@ -60,10 +60,14 @@ const ClientDetailsSection: React.FC<ClientDetailsSectionProps> = ({
 
           {/* Name and ID */}
           <div className="space-y-1">
-            <h2 className="text-2xl font-bold text-gray-800">{client.name}</h2>
-            <p className="text-sm text-gray-600">ID: {client.clientId}</p>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
+              {client.name}
+            </h2>
+            <p className="text-xs sm:text-sm text-gray-600">
+              ID: {client.clientId}
+            </p>
             <div
-              className={`inline-flex items-center px-3 py-1 rounded-sm text-xs font-medium ${getStatusColor(
+              className={`inline-flex items-center px-2 sm:px-3 py-0.5 sm:py-1 rounded-sm text-xs font-medium ${getStatusColor(
                 client.status
               )}`}
             >
@@ -72,31 +76,33 @@ const ClientDetailsSection: React.FC<ClientDetailsSectionProps> = ({
           </div>
         </div>
 
-        {/* Avatar and Buttons */}
-        <div className="flex items-center gap-3">
+        {/* Buttons */}
+        <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto">
           {/* Edit Client Button */}
           <Button
             onClick={onEdit}
-            className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2"
+            className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-1 sm:gap-2 text-xs sm:text-sm flex-1 sm:flex-none px-3 sm:px-4"
           >
-            <Edit className="w-4 h-4" />
-            Edit Client
+            <Edit className="w-3 h-3 sm:w-4 sm:h-4" />
+            <span className="hidden xs:inline">Edit Client</span>
+            <span className="xs:hidden">Edit</span>
           </Button>
 
           {/* Disable Account Button */}
           <Button
             onClick={onDisable}
             variant="outline"
-            className="border-gray-300 text-gray-700  bg-gray-50 hover:bg-gray-100 flex items-center gap-2"
+            className="border-gray-300 text-gray-700 bg-gray-50 hover:bg-gray-100 flex items-center gap-1 sm:gap-2 text-xs sm:text-sm flex-1 sm:flex-none px-3 sm:px-4"
           >
-            <MdBlockFlipped className="w-4 h-4" />
-            Disable Account
+            <MdBlockFlipped className="w-3 h-3 sm:w-4 sm:h-4" />
+            <span className="hidden lg:inline">Disable Account</span>
+            <span className="lg:hidden">Disable</span>
           </Button>
         </div>
       </div>
 
       {/* Info Cards Grid */}
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         {[
           {
             id: "phone",
@@ -133,21 +139,28 @@ const ClientDetailsSection: React.FC<ClientDetailsSectionProps> = ({
         ].map((card) => {
           const IconComponent = card.icon;
           return (
-            <div key={card.id} className="bg-gray-50 rounded-lg p-4 space-y-2">
+            <div
+              key={card.id}
+              className="bg-gray-50 rounded-lg p-3 sm:p-4 space-y-2"
+            >
               <div className="flex items-center gap-2">
                 <div
-                  className={`w-8 h-8 ${card.iconBgColor} rounded-lg flex items-center justify-center`}
+                  className={`w-7 h-7 sm:w-8 sm:h-8 ${card.iconBgColor} rounded-lg flex items-center justify-center flex-shrink-0`}
                 >
-                  <IconComponent className={`w-4 h-4 ${card.iconColor}`} />
+                  <IconComponent
+                    className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${card.iconColor}`}
+                  />
                 </div>
-                <span className="text-sm font-medium text-gray-600">
+                <span className="text-xs sm:text-sm font-medium text-gray-600">
                   {card.label}
                 </span>
               </div>
               <p
                 className={`${
-                  card.id === "totalJob" ? "text-2xl" : "text-base"
-                } font-semibold text-gray-800`}
+                  card.id === "totalJob"
+                    ? "text-xl sm:text-2xl"
+                    : "text-sm sm:text-base"
+                } font-semibold text-gray-800 break-words`}
               >
                 {card.value}
               </p>

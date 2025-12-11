@@ -124,75 +124,84 @@ const CustomTable = <T extends Record<string, any>>({
   };
 
   return (
-    <div className="w-full space-y-4">
+    <div className="w-full space-y-3 sm:space-y-4">
       {/* Header */}
       {title && (
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between px-2 sm:px-0">
           {title && (
-            <h2 className="text-3xl font-semibold text-gray-800">{title}</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800">
+              {title}
+            </h2>
           )}
         </div>
       )}
 
-      <div className="rounded-lg overflow-hidden">
-        <Table className="border-none">
-          <TableHeader>
-            <TableRow className="bg-[#F1F4F9] hover:bg-[#F1F4F9] border-none">
-              {columns.map((column, index) => (
-                <TableHead
-                  key={index}
-                  className={cn(
-                    "font-semibold text-gray-700 text-sm py-3",
-                    column.className
-                  )}
-                >
-                  {column.header}
-                </TableHead>
-              ))}
-              {onAction && (
-                <TableHead className="font-semibold text-gray-700 text-sm text-right">
-                  Action
-                </TableHead>
-              )}
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {currentData.map((row, rowIndex) => (
-              <TableRow
-                key={rowIndex}
-                className="hover:bg-gray-50 transition-colors"
-              >
-                {columns.map((column, colIndex) => (
-                  <TableCell
-                    key={colIndex}
-                    className={cn("text-gray-700 py-5", column.className)}
+      {/* Table Container with Horizontal Scroll */}
+      <div className="rounded-lg overflow-hidden border border-gray-200 sm:border-0">
+        <div className="overflow-x-auto">
+          <Table className="border-none min-w-full">
+            <TableHeader>
+              <TableRow className="bg-[#F1F4F9] hover:bg-[#F1F4F9] border-none">
+                {columns.map((column, index) => (
+                  <TableHead
+                    key={index}
+                    className={cn(
+                      "font-semibold text-gray-700 text-xs sm:text-sm py-2 sm:py-3 whitespace-nowrap",
+                      column.className
+                    )}
                   >
-                    {renderCell(row, column)}
-                  </TableCell>
+                    {column.header}
+                  </TableHead>
                 ))}
                 {onAction && (
-                  <TableCell className="text-right">
-                    <button
-                      onClick={() => onAction(row)}
-                      className="p-2 hover:bg-gray-100 rounded-full transition-colors inline-flex items-center justify-center"
-                    >
-                      <View className="w-5 h-5 text-gray-600" />
-                    </button>
-                  </TableCell>
+                  <TableHead className="font-semibold text-gray-700 text-xs sm:text-sm text-right py-2 sm:py-3 whitespace-nowrap">
+                    Action
+                  </TableHead>
                 )}
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHeader>
+            <TableBody>
+              {currentData.map((row, rowIndex) => (
+                <TableRow
+                  key={rowIndex}
+                  className="hover:bg-gray-50 transition-colors"
+                >
+                  {columns.map((column, colIndex) => (
+                    <TableCell
+                      key={colIndex}
+                      className={cn(
+                        "text-gray-700 py-3 sm:py-5 text-xs sm:text-sm whitespace-nowrap",
+                        column.className
+                      )}
+                    >
+                      {renderCell(row, column)}
+                    </TableCell>
+                  ))}
+                  {onAction && (
+                    <TableCell className="text-right py-3 sm:py-5">
+                      <button
+                        onClick={() => onAction(row)}
+                        className="p-1.5 sm:p-2 hover:bg-gray-100 rounded-full transition-colors inline-flex items-center justify-center"
+                      >
+                        <View className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600" />
+                      </button>
+                    </TableCell>
+                  )}
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
       </div>
 
       {/* Pagination */}
       <Pagination>
-        <PaginationContent>
+        <PaginationContent className="flex-wrap gap-1">
           <PaginationItem>
             <PaginationPrevious
               onClick={() => handlePageChange(currentPage - 1)}
               className={cn(
+                "text-xs sm:text-sm h-8 sm:h-10 px-2 sm:px-4",
                 currentPage === 1
                   ? "pointer-events-none opacity-50"
                   : "cursor-pointer"
@@ -201,15 +210,15 @@ const CustomTable = <T extends Record<string, any>>({
           </PaginationItem>
 
           {getPageNumbers().map((page, index) => (
-            <PaginationItem key={index}>
+            <PaginationItem key={index} className="hidden xs:inline-flex">
               {page === "..." ? (
-                <PaginationEllipsis />
+                <PaginationEllipsis className="h-8 sm:h-10" />
               ) : (
                 <PaginationLink
                   onClick={() => handlePageChange(page as number)}
                   isActive={currentPage === page}
                   className={cn(
-                    "cursor-pointer",
+                    "cursor-pointer text-xs sm:text-sm h-8 sm:h-10 w-8 sm:w-10",
                     currentPage === page &&
                       "bg-red-800 text-white hover:bg-red-700 hover:text-white"
                   )}
@@ -220,10 +229,21 @@ const CustomTable = <T extends Record<string, any>>({
             </PaginationItem>
           ))}
 
+          {/* Mobile: Show only current page */}
+          <PaginationItem className="xs:hidden">
+            <PaginationLink
+              isActive={true}
+              className="cursor-default bg-red-800 text-white h-8 w-8 text-xs"
+            >
+              {currentPage}
+            </PaginationLink>
+          </PaginationItem>
+
           <PaginationItem>
             <PaginationNext
               onClick={() => handlePageChange(currentPage + 1)}
               className={cn(
+                "text-xs sm:text-sm h-8 sm:h-10 px-2 sm:px-4",
                 currentPage === totalPages
                   ? "pointer-events-none opacity-50"
                   : "cursor-pointer"
