@@ -20,13 +20,15 @@ const StatsCard = ({
   iconBgColor,
 }: StatsCardProps) => {
   return (
-    <div className="bg-white border border-gray-200 rounded-2xl p-6 flex items-center justify-between">
-      <div className="flex-1">
-        <p className="text-sm text-gray-500 mb-1">{title}</p>
-        <h3 className="text-3xl font-bold text-gray-800 mb-2">{value}</h3>
+    <div className="bg-white border border-gray-200 rounded-2xl p-4 sm:p-5 md:p-6 flex items-center justify-between gap-3">
+      <div className="flex-1 min-w-0">
+        <p className="text-xs sm:text-sm text-gray-500 mb-1">{title}</p>
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-1 sm:mb-2">
+          {value}
+        </h3>
         <div className="flex items-center gap-1">
           <svg
-            className={`w-4 h-4 ${
+            className={`w-3 h-3 sm:w-4 sm:h-4 ${
               trendDirection === "up" ? "text-green-500" : "text-red-500"
             }`}
             fill="none"
@@ -50,7 +52,7 @@ const StatsCard = ({
             )}
           </svg>
           <span
-            className={`text-sm font-medium ${
+            className={`text-xs sm:text-sm font-medium ${
               trendDirection === "up" ? "text-green-500" : "text-red-500"
             }`}
           >
@@ -59,7 +61,7 @@ const StatsCard = ({
         </div>
       </div>
       <div
-        className={`w-14 h-14 ${iconBgColor} rounded-xl flex items-center justify-center shrink-0`}
+        className={`w-12 h-12 sm:w-14 sm:h-14 ${iconBgColor} rounded-xl flex items-center justify-center shrink-0`}
       >
         {icon}
       </div>
