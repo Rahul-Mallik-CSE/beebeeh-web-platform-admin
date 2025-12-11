@@ -1,6 +1,25 @@
 /** @format */
 
-import { Client, ClientColumn } from "@/types/ClientsTypes";
+import { Client, ClientColumn, ClientDetails } from "@/types/ClientsTypes";
+
+// Detailed client data for individual client pages
+export const clientDetailsData: Record<string, ClientDetails> = {
+  "C-501": {
+    clientId: "C-501",
+    name: "Zara Khan",
+    type: "Commercial",
+    town: "London",
+    contactNumber: "+1 (555) 123-4567",
+    installations: 5,
+    lastService: "25 Jan, 2024",
+    created: "25 Jun, 2023",
+    profileImage: "/logo.png",
+    email: "malik.ahmed@service.com",
+    address: "123 Main St, New York",
+    status: "Available",
+    totalJobs: 16,
+  },
+};
 
 export const clientsData: Client[] = [
   {

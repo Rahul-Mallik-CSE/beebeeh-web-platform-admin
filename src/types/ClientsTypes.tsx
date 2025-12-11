@@ -11,6 +11,14 @@ export interface Client {
   created: string;
 }
 
+export interface ClientDetails extends Client {
+  profileImage?: string;
+  email: string;
+  address: string;
+  status: "Available" | "Unavailable" | "Busy";
+  totalJobs: number;
+}
+
 export interface ClientColumn {
   header: string;
   accessor: keyof Client | ((row: Client) => React.ReactNode);

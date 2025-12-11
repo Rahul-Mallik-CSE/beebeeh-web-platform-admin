@@ -1,16 +1,32 @@
 /** @format */
 "use client";
-import { Button } from "@/components/ui/button";
+
+import ClientDetailsSection from "@/components/ClientsComponents/ClientDetailsSection";
+import { clientDetailsData } from "@/data/ClientsData";
 import { ArrowLeft } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import React from "react";
 
 const ClientDetailsPage = () => {
   const router = useRouter();
+  const params = useParams();
+  const clientId = params["client-id"] as string;
+
+  // Get client data based on the ID from URL
+  const client = clientDetailsData[clientId] || clientDetailsData["C-501"];
+
+  const handleEdit = () => {
+    router.push(`/clients/${clientId}/edit`);
+  };
+
+  const handleDisable = () => {
+    console.log("Disable account:", clientId);
+    // Add disable logic here
+  };
+
   return (
     <div className="w-full p-4">
       <div className="max-w-[2500px] rounded-2xl mx-auto space-y-4">
-        {/* table section */}
         <div className="bg-white border border-gray-200 rounded-2xl p-6">
           {/* Header */}
           <div className="flex items-center justify-between">
@@ -24,6 +40,13 @@ const ClientDetailsPage = () => {
               <span className="text-2xl font-bold">Client Details</span>
             </div>
           </div>
+
+          {/* Client data section */}
+          <ClientDetailsSection
+            client={client}
+            onEdit={handleEdit}
+            onDisable={handleDisable}
+          />
         </div>
       </div>
     </div>
