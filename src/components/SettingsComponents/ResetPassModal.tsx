@@ -36,31 +36,33 @@ const ResetPassModal = ({ isOpen, onClose, onUpdate }: ResetPassModalProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[425px] bg-white">
+      <DialogContent className="sm:max-w-[425px] bg-white max-w-[90vw]">
         <DialogHeader>
           {/* Logo Dots */}
-          <div className="flex gap-2 mb-2">
-            <div className="w-9 h-3 rounded-full bg-red-800"></div>
-            <div className="w-3 h-3 rounded-full bg-red-800"></div>
-            <div className="w-3 h-3 rounded-full bg-red-800"></div>
-            <div className="w-3 h-3 rounded-full bg-red-800"></div>
+          <div className="flex gap-1.5 sm:gap-2 mb-2">
+            <div className="w-7 h-2.5 sm:w-9 sm:h-3 rounded-full bg-red-800"></div>
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-800"></div>
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-800"></div>
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-800"></div>
           </div>
-          <DialogTitle className="text-3xl font-semibold text-red-800">
+          <DialogTitle className="text-2xl sm:text-3xl font-semibold text-red-800">
             Reset Password
           </DialogTitle>
         </DialogHeader>
 
-        <div className="space-y-5 py-4">
+        <div className="space-y-4 sm:space-y-5 py-3 sm:py-4">
           {/* Password Field */}
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-red-800">Password</label>
+          <div className="space-y-1.5 sm:space-y-2">
+            <label className="text-xs sm:text-sm font-medium text-red-800">
+              Password
+            </label>
             <div className="relative">
               <Input
                 type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Create a password"
-                className="bg-white border-gray-200 pr-10"
+                className="bg-white border-gray-200 pr-10 h-9 sm:h-10 text-sm"
               />
               <button
                 type="button"
@@ -68,17 +70,17 @@ const ResetPassModal = ({ isOpen, onClose, onUpdate }: ResetPassModalProps) => {
                 className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
               >
                 {showPassword ? (
-                  <EyeOff className="w-4 h-4" />
+                  <EyeOff className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 ) : (
-                  <Eye className="w-4 h-4" />
+                  <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 )}
               </button>
             </div>
           </div>
 
           {/* Confirm Password Field */}
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-red-800">
+          <div className="space-y-1.5 sm:space-y-2">
+            <label className="text-xs sm:text-sm font-medium text-red-800">
               Confirm Password
             </label>
             <div className="relative">
@@ -87,7 +89,7 @@ const ResetPassModal = ({ isOpen, onClose, onUpdate }: ResetPassModalProps) => {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 placeholder="Re-enter password"
-                className="bg-white border-gray-200 pr-10"
+                className="bg-white border-gray-200 pr-10 h-9 sm:h-10 text-sm"
               />
               <button
                 type="button"
@@ -95,9 +97,9 @@ const ResetPassModal = ({ isOpen, onClose, onUpdate }: ResetPassModalProps) => {
                 className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
               >
                 {showConfirmPassword ? (
-                  <EyeOff className="w-4 h-4" />
+                  <EyeOff className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 ) : (
-                  <Eye className="w-4 h-4" />
+                  <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 )}
               </button>
             </div>
@@ -106,7 +108,7 @@ const ResetPassModal = ({ isOpen, onClose, onUpdate }: ResetPassModalProps) => {
           {/* Update Button */}
           <Button
             onClick={handleUpdate}
-            className="w-full bg-red-800 hover:bg-red-700 text-white py-6 text-base font-medium mt-6"
+            className="w-full bg-red-800 hover:bg-red-700 text-white py-4 sm:py-6 text-sm sm:text-base font-medium mt-4 sm:mt-6"
           >
             Update Password
           </Button>
