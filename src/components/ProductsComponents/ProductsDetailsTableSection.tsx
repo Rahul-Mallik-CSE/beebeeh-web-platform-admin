@@ -1,13 +1,26 @@
 /** @format */
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import CustomTable from "@/components/CommonComponents/CustomTable";
 import { productDetailsData } from "@/data/ProductsData";
 import { Button } from "@/components/ui/button";
 import { PartInventory, FrequentPart, RelatedJob } from "@/types/ProductsTypes";
+import AddCheckListModal from "./AddCheckListModal";
 
 const ProductsDetailsTableSection = () => {
   const product = productDetailsData["1"];
+  const [isInstallationModalOpen, setIsInstallationModalOpen] = useState(false);
+  const [isMaintenanceModalOpen, setIsMaintenanceModalOpen] = useState(false);
+
+  const handleAddInstallationTask = (task: string) => {
+    console.log("Adding installation task:", task);
+    // Add logic to update installation checklist
+  };
+
+  const handleAddMaintenanceTask = (task: string) => {
+    console.log("Adding maintenance task:", task);
+    // Add logic to update maintenance checklist
+  };
 
   // Installation Checklist Columns
   const installationColumns = [
@@ -138,6 +151,7 @@ const ProductsDetailsTableSection = () => {
               Installation Checklist
             </h3>
             <Button
+              onClick={() => setIsInstallationModalOpen(true)}
               variant="ghost"
               size="sm"
               className="text-[10px] xs:text-xs sm:text-sm md:text-base h-7 sm:h-8 md:h-9 px-1.5 xs:px-2 sm:px-3 bg-transparent border-none text-red-800 hover:text-red-700 hover:bg-transparent"
@@ -161,6 +175,7 @@ const ProductsDetailsTableSection = () => {
               Maintenance Checklist
             </h3>
             <Button
+              onClick={() => setIsMaintenanceModalOpen(true)}
               variant="ghost"
               size="sm"
               className="text-[10px] xs:text-xs sm:text-sm md:text-base h-7 sm:h-8 md:h-9 px-1.5 xs:px-2 sm:px-3 bg-transparent border-none text-red-800 hover:text-red-700 hover:bg-transparent"
@@ -219,8 +234,21 @@ const ProductsDetailsTableSection = () => {
           />
         </div>
       </div>
+
+      {/* Modals */}
+      <AddCheckListModal
+        isOpen={isInstallationModalOpen}
+        onClose={() => setIsInstallationModalOpen(false)}
+        onSave={handleAddInstallationTask}
+      />
+      <AddCheckListModal
+        isOpen={isMaintenanceModalOpen}
+        onClose={() => setIsMaintenanceModalOpen(false)}
+        onSave={handleAddMaintenanceTask}
+      />
     </div>
   );
 };
 
 export default ProductsDetailsTableSection;
+        
