@@ -133,14 +133,14 @@ const ProductsDetailsTableSection = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
         {/* Installation Checklist */}
         <div className="space-y-3">
-          <div className="flex items-center justify-between">
-            <h3 className="text-base sm:text-2xl font-semibold text-gray-600">
+          <div className="flex items-center justify-between flex-wrap gap-2">
+            <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-600">
               Installation Checklist
             </h3>
             <Button
               variant="ghost"
               size="sm"
-              className="text-xs sm:text-lg h-8 sm:h-9 px-2 sm:px-3 bg-transparent border-none text-red-800 hover:text-red-700 hover:bg-transparent"
+              className="text-[10px] xs:text-xs sm:text-sm md:text-base h-7 sm:h-8 md:h-9 px-1.5 xs:px-2 sm:px-3 bg-transparent border-none text-red-800 hover:text-red-700 hover:bg-transparent"
             >
               Add Checklist
             </Button>
@@ -156,14 +156,14 @@ const ProductsDetailsTableSection = () => {
 
         {/* Maintenance Checklist */}
         <div className="space-y-3">
-          <div className="flex items-center justify-between">
-            <h3 className="text-base sm:text-2xl font-semibold text-gray-600">
+          <div className="flex items-center justify-between flex-wrap gap-2">
+            <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-600">
               Maintenance Checklist
             </h3>
             <Button
               variant="ghost"
               size="sm"
-              className="text-xs sm:text-lg h-8 sm:h-9 px-2 sm:px-3 bg-transparent border-none text-red-800 hover:text-red-700 hover:bg-transparent"
+              className="text-[10px] xs:text-xs sm:text-sm md:text-base h-7 sm:h-8 md:h-9 px-1.5 xs:px-2 sm:px-3 bg-transparent border-none text-red-800 hover:text-red-700 hover:bg-transparent"
             >
               Add Checklist
             </Button>
@@ -179,8 +179,8 @@ const ProductsDetailsTableSection = () => {
       </div>
 
       {/* All Parts Inventory Status */}
-      <div className="space-y-3 border border-gray-200 rounded-lg p-4 sm:p-6 bg-white">
-        <h3 className="text-base sm:text-2xl font-semibold text-gray-600">
+      <div className="space-y-3 border border-gray-200 rounded-lg p-3 sm:p-4 md:p-6 bg-white">
+        <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-600">
           All Parts Inventory Status
         </h3>
         <div className="bg-white ">
@@ -193,8 +193,8 @@ const ProductsDetailsTableSection = () => {
       </div>
 
       {/* Frequently Used Parts */}
-      <div className="space-y-3 border border-gray-200 rounded-lg p-4 sm:p-6 bg-white">
-        <h3 className="text-base sm:text-2xl font-semibold text-gray-600">
+      <div className="space-y-3 border border-gray-200 rounded-lg p-3 sm:p-4 md:p-6 bg-white">
+        <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-600">
           Frequently Used Parts
         </h3>
         <div className="bg-white ">
@@ -207,8 +207,8 @@ const ProductsDetailsTableSection = () => {
       </div>
 
       {/* Related Jobs */}
-      <div className="space-y-3  border border-gray-200 rounded-lg p-4 sm:p-6 bg-white ">
-        <h3 className="text-base sm:text-2xl font-semibold text-gray-600">
+      <div className="space-y-3 border border-gray-200 rounded-lg p-3 sm:p-4 md:p-6 bg-white">
+        <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-600">
           Related Jobs
         </h3>
         <div className="bg-white ">

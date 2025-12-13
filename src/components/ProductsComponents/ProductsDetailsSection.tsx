@@ -41,13 +41,13 @@ const ProductsDetailsSection: React.FC<ProductsDetailsSectionProps> = ({
       {/* Product Header */}
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">
             {product.modelName}
           </h1>
-          <p className="text-xs sm:text-sm text-gray-600 mt-1">
+          <p className="text-[10px] xs:text-xs sm:text-sm text-gray-600 mt-1">
             ID: {product.productId}
           </p>
-          <p className="text-xs sm:text-sm text-gray-600 mt-0.5">
+          <p className="text-[10px] xs:text-xs sm:text-sm text-gray-600 mt-0.5">
             Alias : {product.alias}
           </p>
           <span
@@ -63,24 +63,26 @@ const ProductsDetailsSection: React.FC<ProductsDetailsSectionProps> = ({
         <div className="flex flex-wrap gap-2">
           <Button
             onClick={onEdit}
-            className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-1.5 text-sm px-3 sm:px-4 h-9 "
+            className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm px-2 sm:px-3 md:px-4 h-8 sm:h-9"
           >
-            <Pencil className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-            Edit Product
+            <Pencil className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4" />
+            <span className="hidden xs:inline">Edit Product</span>
+            <span className="xs:hidden">Edit</span>
           </Button>
           <Button
             onClick={onDelete}
             variant="outline"
-            className="flex items-center gap-1.5 text-sm px-3 sm:px-4 h-9 border-none bg-gray-100 hover:bg-gray-50"
+            className="flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm px-2 sm:px-3 md:px-4 h-8 sm:h-9 border-none bg-gray-100 hover:bg-gray-50"
           >
-            <Trash2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-            Delete Product
+            <Trash2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4" />
+            <span className="hidden xs:inline">Delete Product</span>
+            <span className="xs:hidden">Delete</span>
           </Button>
           <Button
             onClick={onView}
-            className="bg-red-800 hover:bg-red-700 text-white flex items-center gap-1.5 text-sm px-3 sm:px-4 h-9 "
+            className="bg-red-800 hover:bg-red-700 text-white flex items-center gap-1 sm:gap-1.5 text-xs sm:text-sm px-2 sm:px-3 md:px-4 h-8 sm:h-9"
           >
-            <FaBox className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            <FaBox className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4" />
             Re-stock
           </Button>
         </div>
