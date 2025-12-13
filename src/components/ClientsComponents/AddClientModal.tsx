@@ -231,7 +231,7 @@ const AddClientModal: React.FC<AddClientModalProps> = ({
                   setFormData({ ...formData, type: value })
                 }
               >
-                <SelectTrigger className="h-9 sm:h-10 text-sm">
+                <SelectTrigger className="w-full h-9 sm:h-10 text-sm">
                   <SelectValue placeholder="Select client type" />
                 </SelectTrigger>
                 <SelectContent>
