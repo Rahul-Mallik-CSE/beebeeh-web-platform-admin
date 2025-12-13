@@ -130,7 +130,7 @@ const PartsDetailsSection: React.FC<PartsDetailsSectionProps> = ({
             >
               <div className="flex items-center gap-2">
                 <div
-                  className={`w-7 h-7 sm:w-8 sm:h-8 ${card.iconBgColor} rounded-lg flex items-center justify-center flex-shrink-0`}
+                  className={`w-7 h-7 sm:w-8 sm:h-8 ${card.iconBgColor} rounded-lg flex items-center justify-center shrink-0`}
                 >
                   <IconComponent
                     className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${card.iconColor}`}

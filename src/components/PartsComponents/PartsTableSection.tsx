@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, Plus, Eye, Trash2 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import AddPartsModal from "./AddPartsModal";
 
 const PartsTableSection = () => {
   const router = useRouter();
@@ -92,6 +93,13 @@ const PartsTableSection = () => {
           itemsPerPage={10}
         />
       </div>
+
+      {/* Add Parts Modal */}
+      <AddPartsModal
+        isOpen={isAddPartModalOpen}
+        onClose={() => setIsAddPartModalOpen(false)}
+        onSave={handleAddPart}
+      />
     </div>
   );
 };
