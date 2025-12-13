@@ -25,6 +25,7 @@ import LogoutModal from "./LogOutModal";
 import { PiSuitcaseSimple } from "react-icons/pi";
 import { GiAutoRepair } from "react-icons/gi";
 import { BsBox } from "react-icons/bs";
+import { AiFillTool } from "react-icons/ai";
 
 export default function DashboardSidebar() {
   const { state } = useSidebar();
@@ -54,6 +55,11 @@ export default function DashboardSidebar() {
       href: "/products",
       icon: BsBox,
       label: "Products",
+    },
+    {
+      href: "/parts",
+      icon: AiFillTool,
+      label: "Parts",
     },
     {
       href: "/all-jobs",
