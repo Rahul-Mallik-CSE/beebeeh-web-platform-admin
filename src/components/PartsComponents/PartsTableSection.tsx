@@ -57,28 +57,28 @@ const PartsTableSection = () => {
   return (
     <div className="w-full space-y-3 sm:space-y-4">
       {/* Header Section */}
-      <div className="flex flex-col xs:flex-row flex-wrap items-start xs:items-center justify-between gap-3 sm:gap-4">
-        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800">
+      <div className="flex flex-wrap items-center justify-between gap-3 sm:gap-4">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800">
           Parts
         </h2>
-        <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 w-full xs:w-auto">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4">
           {/* Search */}
-          <div className="relative flex-1 xs:flex-none">
-            <Search className="absolute left-2 sm:left-3 top-1/2 transform -translate-y-1/2 w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-gray-400" />
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-400" />
             <Input
               type="text"
               placeholder="Search"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-7 sm:pl-9 md:pl-10 w-full xs:w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 text-xs sm:text-sm h-8 sm:h-9 md:h-10"
+              className="pl-9 sm:pl-10 w-40 sm:w-48 md:w-56 lg:w-64 text-sm"
             />
           </div>
           {/* Add Button */}
           <Button
             onClick={() => setIsAddPartModalOpen(true)}
-            className="bg-red-800 hover:bg-red-700 text-white flex items-center gap-1 sm:gap-1.5 md:gap-2 text-xs sm:text-sm px-2 sm:px-3 md:px-4 h-8 sm:h-9 md:h-10"
+            className="bg-red-800 hover:bg-red-700 text-white flex items-center gap-1.5 sm:gap-2 text-sm px-3 sm:px-4 py-2"
           >
-            <Plus className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4" />
+            <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             <span className="whitespace-nowrap">Add New Parts</span>
           </Button>
         </div>
