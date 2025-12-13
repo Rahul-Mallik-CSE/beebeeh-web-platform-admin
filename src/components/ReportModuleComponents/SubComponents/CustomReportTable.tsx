@@ -1,7 +1,6 @@
 /** @format */
 
 import React from "react";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Table,
   TableBody,
@@ -53,14 +52,14 @@ const CustomReportTable: React.FC<CustomReportTableProps> = ({
       <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-[#535F72] pb-3 sm:pb-4">
         {title}
       </h2>
-      <ScrollArea className="h-[380px]">
-        <Table className="bg-white rounded-2xl overflow-hidden">
-          <TableHeader>
+      <div className="bg-white rounded-2xl overflow-auto h-[380px]">
+        <Table className="w-full ">
+          <TableHeader className="sticky top-0 z-10">
             <TableRow className="bg-[#5C2E2E] hover:bg-[#5C2E2E]">
               {columns.map((column, index) => (
                 <TableHead
                   key={column.key}
-                  className={`text-white font-semibold text-xs sm:text-sm h-10 sm:h-12 px-2 sm:px-4 ${
+                  className={`text-white font-semibold text-xs sm:text-sm h-10 sm:h-12 px-2 sm:px-4 whitespace-nowrap ${
                     index === 0 ? "rounded-tl-2xl" : ""
                   } ${index === columns.length - 1 ? "rounded-tr-2xl" : ""}`}
                   style={{ width: column.width }}
@@ -79,7 +78,7 @@ const CustomReportTable: React.FC<CustomReportTableProps> = ({
                 {columns.map((column) => (
                   <TableCell
                     key={column.key}
-                    className="py-3 sm:py-4 text-xs sm:text-sm text-gray-700 px-2 sm:px-4"
+                    className="py-3 sm:py-4 text-xs sm:text-sm text-gray-700 px-2 sm:px-4 whitespace-nowrap"
                   >
                     {renderCell ? (
                       renderCell(column.key, row[column.key], row)
@@ -98,7 +97,7 @@ const CustomReportTable: React.FC<CustomReportTableProps> = ({
             ))}
           </TableBody>
         </Table>
-      </ScrollArea>
+      </div>
     </div>
   );
 };
