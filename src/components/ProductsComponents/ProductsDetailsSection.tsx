@@ -6,8 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Pencil, Trash2 } from "lucide-react";
 import { IoIosCard } from "react-icons/io";
 import { FaBox } from "react-icons/fa";
-import { IoCheckmarkDoneSharp } from "react-icons/io5";
-import { MdSaveAs } from "react-icons/md";
 import { GiAutoRepair } from "react-icons/gi";
 
 interface ProductsDetailsSectionProps {
