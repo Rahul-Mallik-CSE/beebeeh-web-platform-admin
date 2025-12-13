@@ -14,6 +14,7 @@ import { UserCog, Key, LogOut } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import LogoutModal from "./LogOutModal";
+import { SidebarTrigger } from "../ui/sidebar";
 
 const NavBar = () => {
   const pathname = usePathname();
@@ -38,11 +39,16 @@ const NavBar = () => {
   return (
     <div className="w-full sticky top-0 z-9 px-2 sm:px-4">
       <div className="max-w-[2500px] rounded-2xl mx-auto flex items-center justify-between bg-white border border-gray-200 px-3 sm:px-4 md:px-6 py-3">
-        {/* Left side - Title */}
-        <h1 className="text-sm sm:text-base md:text-lg lg:text-2xl 2xl:text-3xl font-bold text-gray-800 truncate">
-          Technician Dashboard
-        </h1>
-
+        <div className="flex gap-2 items-center">
+          {/* mobile menu button */}
+          <div className=" rounded-sm  md:hidden">
+            <SidebarTrigger />
+          </div>
+          {/* Left side - Title */}
+          <h1 className="text-sm sm:text-base md:text-lg lg:text-2xl 2xl:text-3xl font-bold text-gray-800 truncate">
+            Admin Dashboard
+          </h1>
+        </div>
         {/* Right side - Notification, Profile */}
         <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
           {/* Notification Bell */}

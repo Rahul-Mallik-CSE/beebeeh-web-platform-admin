@@ -5,7 +5,8 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
-import { SquareChevronRight } from "lucide-react";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { FaAnglesLeft, FaAnglesRight } from "react-icons/fa6";
 
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
@@ -260,7 +261,7 @@ function SidebarTrigger({
   onClick,
   ...props
 }: React.ComponentProps<typeof Button>) {
-  const { toggleSidebar } = useSidebar();
+  const { toggleSidebar, isMobile, open } = useSidebar();
 
   return (
     <Button
@@ -275,7 +276,13 @@ function SidebarTrigger({
       }}
       {...props}
     >
-      <SquareChevronRight />
+      {isMobile ? (
+        <RxHamburgerMenu />
+      ) : open ? (
+        <FaAnglesLeft />
+      ) : (
+        <FaAnglesRight />
+      )}
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   );
