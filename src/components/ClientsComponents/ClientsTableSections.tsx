@@ -8,10 +8,12 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, Plus, Eye, Trash2 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import AddClientModal, { ClientFormData } from "./AddClientModal";
 
 const ClientsTableSections = () => {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const filteredClients = clientsData.filter(
     (client) =>
@@ -23,6 +25,12 @@ const ClientsTableSections = () => {
 
   const handleViewClient = (client: Client) => {
     router.push(`/clients/${client.clientId}`);
+  };
+
+  const handleSaveClient = (data: ClientFormData) => {
+    console.log("Saving client:", data);
+    // Add your save logic here (e.g., API call)
+    setIsModalOpen(false);
   };
 
   const columnsWithActions = [
@@ -70,7 +78,7 @@ const ClientsTableSections = () => {
           </div>
           {/* Add Button */}
           <Button
-            onClick={() => router.push("/clients/add-client")}
+            onClick={() => setIsModalOpen(true)}
             className="bg-red-800 hover:bg-red-700 text-white flex items-center gap-1.5 sm:gap-2 text-sm px-3 sm:px-4 py-2"
           >
             <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -87,6 +95,13 @@ const ClientsTableSections = () => {
           itemsPerPage={10}
         />
       </div>
+
+      {/* Add Client Modal */}
+      <AddClientModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onSave={handleSaveClient}
+      />
     </div>
   );
 };
