@@ -8,10 +8,17 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, Plus, Eye, Trash2 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import AddProductModal from "./AddProductModal";
 
 const ProductsTableSection = () => {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
+  const [isAddProductModalOpen, setIsAddProductModalOpen] = useState(false);
+
+  const handleAddProduct = (productData: any) => {
+    console.log("Adding product:", productData);
+    // Add logic to save product
+  };
 
   const filteredProducts = productsData.filter(
     (product) =>
@@ -69,7 +76,7 @@ const ProductsTableSection = () => {
           </div>
           {/* Add Button */}
           <Button
-            onClick={() => router.push("/products/add-product")}
+            onClick={() => setIsAddProductModalOpen(true)}
             className="bg-red-800 hover:bg-red-700 text-white flex items-center gap-1 sm:gap-1.5 md:gap-2 text-xs sm:text-sm px-2 sm:px-3 md:px-4 h-8 sm:h-9 md:h-10"
           >
             <Plus className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4" />
@@ -86,6 +93,13 @@ const ProductsTableSection = () => {
           itemsPerPage={10}
         />
       </div>
+
+      {/* Add Product Modal */}
+      <AddProductModal
+        isOpen={isAddProductModalOpen}
+        onClose={() => setIsAddProductModalOpen(false)}
+        onSave={handleAddProduct}
+      />
     </div>
   );
 };
