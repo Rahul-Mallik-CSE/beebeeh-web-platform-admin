@@ -121,3 +121,109 @@ export const partsColumns = [
     accessor: (row: Part) => row.models,
   },
 ];
+
+import { PartDetails, UsedHistory } from "@/types/PartsTypes";
+
+export const partDetailsData: Record<string, PartDetails> = {
+  "1": {
+    id: "1",
+    partId: "Pr-Pr-501",
+    name: "Filter A22",
+    unit: "pcs",
+    status: "Stocks In",
+    maintenanceStock: 50,
+    models: 15,
+    stock: 505,
+    usedHistory: [
+      {
+        id: "1",
+        jobId: "J-8001",
+        technician: "Linda Kian",
+        type: "Repair",
+        date: "23 Jan, 2024",
+      },
+      {
+        id: "2",
+        jobId: "J-8001",
+        technician: "Linda Kian",
+        type: "Repair",
+        date: "23 Jan, 2024",
+      },
+      {
+        id: "3",
+        jobId: "J-8001",
+        technician: "Linda Kian",
+        type: "Repair",
+        date: "23 Jan, 2024",
+      },
+      {
+        id: "4",
+        jobId: "J-8001",
+        technician: "Linda Kian",
+        type: "Repair",
+        date: "23 Jan, 2024",
+      },
+      {
+        id: "5",
+        jobId: "J-8022",
+        technician: "Linda Kian",
+        type: "Repair",
+        date: "23 Jan, 2024",
+      },
+      {
+        id: "6",
+        jobId: "J-8001",
+        technician: "Linda Kian",
+        type: "Repair",
+        date: "23 Jan, 2024",
+      },
+      {
+        id: "7",
+        jobId: "J-8001",
+        technician: "Linda Kian",
+        type: "Repair",
+        date: "23 Jan, 2024",
+      },
+      {
+        id: "8",
+        jobId: "J-8001",
+        technician: "Linda Kian",
+        type: "Repair",
+        date: "23 Jan, 2024",
+      },
+      {
+        id: "9",
+        jobId: "J-8001",
+        technician: "Linda Kian",
+        type: "Repair",
+        date: "23 Jan, 2024",
+      },
+      {
+        id: "10",
+        jobId: "J-8001",
+        technician: "Linda Kian",
+        type: "Repair",
+        date: "23 Jan, 2024",
+      },
+    ],
+  },
+};
+
+export const usedHistoryColumns = [
+  {
+    header: "Job ID",
+    accessor: (row: UsedHistory) => row.jobId,
+  },
+  {
+    header: "Technician",
+    accessor: (row: UsedHistory) => row.technician,
+  },
+  {
+    header: "Type",
+    accessor: (row: UsedHistory) => row.type,
+  },
+  {
+    header: "Date",
+    accessor: (row: UsedHistory) => row.date,
+  },
+];
