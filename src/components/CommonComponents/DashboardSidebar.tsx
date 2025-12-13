@@ -24,6 +24,7 @@ import { Button } from "../ui/button";
 import LogoutModal from "./LogOutModal";
 import { PiSuitcaseSimple } from "react-icons/pi";
 import { GiAutoRepair } from "react-icons/gi";
+import { BsBox } from "react-icons/bs";
 
 export default function DashboardSidebar() {
   const { state } = useSidebar();
@@ -48,6 +49,11 @@ export default function DashboardSidebar() {
       href: "/clients",
       icon: LiaUserCogSolid,
       label: "Clients",
+    },
+    {
+      href: "/products",
+      icon: BsBox,
+      label: "Products",
     },
     {
       href: "/all-jobs",

@@ -1,0 +1,137 @@
+/** @format */
+
+import { Product } from "@/types/ProductsTypes";
+
+export const productsData: Product[] = [
+  {
+    id: "1",
+    productId: "P-501",
+    modelName: "CM200",
+    alias: "TCPRO",
+    domesticFreq: "6 months",
+    commercialFreq: "4 months",
+    parts: 15,
+    stock: "8 items",
+  },
+  {
+    id: "2",
+    productId: "P-501",
+    modelName: "CoolMaster X200",
+    alias: "TCPRO",
+    domesticFreq: "6 months",
+    commercialFreq: "4 months",
+    parts: 15,
+    stock: "8 items",
+  },
+  {
+    id: "3",
+    productId: "P-501",
+    modelName: "TurboChill Pro",
+    alias: "TCPRO",
+    domesticFreq: "6 months",
+    commercialFreq: "4 months",
+    parts: 15,
+    stock: "8 items",
+  },
+  {
+    id: "4",
+    productId: "P-501",
+    modelName: "CM200",
+    alias: "TCPRO",
+    domesticFreq: "6 months",
+    commercialFreq: "4 months",
+    parts: 15,
+    stock: "8 items",
+  },
+  {
+    id: "5",
+    productId: "P-501",
+    modelName: "TurboChill Pro",
+    alias: "TCPRO",
+    domesticFreq: "6 months",
+    commercialFreq: "4 months",
+    parts: 15,
+    stock: "8 items",
+  },
+  {
+    id: "6",
+    productId: "P-501",
+    modelName: "TurboChill Pro",
+    alias: "TCPRO",
+    domesticFreq: "6 months",
+    commercialFreq: "4 months",
+    parts: 15,
+    stock: "8 items",
+  },
+  {
+    id: "7",
+    productId: "P-501",
+    modelName: "TurboChill Pro",
+    alias: "TCPRO",
+    domesticFreq: "6 months",
+    commercialFreq: "4 months",
+    parts: 15,
+    stock: "8 items",
+  },
+  {
+    id: "8",
+    productId: "P-501",
+    modelName: "TurboChill Pro",
+    alias: "TCPRO",
+    domesticFreq: "6 months",
+    commercialFreq: "4 months",
+    parts: 15,
+    stock: "8 items",
+  },
+  {
+    id: "9",
+    productId: "P-501",
+    modelName: "TurboChill Pro",
+    alias: "TCPRO",
+    domesticFreq: "6 months",
+    commercialFreq: "4 months",
+    parts: 15,
+    stock: "8 items",
+  },
+  {
+    id: "10",
+    productId: "P-501",
+    modelName: "TurboChill Pro",
+    alias: "TCPRO",
+    domesticFreq: "6 months",
+    commercialFreq: "4 months",
+    parts: 15,
+    stock: "8 items",
+  },
+];
+
+export const productsColumns = [
+  {
+    header: "Product ID",
+    accessor: (row: Product) => row.productId,
+  },
+  {
+    header: "Model Name",
+    accessor: (row: Product) => row.modelName,
+  },
+  {
+    header: "Alias",
+    accessor: (row: Product) => row.alias,
+  },
+  {
+    header: "Domestic Freq",
+    accessor: (row: Product) => row.domesticFreq,
+  },
+  {
+    header: "Commercial Freq",
+    accessor: (row: Product) => row.commercialFreq,
+  },
+  {
+    header: "Parts",
+    accessor: (row: Product) => row.parts,
+  },
+  {
+    header: "Stock",
+    accessor: (row: Product) => row.stock,
+  },
+];
