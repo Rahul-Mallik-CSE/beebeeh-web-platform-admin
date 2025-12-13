@@ -4,7 +4,6 @@ import React from "react";
 import CustomTable from "@/components/CommonComponents/CustomTable";
 import { productDetailsData } from "@/data/ProductsData";
 import { Button } from "@/components/ui/button";
-import { Plus } from "lucide-react";
 import { PartInventory, FrequentPart, RelatedJob } from "@/types/ProductsTypes";
 
 const ProductsDetailsTableSection = () => {
@@ -13,19 +12,12 @@ const ProductsDetailsTableSection = () => {
   // Installation Checklist Columns
   const installationColumns = [
     {
-      header: "Task",
-      accessor: (row: any) => row.task,
+      header: "Step",
+      accessor: (row: any) => row.id,
     },
     {
-      header: "Checklist",
-      accessor: (row: any) => (
-        <input
-          type="checkbox"
-          checked={row.completed}
-          className="w-4 h-4 rounded border-gray-300"
-          readOnly
-        />
-      ),
+      header: "Check List",
+      accessor: (row: any) => row.task,
     },
   ];
 
@@ -142,11 +134,10 @@ const ProductsDetailsTableSection = () => {
               Installation Checklist
             </h3>
             <Button
-              variant="outline"
+              variant="ghost"
               size="sm"
-              className="text-xs sm:text-sm h-8 sm:h-9 px-2 sm:px-3 border-gray-300"
+              className="text-xs sm:text-sm h-8 sm:h-9 px-2 sm:px-3 text-red-600 hover:text-red-700 hover:bg-red-50"
             >
-              <Plus className="w-3.5 h-3.5 mr-1" />
               Add Checklist
             </Button>
           </div>
@@ -154,7 +145,7 @@ const ProductsDetailsTableSection = () => {
             <CustomTable
               data={product.installationChecklist}
               columns={installationColumns}
-              itemsPerPage={5}
+              itemsPerPage={6}
             />
           </div>
         </div>
@@ -166,11 +157,10 @@ const ProductsDetailsTableSection = () => {
               Maintenance Checklist
             </h3>
             <Button
-              variant="outline"
+              variant="ghost"
               size="sm"
-              className="text-xs sm:text-sm h-8 sm:h-9 px-2 sm:px-3 border-gray-300"
+              className="text-xs sm:text-sm h-8 sm:h-9 px-2 sm:px-3 text-red-600 hover:text-red-700 hover:bg-red-50"
             >
-              <Plus className="w-3.5 h-3.5 mr-1" />
               Add Checklist
             </Button>
           </div>
@@ -178,7 +168,7 @@ const ProductsDetailsTableSection = () => {
             <CustomTable
               data={product.maintenanceChecklist}
               columns={installationColumns}
-              itemsPerPage={5}
+              itemsPerPage={6}
             />
           </div>
         </div>

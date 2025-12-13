@@ -37,7 +37,7 @@ const ProductsDetailsSection: React.FC<ProductsDetailsSectionProps> = ({
   };
 
   return (
-    <div className="space-y-4 sm:space-y-6">
+    <div className="space-y-4 sm:space-y-6 border border-gray-200 rounded-2xl p-4 sm:p-6 bg-white">
       {/* Product Header */}
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4">
         <div>
@@ -63,7 +63,7 @@ const ProductsDetailsSection: React.FC<ProductsDetailsSectionProps> = ({
         <div className="flex flex-wrap gap-2">
           <Button
             onClick={onEdit}
-            className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-1.5 text-sm px-3 sm:px-4 h-9 sm:h-10"
+            className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-1.5 text-sm px-3 sm:px-4 h-9 "
           >
             <Pencil className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             Edit Product
@@ -71,14 +71,14 @@ const ProductsDetailsSection: React.FC<ProductsDetailsSectionProps> = ({
           <Button
             onClick={onDelete}
             variant="outline"
-            className="flex items-center gap-1.5 text-sm px-3 sm:px-4 h-9 sm:h-10 border-gray-300 hover:bg-gray-50"
+            className="flex items-center gap-1.5 text-sm px-3 sm:px-4 h-9 border-none bg-gray-100 hover:bg-gray-50"
           >
             <Trash2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             Delete Product
           </Button>
           <Button
             onClick={onView}
-            className="bg-red-800 hover:bg-red-700 text-white flex items-center gap-1.5 text-sm px-3 sm:px-4 h-9 sm:h-10"
+            className="bg-red-800 hover:bg-red-700 text-white flex items-center gap-1.5 text-sm px-3 sm:px-4 h-9 "
           >
             <FaBox className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             Re-stock
