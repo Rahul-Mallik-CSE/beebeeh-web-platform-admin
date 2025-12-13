@@ -14,10 +14,12 @@ const ProductsDetailsTableSection = () => {
     {
       header: "Step",
       accessor: (row: any) => row.id,
+      className: "w-20",
     },
     {
       header: "Check List",
       accessor: (row: any) => row.task,
+      className: "w-full text-right",
     },
   ];
 
@@ -37,6 +39,7 @@ const ProductsDetailsTableSection = () => {
     },
     {
       header: "Status",
+      className: " text-right",
       accessor: (row: PartInventory) => {
         const statusColors = {
           Available: "bg-green-100 text-green-700",
@@ -71,7 +74,8 @@ const ProductsDetailsTableSection = () => {
       accessor: (row: FrequentPart) => row.units,
     },
     {
-      header: "Quantity",
+      header: "Used Stock",
+      className: " text-right",
       accessor: (row: FrequentPart) => row.quantity,
     },
   ];
@@ -130,13 +134,13 @@ const ProductsDetailsTableSection = () => {
         {/* Installation Checklist */}
         <div className="space-y-3">
           <div className="flex items-center justify-between">
-            <h3 className="text-base sm:text-lg font-semibold text-gray-800">
+            <h3 className="text-base sm:text-2xl font-semibold text-gray-600">
               Installation Checklist
             </h3>
             <Button
               variant="ghost"
               size="sm"
-              className="text-xs sm:text-sm h-8 sm:h-9 px-2 sm:px-3 text-red-600 hover:text-red-700 hover:bg-red-50"
+              className="text-xs sm:text-lg h-8 sm:h-9 px-2 sm:px-3 bg-transparent border-none text-red-800 hover:text-red-700 hover:bg-transparent"
             >
               Add Checklist
             </Button>
@@ -153,13 +157,13 @@ const ProductsDetailsTableSection = () => {
         {/* Maintenance Checklist */}
         <div className="space-y-3">
           <div className="flex items-center justify-between">
-            <h3 className="text-base sm:text-lg font-semibold text-gray-800">
+            <h3 className="text-base sm:text-2xl font-semibold text-gray-600">
               Maintenance Checklist
             </h3>
             <Button
               variant="ghost"
               size="sm"
-              className="text-xs sm:text-sm h-8 sm:h-9 px-2 sm:px-3 text-red-600 hover:text-red-700 hover:bg-red-50"
+              className="text-xs sm:text-lg h-8 sm:h-9 px-2 sm:px-3 bg-transparent border-none text-red-800 hover:text-red-700 hover:bg-transparent"
             >
               Add Checklist
             </Button>
@@ -175,11 +179,11 @@ const ProductsDetailsTableSection = () => {
       </div>
 
       {/* All Parts Inventory Status */}
-      <div className="space-y-3">
-        <h3 className="text-base sm:text-lg font-semibold text-gray-800">
+      <div className="space-y-3 border border-gray-200 rounded-lg p-4 sm:p-6 bg-white">
+        <h3 className="text-base sm:text-2xl font-semibold text-gray-600">
           All Parts Inventory Status
         </h3>
-        <div className="bg-white border border-gray-200 rounded-lg">
+        <div className="bg-white ">
           <CustomTable
             data={product.partsInventory}
             columns={partsInventoryColumns}
@@ -189,11 +193,11 @@ const ProductsDetailsTableSection = () => {
       </div>
 
       {/* Frequently Used Parts */}
-      <div className="space-y-3">
-        <h3 className="text-base sm:text-lg font-semibold text-gray-800">
+      <div className="space-y-3 border border-gray-200 rounded-lg p-4 sm:p-6 bg-white">
+        <h3 className="text-base sm:text-2xl font-semibold text-gray-600">
           Frequently Used Parts
         </h3>
-        <div className="bg-white border border-gray-200 rounded-lg">
+        <div className="bg-white ">
           <CustomTable
             data={product.frequentlyUsedParts}
             columns={frequentPartsColumns}
@@ -203,11 +207,11 @@ const ProductsDetailsTableSection = () => {
       </div>
 
       {/* Related Jobs */}
-      <div className="space-y-3">
-        <h3 className="text-base sm:text-lg font-semibold text-gray-800">
+      <div className="space-y-3  border border-gray-200 rounded-lg p-4 sm:p-6 bg-white ">
+        <h3 className="text-base sm:text-2xl font-semibold text-gray-600">
           Related Jobs
         </h3>
-        <div className="bg-white border border-gray-200 rounded-lg">
+        <div className="bg-white ">
           <CustomTable
             data={product.relatedJobs}
             columns={relatedJobsColumns}
