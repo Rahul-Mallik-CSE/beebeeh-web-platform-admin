@@ -48,7 +48,7 @@ const NavBar = () => {
           {/* Notification Bell */}
           <button
             onClick={() => router.push("/notifications")}
-            className="cursor-pointer relative p-1.5 sm:p-2 hover:bg-gray-100 rounded-full transition-colors flex-shrink-0"
+            className="cursor-pointer relative p-1.5 sm:p-2 hover:bg-gray-100 rounded-full transition-colors shrink-0"
           >
             <Bell className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600" />
             <span className="absolute top-0.5 right-0.5 sm:top-1 sm:right-1 w-2 h-2 bg-red-500 rounded-full"></span>
@@ -56,8 +56,8 @@ const NavBar = () => {
 
           {/* Profile Dropdown */}
           <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center gap-1 sm:gap-2 hover:bg-gray-50 rounded-lg px-1 sm:px-2 py-1 transition-colors flex-shrink-0">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-red-800 flex items-center justify-center overflow-hidden flex-shrink-0">
+            <DropdownMenuTrigger className="flex items-center gap-1 sm:gap-2 hover:bg-gray-50 rounded-lg px-1 sm:px-2 py-1 transition-colors shrink-0">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-red-800 flex items-center justify-center overflow-hidden shrink-0">
                 <Image
                   src="/logo.png"
                   alt="Profile"

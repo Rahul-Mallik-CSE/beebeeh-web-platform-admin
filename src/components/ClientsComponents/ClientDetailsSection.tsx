@@ -40,7 +40,7 @@ const ClientDetailsSection: React.FC<ClientDetailsSectionProps> = ({
         {/* Profile Section */}
         <div className="flex items-center gap-3 sm:gap-4">
           {/* Profile Image */}
-          <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-linear-to-br from-pink-400 to-purple-500 flex-shrink-0">
+          <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-linear-to-br from-pink-400 to-purple-500 shrink-0">
             {client.profileImage ? (
               <Image
                 src={client.profileImage}
@@ -145,7 +145,7 @@ const ClientDetailsSection: React.FC<ClientDetailsSectionProps> = ({
             >
               <div className="flex items-center gap-2">
                 <div
-                  className={`w-7 h-7 sm:w-8 sm:h-8 ${card.iconBgColor} rounded-lg flex items-center justify-center flex-shrink-0`}
+                  className={`w-7 h-7 sm:w-8 sm:h-8 ${card.iconBgColor} rounded-lg flex items-center justify-center shrink-0`}
                 >
                   <IconComponent
                     className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${card.iconColor}`}
@@ -160,7 +160,7 @@ const ClientDetailsSection: React.FC<ClientDetailsSectionProps> = ({
                   card.id === "totalJob"
                     ? "text-xl sm:text-2xl"
                     : "text-sm sm:text-base"
-                } font-semibold text-gray-800 break-words`}
+                } font-semibold text-gray-800 wrap-break-words`}
               >
                 {card.value}
               </p>

@@ -16,7 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Camera, MapPin, X } from "lucide-react";
+import { Camera, MapPin } from "lucide-react";
 import Image from "next/image";
 
 interface AddClientModalProps {

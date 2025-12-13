@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Lock, X } from "lucide-react";
+import { Lock } from "lucide-react";
 
 interface AddPartsModalProps {
   isOpen: boolean;

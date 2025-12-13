@@ -1,7 +1,7 @@
 /** @format */
 "use client";
 import React from "react";
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import { jobDistributionData } from "@/data/ReportModuleData";
 
 const JobDistributionChart = () => {
