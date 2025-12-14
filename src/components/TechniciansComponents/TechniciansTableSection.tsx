@@ -7,6 +7,7 @@ import { Technician } from "@/types/TechniciansTypes";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, Plus, Eye, Trash2 } from "lucide-react";
+import AddTechnicianModal from "./AddTechnicianModal";
 import { useRouter } from "next/navigation";
 
 const TechniciansTableSection = () => {
@@ -94,6 +95,12 @@ const TechniciansTableSection = () => {
           itemsPerPage={10}
         />
       </div>
+
+      <AddTechnicianModal
+        open={isAddTechnicianModalOpen}
+        onOpenChange={setIsAddTechnicianModalOpen}
+        onSave={handleAddTechnician}
+      />
     </div>
   );
 };
