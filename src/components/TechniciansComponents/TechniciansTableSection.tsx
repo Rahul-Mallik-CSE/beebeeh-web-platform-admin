@@ -75,6 +75,14 @@ const TechniciansTableSection = () => {
               className="pl-9 sm:pl-10 w-40 sm:w-48 md:w-56 lg:w-64 text-sm"
             />
           </div>
+          {/* Add Button */}
+          <Button
+            onClick={() => setIsAddTechnicianModalOpen(true)}
+            className="bg-red-800 hover:bg-red-700 text-white flex items-center gap-1.5 sm:gap-2 text-sm px-3 sm:px-4 py-2"
+          >
+            <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            <span className="whitespace-nowrap">Add New Technician</span>
+          </Button>
         </div>
       </div>
 
