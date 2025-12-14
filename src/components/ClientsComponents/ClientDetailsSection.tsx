@@ -84,8 +84,8 @@ const ClientDetailsSection: React.FC<ClientDetailsSectionProps> = ({
             className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-1 sm:gap-2 text-xs sm:text-sm flex-1 sm:flex-none px-3 sm:px-4"
           >
             <Edit className="w-3 h-3 sm:w-4 sm:h-4" />
-            <span className="hidden xs:inline">Edit Client</span>
-            <span className="xs:hidden">Edit</span>
+            <span className="hidden sm:inline">Edit Client</span>
+            <span className="sm:hidden">Edit</span>
           </Button>
 
           {/* Disable Account Button */}
