@@ -12,6 +12,7 @@ import {
   PieChart,
   Pie,
   Cell,
+  Legend,
 } from "recharts";
 
 const TechnicianChartSection: React.FC = () => {
@@ -56,6 +57,7 @@ const TechnicianChartSection: React.FC = () => {
                 vertical={false}
                 strokeDasharray="0"
               />
+
               <XAxis
                 dataKey="day"
                 tick={{ fontSize: 11, fill: "#6b7280" }}
@@ -68,14 +70,7 @@ const TechnicianChartSection: React.FC = () => {
                 tickLine={false}
                 domain={[0, 170]}
               />
-              <Tooltip
-                contentStyle={{
-                  backgroundColor: "#fff",
-                  border: "1px solid #e5e7eb",
-                  borderRadius: "8px",
-                  fontSize: "12px",
-                }}
-              />
+
               <Bar
                 dataKey="value"
                 fill="#d1d5db"

@@ -2,6 +2,7 @@
 "use client";
 import TechnicianChartSection from "@/components/TechniciansComponents/TechnicianChartSection";
 import TechnicianDetailsSection from "@/components/TechniciansComponents/TechnicianDetailsSection";
+import TechnicianDetailsTableSection from "@/components/TechniciansComponents/TechnicianDetailsTableSection";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Eye } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -36,6 +37,8 @@ const TechnicianDetailsPage = () => {
           <TechnicianDetailsSection />
 
           <TechnicianChartSection />
+
+          <TechnicianDetailsTableSection />
         </div>
       </div>
     </div>
