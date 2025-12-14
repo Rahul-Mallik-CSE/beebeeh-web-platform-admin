@@ -26,10 +26,11 @@ export interface TechnicianDetails {
 }
 
 export interface CalendarJobEvent {
-  id: string;
   date: Date;
   installations: number;
   repairs: number;
   maintenance: number;
   color: string;
+  bgColor: string;
+  textColor: string;
 }

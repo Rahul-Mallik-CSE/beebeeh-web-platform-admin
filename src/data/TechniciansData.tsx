@@ -136,7 +136,7 @@ export const techniciansColumns = [
   },
 ];
 
-import { TechnicianDetails } from "@/types/TechniciansTypes";
+import { TechnicianDetails, CalendarJobEvent } from "@/types/TechniciansTypes";
 
 export const technicianDetailsData: TechnicianDetails = {
   id: "1",
@@ -153,95 +153,118 @@ export const technicianDetailsData: TechnicianDetails = {
   profileImage: undefined,
 };
 
-import { CalendarJobEvent } from "@/types/TechniciansTypes";
-
+// Calendar events data matching the image design
 export const technicianCalendarEvents: CalendarJobEvent[] = [
+  // Row 1 - Feb 2025
   {
-    id: "1",
-    date: new Date(2025, 1, 7),
+    date: new Date(2025, 1, 8), // Sunday Feb 8
     installations: 5,
     repairs: 3,
     maintenance: 3,
-    color: "#22d3ee",
+    color: "#0EA5E9",
+    bgColor: "#E0F2FE",
+    textColor: "#0369A1",
   },
   {
-    id: "2",
-    date: new Date(2025, 1, 5),
+    date: new Date(2025, 1, 5), // Tuesday Feb 5
     installations: 5,
     repairs: 3,
     maintenance: 3,
-    color: "#3b82f6",
+    color: "#22C55E",
+    bgColor: "#DCFCE7",
+    textColor: "#15803D",
   },
   {
-    id: "3",
-    date: new Date(2025, 1, 3),
+    date: new Date(2025, 1, 3), // Thursday Feb 3
     installations: 5,
     repairs: 3,
     maintenance: 3,
-    color: "#f97316",
+    color: "#F472B6",
+    bgColor: "#FCE7F3",
+    textColor: "#BE185D",
+  },
+  // Row 2
+  {
+    date: new Date(2025, 1, 13), // Monday Feb 13
+    installations: 5,
+    repairs: 3,
+    maintenance: 3,
+    color: "#F97316",
+    bgColor: "#FFEDD5",
+    textColor: "#C2410C",
   },
   {
-    id: "4",
-    date: new Date(2025, 1, 14),
+    date: new Date(2025, 1, 11), // Wednesday Feb 11
     installations: 5,
     repairs: 3,
     maintenance: 3,
-    color: "#ef4444",
+    color: "#FBBF24",
+    bgColor: "#FEF3C7",
+    textColor: "#B45309",
   },
   {
-    id: "5",
-    date: new Date(2025, 1, 12),
+    date: new Date(2025, 1, 9), // Saturday Feb 9
     installations: 5,
     repairs: 3,
     maintenance: 3,
-    color: "#eab308",
+    color: "#0EA5E9",
+    bgColor: "#E0F2FE",
+    textColor: "#0369A1",
+  },
+  // Row 3
+  {
+    date: new Date(2025, 1, 22), // Sunday Feb 22
+    installations: 5,
+    repairs: 3,
+    maintenance: 3,
+    color: "#0EA5E9",
+    bgColor: "#E0F2FE",
+    textColor: "#0369A1",
   },
   {
-    id: "6",
-    date: new Date(2025, 1, 8),
+    date: new Date(2025, 1, 19), // Tuesday Feb 19
     installations: 5,
     repairs: 3,
     maintenance: 3,
-    color: "#06b6d4",
+    color: "#FBBF24",
+    bgColor: "#FEF3C7",
+    textColor: "#B45309",
   },
   {
-    id: "7",
-    date: new Date(2025, 1, 21),
+    date: new Date(2025, 1, 17), // Friday Feb 17
     installations: 5,
     repairs: 3,
     maintenance: 3,
-    color: "#10b981",
+    color: "#F472B6",
+    bgColor: "#FCE7F3",
+    textColor: "#BE185D",
   },
   {
-    id: "8",
-    date: new Date(2025, 1, 20),
+    date: new Date(2025, 1, 16), // Saturday Feb 16
     installations: 5,
     repairs: 3,
     maintenance: 3,
-    color: "#8b5cf6",
+    color: "#0EA5E9",
+    bgColor: "#E0F2FE",
+    textColor: "#0369A1",
+  },
+  // Row 4
+  {
+    date: new Date(2025, 1, 25), // Wednesday Feb 25
+    installations: 5,
+    repairs: 3,
+    maintenance: 3,
+    color: "#FBBF24",
+    bgColor: "#FEF3C7",
+    textColor: "#B45309",
   },
   {
-    id: "9",
-    date: new Date(2025, 1, 17),
+    date: new Date(2025, 1, 24), // Thursday Feb 24
     installations: 5,
     repairs: 3,
     maintenance: 3,
-    color: "#dc2626",
-  },
-  {
-    id: "10",
-    date: new Date(2025, 1, 26),
-    installations: 5,
-    repairs: 3,
-    maintenance: 3,
-    color: "#ec4899",
-  },
-  {
-    id: "11",
-    date: new Date(2025, 1, 23),
-    installations: 5,
-    repairs: 3,
-    maintenance: 3,
-    color: "#2563eb",
+    color: "#F472B6",
+    bgColor: "#FCE7F3",
+    textColor: "#BE185D",
   },
 ];
