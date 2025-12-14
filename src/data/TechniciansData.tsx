@@ -135,3 +135,20 @@ export const techniciansColumns = [
     },
   },
 ];
+
+import { TechnicianDetails } from "@/types/TechniciansTypes";
+
+export const technicianDetailsData: TechnicianDetails = {
+  id: "1",
+  techId: "T-201",
+  name: "Malik Ahmed",
+  contactNumber: "+1 (555) 123-4567",
+  email: "malik.ahmed@service.com",
+  address: "123 Main St, New York",
+  skills: "Install, Repair",
+  rating: 5.0,
+  completedJobs: 16,
+  todaysJobs: 16,
+  status: "Available",
+  profileImage: undefined,
+};

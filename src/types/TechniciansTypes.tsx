@@ -9,3 +9,18 @@ export interface Technician {
   totalJobs: number;
   status: "Available" | "Unavailable";
 }
+
+export interface TechnicianDetails {
+  id: string;
+  techId: string;
+  name: string;
+  contactNumber: string;
+  email: string;
+  address: string;
+  skills: string;
+  rating: number;
+  completedJobs: number;
+  todaysJobs: number;
+  status: "Available" | "Unavailable";
+  profileImage?: string;
+}

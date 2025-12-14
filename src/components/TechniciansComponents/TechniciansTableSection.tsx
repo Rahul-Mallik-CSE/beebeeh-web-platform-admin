@@ -29,7 +29,7 @@ const TechniciansTableSection = () => {
   );
 
   const handleViewTechnician = (technician: Technician) => {
-    router.push(`/technicians/${technician.id}`);
+    router.push(`/technicians/technician-${technician.id}`);
   };
 
   const columnsWithActions = [
