@@ -1,5 +1,6 @@
 /** @format */
 "use client";
+import TechnicianChartSection from "@/components/TechniciansComponents/TechnicianChartSection";
 import TechnicianDetailsSection from "@/components/TechniciansComponents/TechnicianDetailsSection";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Eye } from "lucide-react";
@@ -33,6 +34,8 @@ const TechnicianDetailsPage = () => {
 
           {/* Technician data section */}
           <TechnicianDetailsSection />
+
+          <TechnicianChartSection />
         </div>
       </div>
     </div>

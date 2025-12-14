@@ -73,9 +73,9 @@ const TechnicianDetailsSection: React.FC<TechnicianDetailsSectionProps> = ({
               ID: {technician.techId}
             </p>
             <div
-              className={`inline-flex items-center px-2 sm:px-3 py-0.5 sm:py-1 rounded-sm text-xs font-medium ${
-                getStatusColor(technician.status)
-              }`}
+              className={`inline-flex items-center px-2 sm:px-3 py-0.5 sm:py-1 rounded-sm text-xs font-medium ${getStatusColor(
+                technician.status
+              )}`}
             >
               {technician.status}
             </div>
@@ -160,9 +160,7 @@ const TechnicianDetailsSection: React.FC<TechnicianDetailsSectionProps> = ({
             >
               <div className="flex items-center gap-2">
                 <div
-                  className={`w-7 h-7 sm:w-8 sm:h-8 ${
-                    card.iconBgColor
-                  } rounded-lg flex items-center justify-center shrink-0`}
+                  className={`w-7 h-7 sm:w-8 sm:h-8 ${card.iconBgColor} rounded-lg flex items-center justify-center shrink-0`}
                 >
                   <IconComponent
                     className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${card.iconColor}`}
@@ -212,9 +210,9 @@ const TechnicianDetailsSection: React.FC<TechnicianDetailsSectionProps> = ({
             label: "Status",
             value: (
               <span
-                className={`inline-flex items-center px-3 py-1 rounded-sm text-xs font-medium ${
-                  getStatusColor(technician.status)
-                }`}
+                className={`inline-flex items-center px-3 py-1 rounded-sm text-xs font-medium ${getStatusColor(
+                  technician.status
+                )}`}
               >
                 {technician.status}
               </span>
@@ -232,9 +230,7 @@ const TechnicianDetailsSection: React.FC<TechnicianDetailsSectionProps> = ({
             >
               <div className="flex items-center gap-2">
                 <div
-                  className={`w-7 h-7 sm:w-8 sm:h-8 ${
-                    card.iconBgColor
-                  } rounded-lg flex items-center justify-center shrink-0`}
+                  className={`w-7 h-7 sm:w-8 sm:h-8 ${card.iconBgColor} rounded-lg flex items-center justify-center shrink-0`}
                 >
                   <IconComponent
                     className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${card.iconColor}`}
