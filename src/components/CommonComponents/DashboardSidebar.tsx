@@ -68,11 +68,6 @@ export default function DashboardSidebar() {
       label: "Parts",
     },
     {
-      href: "/all-jobs",
-      icon: Briefcase,
-      label: "All Jobs",
-    },
-    {
       href: "/installation",
       icon: VscTools,
       label: "Installation",
