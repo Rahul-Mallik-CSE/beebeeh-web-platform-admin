@@ -24,3 +24,12 @@ export interface TechnicianDetails {
   status: "Available" | "Unavailable";
   profileImage?: string;
 }
+
+export interface CalendarJobEvent {
+  id: string;
+  date: Date;
+  installations: number;
+  repairs: number;
+  maintenance: number;
+  color: string;
+}

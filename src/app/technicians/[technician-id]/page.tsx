@@ -10,6 +10,11 @@ import React from "react";
 
 const TechnicianDetailsPage = () => {
   const router = useRouter();
+
+  const handleViewCalendar = () => {
+    router.push(`${window.location.pathname}/TechnicalCalendar.tsx`);
+  };
+
   return (
     <div className="w-full p-2 sm:p-4 overflow-x-hidden">
       <div className="max-w-[2500px] rounded-2xl mx-auto space-y-3 sm:space-y-4">
@@ -29,7 +34,10 @@ const TechnicianDetailsPage = () => {
             </div>
             <div className="w-full sm:w-auto">
               {/* Action buttons can be added here */}
-              <Button className="w-full sm:w-auto bg-red-800 hover:bg-red-700 text-white flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm px-3 sm:px-4 py-2">
+              <Button
+                onClick={handleViewCalendar}
+                className="w-full sm:w-auto bg-red-800 hover:bg-red-700 text-white flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm px-3 sm:px-4 py-2"
+              >
                 <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 <span className="whitespace-nowrap">View Calendar</span>
               </Button>
