@@ -63,7 +63,12 @@ const AllAssignJobTableSection = () => {
       header: "Action",
       accessor: (row: AllAssignJob) => (
         <div className="flex items-center justify-center">
-          <button className="p-1.5 cursor-pointer hover:bg-gray-100 rounded-full transition-colors">
+          <button
+            onClick={() =>
+              router.push(`/maintenance/all-assign-job/${row.jobId}`)
+            }
+            className="p-1.5 cursor-pointer hover:bg-gray-100 rounded-full transition-colors"
+          >
             <Eye className="w-4 h-4 text-gray-600" />
           </button>
         </div>
