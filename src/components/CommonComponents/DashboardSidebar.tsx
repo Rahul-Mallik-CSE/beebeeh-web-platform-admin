@@ -26,6 +26,7 @@ import { PiSuitcaseSimple } from "react-icons/pi";
 import { GiAutoRepair } from "react-icons/gi";
 import { BsBox } from "react-icons/bs";
 import { AiFillTool } from "react-icons/ai";
+import { GrUserWorker, GrVmMaintenance } from "react-icons/gr";
 
 export default function DashboardSidebar() {
   const { state } = useSidebar();
@@ -53,7 +54,7 @@ export default function DashboardSidebar() {
     },
     {
       href: "/technicians",
-      icon: LiaUserCogSolid,
+      icon: GrUserWorker,
       label: "Technicians",
     },
     {
@@ -80,6 +81,11 @@ export default function DashboardSidebar() {
       href: "/repairs",
       icon: GiAutoRepair,
       label: "Repairs",
+    },
+    {
+      href: "/maintenance",
+      icon: GrVmMaintenance,
+      label: "Maintenance",
     },
     {
       href: "/report-module",
