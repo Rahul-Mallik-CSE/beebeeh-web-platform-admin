@@ -15,7 +15,7 @@ const TechniciansTableSection = () => {
   const [isAddTechnicianModalOpen, setIsAddTechnicianModalOpen] =
     useState(false);
 
-  const handleAddTechnician = (technicianData: any) => {
+  const handleAddTechnician = (technicianData: Technician) => {
     console.log("Adding technician:", technicianData);
     // Add logic to save technician
   };
