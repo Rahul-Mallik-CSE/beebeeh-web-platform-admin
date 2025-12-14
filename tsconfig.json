@@ -30,6 +30,6 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     "src/app/report-module"
-  ],
+, "src/app/technicians/[technician-id]/technician-calendar"  ],
   "exclude": ["node_modules"]
 }

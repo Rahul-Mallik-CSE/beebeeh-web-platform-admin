@@ -5,14 +5,16 @@ import TechnicianDetailsSection from "@/components/TechniciansComponents/Technic
 import TechnicianDetailsTableSection from "@/components/TechniciansComponents/TechnicianDetailsTableSection";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Eye } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import React from "react";
 
 const TechnicianDetailsPage = () => {
   const router = useRouter();
+  const params = useParams();
+  const technicianId = params["technician-id"];
 
   const handleViewCalendar = () => {
-    router.push(`${window.location.pathname}/TechnicalCalendar.tsx`);
+    router.push(`/technicians/${technicianId}/technician-calendar`);
   };
 
   return (
