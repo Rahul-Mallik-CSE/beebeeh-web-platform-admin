@@ -52,6 +52,11 @@ export default function DashboardSidebar() {
       label: "Clients",
     },
     {
+      href: "/technicians",
+      icon: LiaUserCogSolid,
+      label: "Technicians",
+    },
+    {
       href: "/products",
       icon: BsBox,
       label: "Products",
