@@ -15,6 +15,10 @@ const MaintenanceTableSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
 
+  const handleViewAssignJob = () => {
+    router.push(`/maintenance/all-assign-job`);
+  };
+
   const filteredData = maintenanceData.filter((item) =>
     Object.values(item).some((value) =>
       value.toString().toLowerCase().includes(searchQuery.toLowerCase())
@@ -76,10 +80,10 @@ const MaintenanceTableSection = () => {
       header: "Action",
       accessor: (row: Maintenance) => (
         <div className="flex items-center justify-center gap-2">
-          <button className="p-1.5 hover:bg-gray-100 rounded-full transition-colors">
+          <button className="p-1.5 cursor-pointer hover:bg-gray-100 rounded-full transition-colors">
             <Eye className="w-4 h-4 text-gray-600" />
           </button>
-          <button className="p-1.5 hover:bg-gray-100 rounded-full transition-colors">
+          <button className="p-1.5 cursor-pointer hover:bg-gray-100 rounded-full transition-colors">
             <FiPlusCircle className="w-4 h-4 text-gray-600" />
           </button>
         </div>
@@ -106,7 +110,10 @@ const MaintenanceTableSection = () => {
               className="pl-9 sm:pl-10 pr-3 sm:pr-4 py-2 w-full text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent"
             />
           </div>
-          <Button className="bg-red-800 hover:bg-red-700 text-white px-3 sm:px-4 md:px-6 py-2 rounded-lg flex items-center gap-1.5 sm:gap-2 text-sm">
+          <Button
+            onClick={handleViewAssignJob}
+            className="bg-red-800 hover:bg-red-700 text-white px-3 sm:px-4 md:px-6 py-2 rounded-lg flex items-center gap-1.5 sm:gap-2 text-sm"
+          >
             <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
             <span className="whitespace-nowrap">View Assign Job</span>
           </Button>

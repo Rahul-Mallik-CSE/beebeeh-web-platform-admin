@@ -16,3 +16,19 @@ export interface MaintenanceColumn {
   accessor: keyof Maintenance | ((row: Maintenance) => React.ReactNode);
   className?: string;
 }
+
+export interface AllAssignJob {
+  jobId: string;
+  client: string;
+  product: string;
+  type: string;
+  technician: string;
+  scheduled: string;
+  status: "Assign" | "In-Progress" | "Complete";
+}
+
+export interface AllAssignJobColumn {
+  header: string;
+  accessor: keyof AllAssignJob | ((row: AllAssignJob) => React.ReactNode);
+  className?: string;
+}

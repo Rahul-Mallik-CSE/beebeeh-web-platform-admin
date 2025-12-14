@@ -1,6 +1,6 @@
 /** @format */
 
-import { Maintenance } from "@/types/MaintenanceTypes";
+import { AllAssignJob, Maintenance } from "@/types/MaintenanceTypes";
 
 export const maintenanceData: Maintenance[] = [
   {
@@ -102,5 +102,98 @@ export const maintenanceData: Maintenance[] = [
     lastService: "24 Nov 2025",
     clientContacted: true,
     status: "Upcoming",
+  },
+];
+
+export const allAssignJobData: AllAssignJob[] = [
+  {
+    jobId: "J-102",
+    client: "Zara Khan",
+    product: "CoolMaster X300",
+    type: "Installation",
+    technician: "Malik khan",
+    scheduled: "24 Nov 2025, 2:30 PM",
+    status: "Assign",
+  },
+  {
+    jobId: "J-102",
+    client: "Emma Wilson",
+    product: "TurboChill Pro",
+    type: "Repair",
+    technician: "Kameer Hossain",
+    scheduled: "24 Nov 2025, 2:30 PM",
+    status: "In-Progress",
+  },
+  {
+    jobId: "J-102",
+    client: "Zara Khan",
+    product: "CoolMaster X300",
+    type: "Repair",
+    technician: "Malik khan",
+    scheduled: "24 Nov 2025, 2:30 PM",
+    status: "Complete",
+  },
+  {
+    jobId: "J-102",
+    client: "Emma Wilson",
+    product: "TurboChill Pro",
+    type: "Repair",
+    technician: "Kameer Hossain",
+    scheduled: "24 Nov 2025, 2:30 PM",
+    status: "In-Progress",
+  },
+  {
+    jobId: "J-102",
+    client: "Zara Khan",
+    product: "CoolMaster X300",
+    type: "Installation",
+    technician: "Malik khan",
+    scheduled: "24 Nov 2025, 2:30 PM",
+    status: "Complete",
+  },
+  {
+    jobId: "J-102",
+    client: "Zara Khan",
+    product: "CoolMaster X300",
+    type: "Installation",
+    technician: "Malik khan",
+    scheduled: "24 Nov 2025, 2:30 PM",
+    status: "Assign",
+  },
+  {
+    jobId: "J-102",
+    client: "Emma Wilson",
+    product: "TurboChill Pro",
+    type: "Installation",
+    technician: "Kameer Hossain",
+    scheduled: "24 Nov 2025, 2:30 PM",
+    status: "In-Progress",
+  },
+  {
+    jobId: "J-102",
+    client: "Zara Khan",
+    product: "CoolMaster X300",
+    type: "Repair",
+    technician: "Malik khan",
+    scheduled: "24 Nov 2025, 2:30 PM",
+    status: "Complete",
+  },
+  {
+    jobId: "J-102",
+    client: "Emma Wilson",
+    product: "TurboChill Pro",
+    type: "Installation",
+    technician: "Kameer Hossain",
+    scheduled: "24 Nov 2025, 2:30 PM",
+    status: "In-Progress",
+  },
+  {
+    jobId: "J-102",
+    client: "Zara Khan",
+    product: "CoolMaster X300",
+    type: "Repair",
+    technician: "Malik khan",
+    scheduled: "24 Nov 2025, 2:30 PM",
+    status: "Assign",
   },
 ];
