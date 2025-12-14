@@ -83,7 +83,16 @@ const MaintenanceTableSection = () => {
           <button className="p-1.5 cursor-pointer hover:bg-gray-100 rounded-full transition-colors">
             <Eye className="w-4 h-4 text-gray-600" />
           </button>
-          <button className="p-1.5 cursor-pointer hover:bg-gray-100 rounded-full transition-colors">
+          <button
+            onClick={() =>
+              router.push(
+                `/maintenance/${row.client
+                  .toLowerCase()
+                  .replace(" ", "-")}-maintenance`
+              )
+            }
+            className="p-1.5 cursor-pointer hover:bg-gray-100 rounded-full transition-colors"
+          >
             <FiPlusCircle className="w-4 h-4 text-gray-600" />
           </button>
         </div>

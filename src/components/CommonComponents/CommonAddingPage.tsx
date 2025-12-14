@@ -27,10 +27,12 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
 }) => {
   const router = useRouter();
 
-  // Determine if this is a repairs page
+  // Determine if this is a repairs page or maintenance page
   const isRepairs = title.toLowerCase().includes("repair");
+  const isMaintenance = title.toLowerCase().includes("maintenance");
 
   const [formData, setFormData] = useState({
+    clientId: "",
     searchClient: "",
     clientName: "",
     productId: "",
@@ -40,6 +42,7 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
     time: "",
     maintenanceFrequency: "",
     priority: "",
+    technicianId: "",
     technicianName: "",
     problemType: "",
     problemDescription: "",
@@ -80,19 +83,37 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
       {/* Form Container */}
       <div>
         <div className="space-y-4 sm:space-y-6">
-          {/* Search Client ID or Name */}
-          <div className="space-y-2">
-            <label className="text-sm sm:text-base md:text-lg font-medium text-gray-700">
-              Search Client ID or Name
-            </label>
-            <Input
-              type="text"
-              placeholder="Search client ID or client name"
-              value={formData.searchClient}
-              onChange={(e) => handleChange("searchClient", e.target.value)}
-              className="w-full"
-            />
-          </div>
+          {/* Client ID - Only for maintenance */}
+          {isMaintenance && (
+            <div className="space-y-2">
+              <label className="text-sm sm:text-base md:text-lg font-medium text-gray-700">
+                Client id
+              </label>
+              <Input
+                type="text"
+                placeholder="Select client id"
+                value={formData.clientId}
+                onChange={(e) => handleChange("clientId", e.target.value)}
+                className="w-full"
+              />
+            </div>
+          )}
+
+          {/* Search Client ID or Name - For non-maintenance */}
+          {!isMaintenance && (
+            <div className="space-y-2">
+              <label className="text-sm sm:text-base md:text-lg font-medium text-gray-700">
+                Search Client ID or Name
+              </label>
+              <Input
+                type="text"
+                placeholder="Search client ID or client name"
+                value={formData.searchClient}
+                onChange={(e) => handleChange("searchClient", e.target.value)}
+                className="w-full"
+              />
+            </div>
+          )}
 
           {/* Client Name */}
           <div className="space-y-2">
@@ -111,19 +132,21 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
             </div>
           </div>
 
-          {/* Product ID or Model Name */}
-          <div className="space-y-2">
-            <label className="text-sm sm:text-base md:text-lg font-medium text-gray-700">
-              Product ID or Model Name
-            </label>
-            <Input
-              type="text"
-              placeholder="Search product id or model name"
-              value={formData.productId}
-              onChange={(e) => handleChange("productId", e.target.value)}
-              className="w-full"
-            />
-          </div>
+          {/* Product ID or Model Name - Only for non-maintenance */}
+          {!isMaintenance && (
+            <div className="space-y-2">
+              <label className="text-sm sm:text-base md:text-lg font-medium text-gray-700">
+                Product ID or Model Name
+              </label>
+              <Input
+                type="text"
+                placeholder="Search product id or model name"
+                value={formData.productId}
+                onChange={(e) => handleChange("productId", e.target.value)}
+                className="w-full"
+              />
+            </div>
+          )}
 
           {/* Product Model Name */}
           <div className="space-y-2">
@@ -230,6 +253,22 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
             </Select>
           </div>
 
+          {/* Technician ID - Only for maintenance */}
+          {isMaintenance && (
+            <div className="space-y-2">
+              <label className="text-sm sm:text-base md:text-lg font-medium text-gray-700">
+                Technician ID
+              </label>
+              <Input
+                type="text"
+                placeholder="Select technician id"
+                value={formData.technicianId}
+                onChange={(e) => handleChange("technicianId", e.target.value)}
+                className="w-full"
+              />
+            </div>
+          )}
+
           {/* Technician Name */}
           <div className="space-y-2">
             <label className="text-sm sm:text-base md:text-lg font-medium text-gray-700">
@@ -273,18 +312,22 @@ const CommonAddingPage: React.FC<CommonAddingPageProps> = ({
           {/* Problem Description / Notes */}
           <div className="space-y-2">
             <label className="text-sm sm:text-base md:text-lg font-medium text-gray-700">
-              {isRepairs ? "Problem Description" : "Notes"}
+              {isRepairs || isMaintenance ? "Problem Description" : "Notes"}
             </label>
             <Textarea
               placeholder={
-                isRepairs
+                isRepairs || isMaintenance
                   ? "enter problem description"
                   : "enter installation job note"
               }
-              value={isRepairs ? formData.problemDescription : formData.notes}
+              value={
+                isRepairs || isMaintenance
+                  ? formData.problemDescription
+                  : formData.notes
+              }
               onChange={(e) =>
                 handleChange(
-                  isRepairs ? "problemDescription" : "notes",
+                  isRepairs || isMaintenance ? "problemDescription" : "notes",
                   e.target.value
                 )
               }
