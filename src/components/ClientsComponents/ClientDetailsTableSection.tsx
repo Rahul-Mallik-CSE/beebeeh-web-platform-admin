@@ -5,7 +5,7 @@ import CustomTable from "@/components/CommonComponents/CustomTable";
 import { jobHistoryData, jobHistoryColumns } from "@/data/ClientsData";
 import { JobHistory } from "@/types/ClientsTypes";
 import { useRouter } from "next/navigation";
-import { Eye } from "lucide-react";
+import { Eye, Plus } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -13,10 +13,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import AssignTechnicianModal from "../CommonComponents/AssignTechnicianModal";
 
 const ClientDetailsTableSection = () => {
   const router = useRouter();
   const [serviceStatusFilter, setServiceStatusFilter] = useState<string>("all");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedJobId, setSelectedJobId] = useState<string>("");
 
   const handleViewJob = (job: JobHistory) => {};
 
@@ -59,13 +62,24 @@ const ClientDetailsTableSection = () => {
     {
       header: "Action",
       accessor: (row: JobHistory) => (
-        <div className="flex items-center justify-end">
+        <div className="flex items-center justify-end gap-2">
           <button
             onClick={() => handleViewJob(row)}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors"
           >
             <Eye className="w-5 h-5 text-gray-600" />
           </button>
+          {row.serviceStatus === "Upcoming" && (
+            <button
+              onClick={() => {
+                setSelectedJobId(row.jobId);
+                setIsModalOpen(true);
+              }}
+              className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+            >
+              <Plus className="w-5 h-5 text-gray-600" />
+            </button>
+          )}
         </div>
       ),
       className: "text-right",
@@ -100,6 +114,13 @@ const ClientDetailsTableSection = () => {
         data={filteredData}
         columns={columnsWithActions}
         itemsPerPage={10}
+      />
+
+      {/* Assign Technician Modal */}
+      <AssignTechnicianModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        jobId={selectedJobId}
       />
     </div>
   );
