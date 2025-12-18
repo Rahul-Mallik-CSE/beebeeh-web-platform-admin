@@ -1,25 +1,33 @@
 /** @format */
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import SignatureCanvas from "react-signature-canvas";
 
 const CustomerSignatureSection = () => {
   const [signatureImage, setSignatureImage] = useState<string | null>(null);
+  const [showCanvas, setShowCanvas] = useState(false);
+  const sigCanvas = useRef<SignatureCanvas>(null);
 
-  const handleSignatureUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        setSignatureImage(event.target?.result as string);
-      };
-      reader.readAsDataURL(file);
+  const handleCollectClick = () => {
+    setShowCanvas(true);
+  };
+
+  const handleClear = () => {
+    sigCanvas.current?.clear();
+  };
+
+  const handleSave = () => {
+    if (sigCanvas.current) {
+      const dataURL = sigCanvas.current.toDataURL();
+      setSignatureImage(dataURL);
+      setShowCanvas(false);
     }
   };
 
-  const handleCollectClick = () => {
-    document.getElementById("signature-upload")?.click();
+  const handleCancel = () => {
+    setShowCanvas(false);
   };
 
   return (
@@ -61,33 +69,64 @@ const CustomerSignatureSection = () => {
 
           {/* Right side - Signature area and button */}
           <div className="space-y-3 sm:space-y-4">
-            <div className="border-2 border-dashed border-gray-300 rounded-lg h-16 flex items-center justify-center">
-              {signatureImage ? (
-                <Image
-                  src={signatureImage}
-                  alt="Customer signature"
-                  width={200}
-                  height={64}
-                  className="max-h-full max-w-full object-contain"
-                />
-              ) : (
-                <p className="text-gray-400 text-sm">Signature area</p>
-              )}
-            </div>
-            <div className="border border-black w-full"></div>
-            <input
-              id="signature-upload"
-              type="file"
-              accept="image/*"
-              className="hidden"
-              onChange={handleSignatureUpload}
-            />
-            <Button
-              onClick={handleCollectClick}
-              className="w-full bg-[#5C3D2E] hover:bg-[#4A2F22] text-white rounded-lg"
-            >
-              Collect
-            </Button>
+            {!showCanvas ? (
+              <>
+                <div className="border-2 border-dashed border-gray-300 rounded-lg h-16 flex items-center justify-center">
+                  {signatureImage ? (
+                    <Image
+                      src={signatureImage}
+                      alt="Customer signature"
+                      width={200}
+                      height={64}
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  ) : (
+                    <p className="text-gray-400 text-sm">Signature area</p>
+                  )}
+                </div>
+                <div className="border border-black w-full"></div>
+                <Button
+                  onClick={handleCollectClick}
+                  className="w-full bg-[#5C3D2E] hover:bg-[#4A2F22] text-white rounded-lg"
+                >
+                  Collect
+                </Button>
+              </>
+            ) : (
+              <>
+                <div className="border-2 border-gray-300 rounded-lg overflow-hidden bg-white">
+                  <SignatureCanvas
+                    ref={sigCanvas}
+                    canvasProps={{
+                      className: "w-full h-16 sm:h-24",
+                    }}
+                    backgroundColor="white"
+                  />
+                </div>
+                <div className="flex gap-2">
+                  <Button
+                    onClick={handleClear}
+                    variant="outline"
+                    className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-50"
+                  >
+                    Clear
+                  </Button>
+                  <Button
+                    onClick={handleCancel}
+                    variant="outline"
+                    className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-50"
+                  >
+                    Cancel
+                  </Button>
+                  <Button
+                    onClick={handleSave}
+                    className="flex-1 bg-[#5C3D2E] hover:bg-[#4A2F22] text-white"
+                  >
+                    Save
+                  </Button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
