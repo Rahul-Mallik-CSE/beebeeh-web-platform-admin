@@ -1,24 +1,20 @@
 /** @format */
 "use client";
 import React, { useState } from "react";
-import { Search, Plus } from "lucide-react";
+import { Search, Plus, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import CustomTable from "../CommonComponents/CustomTable";
-import {
-  installationColumns,
-  installationJobsData,
-} from "@/data/InstallationData";
+import { installationJobsData } from "@/data/InstallationData";
 import type { InstallationJob } from "@/types/AllTypes";
 import { useRouter } from "next/navigation";
+import AssignTechnicianModal from "../CommonComponents/AssignTechnicianModal";
 
 const RepairsTableSection = () => {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
-
-  const handleAction = (job: InstallationJob) => {
-    router.push(`/installation/${job.jobId}`);
-  };
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedJobId, setSelectedJobId] = useState<string>("");
 
   const handleAddRepairs = () => {
     router.push("/repairs/add-repairs");
@@ -31,6 +27,58 @@ const RepairsTableSection = () => {
       job.model.toLowerCase().includes(searchQuery.toLowerCase()) ||
       job.technician.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  const repairsColumns = [
+    {
+      header: "Job ID",
+      accessor: "jobId" as keyof InstallationJob,
+    },
+    {
+      header: "Client",
+      accessor: "client" as keyof InstallationJob,
+    },
+    {
+      header: "Model",
+      accessor: "model" as keyof InstallationJob,
+    },
+    {
+      header: "Technician",
+      accessor: "technician" as keyof InstallationJob,
+    },
+    {
+      header: "Scheduled",
+      accessor: "scheduled" as keyof InstallationJob,
+    },
+    {
+      header: "Status",
+      accessor: "status" as keyof InstallationJob,
+    },
+    {
+      header: "Action",
+      accessor: (row: InstallationJob) => (
+        <div className="flex items-center justify-center gap-2">
+          <button
+            onClick={() => router.push(`/repairs/${row.jobId}`)}
+            className="p-1.5 cursor-pointer hover:bg-gray-100 rounded-full transition-colors"
+          >
+            <Eye className="w-4 h-4 text-gray-600" />
+          </button>
+          {row.status === "Assign" && (
+            <button
+              onClick={() => {
+                setSelectedJobId(row.jobId);
+                setIsModalOpen(true);
+              }}
+              className="p-1.5 cursor-pointer hover:bg-gray-100 rounded-full transition-colors"
+            >
+              <Plus className="w-4 h-4 text-gray-600" />
+            </button>
+          )}
+        </div>
+      ),
+      className: "text-center",
+    },
+  ];
 
   return (
     <div className="w-full space-y-4 sm:space-y-6 bg-white p-3 sm:p-4 md:p-6 rounded-2xl">
@@ -64,11 +112,17 @@ const RepairsTableSection = () => {
       <div className="">
         <CustomTable
           data={filteredData}
-          columns={installationColumns}
-          onAction={handleAction}
+          columns={repairsColumns}
           itemsPerPage={10}
         />
       </div>
+
+      {/* Assign Technician Modal */}
+      <AssignTechnicianModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        jobId={selectedJobId}
+      />
     </div>
   );
 };
