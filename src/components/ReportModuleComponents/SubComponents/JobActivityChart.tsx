@@ -65,18 +65,19 @@ const JobActivityChart = () => {
               name="Installation"
             />
             <Bar
-              dataKey="repair"
-              fill="#E9C8C8"
-              radius={[8, 8, 8, 8]}
-              barSize={14}
-              name="Repair"
-            />
-            <Bar
               dataKey="maintenance"
               fill="#7C3434"
               radius={[8, 8, 8, 8]}
               barSize={14}
               name="Maintenance"
+            />
+
+            <Bar
+              dataKey="repair"
+              fill="#E9C8C8"
+              radius={[8, 8, 8, 8]}
+              barSize={14}
+              name="Repair"
             />
           </BarChart>
         </ResponsiveContainer>
