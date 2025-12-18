@@ -8,9 +8,12 @@ import { allAssignJobData } from "@/data/MaintenanceData";
 import { AllAssignJob, AllAssignJobColumn } from "@/types/MaintenanceTypes";
 import { useRouter } from "next/navigation";
 import { Button } from "../ui/button";
+import AssignTechnicianModal from "../CommonComponents/AssignTechnicianModal";
 
 const AllAssignJobTableSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedJobId, setSelectedJobId] = useState<string>("");
   const router = useRouter();
 
   const filteredData = allAssignJobData.filter((item) =>
@@ -63,13 +66,24 @@ const AllAssignJobTableSection = () => {
     {
       header: "Action",
       accessor: (row: AllAssignJob) => (
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center gap-2">
           <button
             onClick={() => router.push(`/maintenance/${row.jobId}`)}
             className="p-1.5 cursor-pointer hover:bg-gray-100 rounded-full transition-colors"
           >
             <Eye className="w-4 h-4 text-gray-600" />
           </button>
+          {row.status === "Assign" && (
+            <button
+              onClick={() => {
+                setSelectedJobId(row.jobId);
+                setIsModalOpen(true);
+              }}
+              className="p-1.5 cursor-pointer hover:bg-gray-100 rounded-full transition-colors"
+            >
+              <Plus className="w-4 h-4 text-gray-600" />
+            </button>
+          )}
         </div>
       ),
       className: "text-center",
@@ -110,6 +124,12 @@ const AllAssignJobTableSection = () => {
 
       {/* Table */}
       <CustomTable data={filteredData} columns={allAssignJobColumns} />
+      {/* Assign Technician Modal */}
+      <AssignTechnicianModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        jobId={selectedJobId}
+      />
     </div>
   );
 };

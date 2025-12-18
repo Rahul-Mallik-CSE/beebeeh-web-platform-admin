@@ -279,3 +279,52 @@ export const notificationsData = [
     type: "checklist" as const,
   },
 ];
+
+export interface TechnicianForAssign {
+  id: string;
+  name: string;
+  technicianId: string;
+}
+
+export const techniciansForAssign: TechnicianForAssign[] = [
+  {
+    id: "1",
+    name: "Malik Rehman",
+    technicianId: "T-001",
+  },
+  {
+    id: "2",
+    name: "Kameer Hossain",
+    technicianId: "T-002",
+  },
+  {
+    id: "3",
+    name: "John Smith",
+    technicianId: "T-003",
+  },
+  {
+    id: "4",
+    name: "Sarah Johnson",
+    technicianId: "T-004",
+  },
+  {
+    id: "5",
+    name: "David Brown",
+    technicianId: "T-005",
+  },
+  {
+    id: "6",
+    name: "Emma Wilson",
+    technicianId: "T-006",
+  },
+  {
+    id: "7",
+    name: "Michael Davis",
+    technicianId: "T-007",
+  },
+  {
+    id: "8",
+    name: "Lisa Anderson",
+    technicianId: "T-008",
+  },
+];
