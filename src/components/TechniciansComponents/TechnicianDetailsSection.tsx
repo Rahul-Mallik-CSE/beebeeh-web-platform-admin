@@ -90,8 +90,8 @@ const TechnicianDetailsSection: React.FC<TechnicianDetailsSectionProps> = ({
             className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-1 sm:gap-2 text-xs sm:text-sm flex-1 sm:flex-none px-3 sm:px-4"
           >
             <Edit className="w-3 h-3 sm:w-4 sm:h-4" />
-            <span className="hidden xs:inline">Edit Technician</span>
-            <span className="xs:hidden">Edit</span>
+            <span className="hidden sm:inline">Edit Technician</span>
+            <span className="sm:hidden">Edit</span>
           </Button>
 
           {/* Disable Account Button */}
@@ -101,8 +101,8 @@ const TechnicianDetailsSection: React.FC<TechnicianDetailsSectionProps> = ({
             className="border-gray-300 text-gray-700 bg-gray-50 hover:bg-gray-100 flex items-center gap-1 sm:gap-2 text-xs sm:text-sm flex-1 sm:flex-none px-3 sm:px-4"
           >
             <MdBlockFlipped className="w-3 h-3 sm:w-4 sm:h-4" />
-            <span className="hidden lg:inline">Disable Account</span>
-            <span className="lg:hidden">Disable</span>
+            <span className="hidden sm:inline">Disable Account</span>
+            <span className="sm:hidden">Disable</span>
           </Button>
 
           {/* Assign Job Button */}
@@ -110,8 +110,8 @@ const TechnicianDetailsSection: React.FC<TechnicianDetailsSectionProps> = ({
             onClick={onAssignJob}
             className="bg-red-800 hover:bg-red-700 text-white flex items-center gap-1 sm:gap-2 text-xs sm:text-sm flex-1 sm:flex-none px-3 sm:px-4"
           >
-            <span className="hidden xs:inline">Assign Job</span>
-            <span className="xs:hidden">Assign</span>
+            <span className="hidden sm:inline">Assign Job</span>
+            <span className="sm:hidden">Assign</span>
           </Button>
         </div>
       </div>

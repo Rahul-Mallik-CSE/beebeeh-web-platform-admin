@@ -328,3 +328,61 @@ export const techniciansForAssign: TechnicianForAssign[] = [
     technicianId: "T-008",
   },
 ];
+
+export interface JobForAssign {
+  id: string;
+  jobId: string;
+  clientName: string;
+  jobType: string;
+}
+
+export const jobsForAssign: JobForAssign[] = [
+  {
+    id: "1",
+    jobId: "J-001",
+    clientName: "Zara Khan",
+    jobType: "Installation",
+  },
+  {
+    id: "2",
+    jobId: "J-002",
+    clientName: "Emma Wilson",
+    jobType: "Repair",
+  },
+  {
+    id: "3",
+    jobId: "J-003",
+    clientName: "John Doe",
+    jobType: "Maintenance",
+  },
+  {
+    id: "4",
+    jobId: "J-004",
+    clientName: "Sarah Johnson",
+    jobType: "Installation",
+  },
+  {
+    id: "5",
+    jobId: "J-005",
+    clientName: "Michael Brown",
+    jobType: "Repair",
+  },
+  {
+    id: "6",
+    jobId: "J-006",
+    clientName: "Lisa Anderson",
+    jobType: "Maintenance",
+  },
+  {
+    id: "7",
+    jobId: "J-007",
+    clientName: "David Wilson",
+    jobType: "Installation",
+  },
+  {
+    id: "8",
+    jobId: "J-008",
+    clientName: "Emily Davis",
+    jobType: "Repair",
+  },
+];

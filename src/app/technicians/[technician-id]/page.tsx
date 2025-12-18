@@ -6,15 +6,21 @@ import TechnicianDetailsTableSection from "@/components/TechniciansComponents/Te
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Eye } from "lucide-react";
 import { useRouter, useParams } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
+import AssignJobModal from "@/components/CommonComponents/AssignJobModal";
 
 const TechnicianDetailsPage = () => {
   const router = useRouter();
   const params = useParams();
-  const technicianId = params["technician-id"];
+  const technicianId = params["technician-id"] as string;
+  const [isAssignJobModalOpen, setIsAssignJobModalOpen] = useState(false);
 
   const handleViewCalendar = () => {
     router.push(`/technicians/${technicianId}/technician-calendar`);
+  };
+
+  const handleAssignJob = () => {
+    setIsAssignJobModalOpen(true);
   };
 
   return (
@@ -47,13 +53,21 @@ const TechnicianDetailsPage = () => {
           </div>
 
           {/* Technician data section */}
-          <TechnicianDetailsSection />
+          <TechnicianDetailsSection onAssignJob={handleAssignJob} />
 
           <TechnicianChartSection />
 
           <TechnicianDetailsTableSection />
         </div>
       </div>
+
+      {/* Assign Job Modal */}
+      <AssignJobModal
+        isOpen={isAssignJobModalOpen}
+        onClose={() => setIsAssignJobModalOpen(false)}
+        technicianId={technicianId}
+        technicianName="Malik Rehman"
+      />
     </div>
   );
 };
