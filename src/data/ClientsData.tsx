@@ -145,6 +145,7 @@ export const jobHistoryData: JobHistory[] = [
     type: "Repair",
     orderByDate: "25 Jun, 2024",
     completeDate: "25 Jun, 2024",
+    serviceStatus: "Serviced",
   },
   {
     jobId: "J-9021",
@@ -153,6 +154,7 @@ export const jobHistoryData: JobHistory[] = [
     type: "Installations",
     orderByDate: "25 Jun, 2024",
     completeDate: "25 Jun, 2024",
+    serviceStatus: "Upcoming",
   },
   {
     jobId: "J-9021",
@@ -161,6 +163,7 @@ export const jobHistoryData: JobHistory[] = [
     type: "Maintenance",
     orderByDate: "25 Jun, 2024",
     completeDate: "25 Jun, 2024",
+    serviceStatus: "Overdue",
   },
   {
     jobId: "J-9021",
@@ -169,6 +172,7 @@ export const jobHistoryData: JobHistory[] = [
     type: "Repair",
     orderByDate: "25 Jun, 2024",
     completeDate: "25 Jun, 2024",
+    serviceStatus: "Serviced",
   },
   {
     jobId: "J-9021",
@@ -177,6 +181,7 @@ export const jobHistoryData: JobHistory[] = [
     type: "Maintenance",
     orderByDate: "25 Jun, 2024",
     completeDate: "25 Jun, 2024",
+    serviceStatus: "Upcoming",
   },
   {
     jobId: "J-9021",
@@ -185,6 +190,7 @@ export const jobHistoryData: JobHistory[] = [
     type: "Repair",
     orderByDate: "25 Jun, 2024",
     completeDate: "25 Jun, 2024",
+    serviceStatus: "Overdue",
   },
 ];
 
@@ -195,4 +201,5 @@ export const jobHistoryColumns: JobHistoryColumn[] = [
   { header: "Type", accessor: "type" },
   { header: "Order by Date", accessor: "orderByDate" },
   { header: "Complete Date", accessor: "completeDate" },
+  { header: "Service Status", accessor: "serviceStatus" },
 ];

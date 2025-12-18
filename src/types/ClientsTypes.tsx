@@ -41,6 +41,7 @@ export interface JobHistory {
   type: string;
   orderByDate: string;
   completeDate: string;
+  serviceStatus: "Serviced" | "Upcoming" | "Overdue";
 }
 
 export interface JobHistoryColumn {
