@@ -23,7 +23,6 @@ interface ProductFormData {
   frequencyCommercial: string;
   partsQuantity: string;
   stockQuantity: string;
-  maintenanceFrequency: string;
 }
 
 const AddProductModal: React.FC<AddProductModalProps> = ({
@@ -38,7 +37,6 @@ const AddProductModal: React.FC<AddProductModalProps> = ({
     frequencyCommercial: "",
     partsQuantity: "",
     stockQuantity: "",
-    maintenanceFrequency: "",
   });
 
   const handleChange = (field: keyof ProductFormData, value: string) => {
@@ -60,7 +58,6 @@ const AddProductModal: React.FC<AddProductModalProps> = ({
       frequencyCommercial: "",
       partsQuantity: "",
       stockQuantity: "",
-      maintenanceFrequency: "",
     });
     onClose();
   };
@@ -118,7 +115,7 @@ const AddProductModal: React.FC<AddProductModalProps> = ({
               htmlFor="frequencyDomestic"
               className="text-[11px] xs:text-xs sm:text-lg font-medium text-gray-700"
             >
-              Frequency Domestic{" "}
+              Maintenance Frequency Domestic{" "}
               <span className="text-gray-500 font-normal">(month)</span>
             </label>
             <Input
@@ -139,7 +136,7 @@ const AddProductModal: React.FC<AddProductModalProps> = ({
               htmlFor="frequencyCommercial"
               className="text-[11px] xs:text-xs sm:text-lg font-medium text-gray-700"
             >
-              Frequency Commercial{" "}
+              Maintenance Frequency Commercial{" "}
               <span className="text-gray-500 font-normal">(month)</span>
             </label>
             <Input
@@ -186,26 +183,6 @@ const AddProductModal: React.FC<AddProductModalProps> = ({
               placeholder="enter stock number"
               value={formData.stockQuantity}
               onChange={(e) => handleChange("stockQuantity", e.target.value)}
-              className="w-full text-[11px] xs:text-xs sm:text-sm h-8 xs:h-9 sm:h-10"
-            />
-          </div>
-
-          {/* Maintenance Frequency */}
-          <div className="space-y-1.5">
-            <label
-              htmlFor="maintenanceFrequency"
-              className="text-[11px] xs:text-xs sm:text-lg font-medium text-gray-700"
-            >
-              Maintenance Frequency
-            </label>
-            <Input
-              id="maintenanceFrequency"
-              type="text"
-              placeholder="enter maintenance frequency month"
-              value={formData.maintenanceFrequency}
-              onChange={(e) =>
-                handleChange("maintenanceFrequency", e.target.value)
-              }
               className="w-full text-[11px] xs:text-xs sm:text-sm h-8 xs:h-9 sm:h-10"
             />
           </div>
