@@ -5,12 +5,12 @@ import JobDetailsPage from "@/components/JobDetailsComponents/JobDetailsPage";
 
 interface PageProps {
   params: {
-    "iob-id": string;
+    "job-id": string;
   };
 }
 
 const AllAssignJobDetailsPage = ({ params }: PageProps) => {
-  const jobId = params["iob-id"];
+  const jobId = params["job-id"];
 
   return (
     <div className="w-full p-4">
