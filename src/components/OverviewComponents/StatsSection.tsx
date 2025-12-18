@@ -19,7 +19,7 @@ const StatsSection = () => {
     },
     {
       id: 2,
-      title: "Total Completed Jobs",
+      title: "Completed Jobs Today",
       value: "10293",
       icon: <PiSunHorizonFill className="w-7 h-7 text-purple-600" />,
       trend: "4.3% Down from yesterday",
@@ -28,7 +28,7 @@ const StatsSection = () => {
     },
     {
       id: 3,
-      title: "Total Pending Jobs",
+      title: "Pending Jobs Today",
       value: "10293",
       icon: <FaClockRotateLeft className="w-7 h-7 text-[#FEC12C]" />,
       trend: "1.3% Up from past week",

@@ -12,7 +12,7 @@ export default function Home() {
     const timer = setTimeout(() => {
       setIsLoading(false);
       router.push("/overview");
-    }, 1000);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, [router]);
