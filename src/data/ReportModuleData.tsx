@@ -23,6 +23,8 @@ import {
   PartsUsage,
   ProductStock,
   PartsStock,
+  ConsumablesUsage,
+  DailyPartsUsage,
 } from "@/types/ReportModuleTypes";
 
 export const technicianPerformanceData: TechnicianPerformance[] = [
@@ -178,5 +180,101 @@ export const partsStockData: PartsStock[] = [
     availableUnits: 150,
     status: "Low Stock",
     lastStock: "25 Jun, 2025",
+  },
+];
+
+export const consumablesUsageData: ConsumablesUsage[] = [
+  {
+    id: "1",
+    technician: "Malik Ahmed",
+    consumableCategory: "Oil Filter",
+    totalQty: 15,
+    totalValue: "$300",
+  },
+  {
+    id: "2",
+    technician: "John Smith",
+    consumableCategory: "Filter",
+    totalQty: 8,
+    totalValue: "$120",
+  },
+  {
+    id: "3",
+    technician: "Malik Ahmed",
+    consumableCategory: "Oil Filter",
+    totalQty: 15,
+    totalValue: "$300",
+  },
+  {
+    id: "4",
+    technician: "John Smith",
+    consumableCategory: "Filter",
+    totalQty: 8,
+    totalValue: "$120",
+  },
+  {
+    id: "5",
+    technician: "Malik Ahmed",
+    consumableCategory: "Oil Filter",
+    totalQty: 15,
+    totalValue: "$300",
+  },
+  {
+    id: "6",
+    technician: "John Smith",
+    consumableCategory: "Filter",
+    totalQty: 8,
+    totalValue: "$120",
+  },
+];
+
+export const dailyPartsUsageData: DailyPartsUsage[] = [
+  {
+    id: "1",
+    technician: "Malik Ahmed",
+    partName: "Oil Filter",
+    usedQty: 150,
+    date: "25 Jun, 2025",
+    jobId: "JB-1023",
+  },
+  {
+    id: "2",
+    technician: "John Smith",
+    partName: "Fuse",
+    usedQty: 1,
+    date: "25 Jun, 2025",
+    jobId: "JB-1023",
+  },
+  {
+    id: "3",
+    technician: "Malik Ahmed",
+    partName: "Oil Filter",
+    usedQty: 150,
+    date: "25 Jun, 2025",
+    jobId: "JB-1023",
+  },
+  {
+    id: "4",
+    technician: "John Smith",
+    partName: "Fuse",
+    usedQty: 1,
+    date: "25 Jun, 2025",
+    jobId: "JB-1023",
+  },
+  {
+    id: "5",
+    technician: "Malik Ahmed",
+    partName: "Oil Filter",
+    usedQty: 150,
+    date: "25 Jun, 2025",
+    jobId: "JB-1023",
+  },
+  {
+    id: "6",
+    technician: "John Smith",
+    partName: "Fuse",
+    usedQty: 1,
+    date: "25 Jun, 2025",
+    jobId: "JB-1023",
   },
 ];

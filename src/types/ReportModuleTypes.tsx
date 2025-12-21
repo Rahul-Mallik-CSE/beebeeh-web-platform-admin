@@ -60,3 +60,20 @@ export interface PartsStock {
   status: "Stock Out" | "Low Stock" | "In Stock";
   lastStock: string;
 }
+
+export interface ConsumablesUsage {
+  id: string;
+  technician: string;
+  consumableCategory: string;
+  totalQty: number;
+  totalValue: string;
+}
+
+export interface DailyPartsUsage {
+  id: string;
+  technician: string;
+  partName: string;
+  usedQty: number;
+  date: string;
+  jobId: string;
+}

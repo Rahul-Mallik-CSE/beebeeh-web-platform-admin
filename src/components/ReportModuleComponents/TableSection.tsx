@@ -7,6 +7,8 @@ import {
   partsUsageData,
   productStockData,
   partsStockData,
+  consumablesUsageData,
+  dailyPartsUsageData,
 } from "@/data/ReportModuleData";
 
 const TableSection = () => {
@@ -39,6 +41,21 @@ const TableSection = () => {
     { key: "lastStock", label: "Last Stock", width: "22%" },
   ];
 
+  const consumablesUsageColumns = [
+    { key: "technician", label: "Technician", width: "30%" },
+    { key: "consumableCategory", label: "Consumable Category", width: "30%" },
+    { key: "totalQty", label: "Total Qty", width: "20%" },
+    { key: "totalValue", label: "Total Value", width: "20%" },
+  ];
+
+  const dailyPartsUsageColumns = [
+    { key: "technician", label: "Technician", width: "20%" },
+    { key: "partName", label: "Part Name", width: "20%" },
+    { key: "usedQty", label: "Used Qty", width: "15%" },
+    { key: "date", label: "Date", width: "20%" },
+    { key: "jobId", label: "Job ID", width: "25%" },
+  ];
+
   return (
     <div className="w-full space-y-4 sm:space-y-6">
       {/* First Row - Technician Performance and Parts Usage */}
@@ -66,6 +83,20 @@ const TableSection = () => {
           title="Parts Stock Levels Table"
           columns={partsStockColumns}
           data={partsStockData}
+        />
+      </div>
+
+      {/* Third Row - Consumables Usage and Daily Parts Usage */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+        <CustomReportTable
+          title="Consumables Usage Report"
+          columns={consumablesUsageColumns}
+          data={consumablesUsageData}
+        />
+        <CustomReportTable
+          title="Daily Parts Usage Report"
+          columns={dailyPartsUsageColumns}
+          data={dailyPartsUsageData}
         />
       </div>
     </div>
