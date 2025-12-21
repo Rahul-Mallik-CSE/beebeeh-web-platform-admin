@@ -1,7 +1,6 @@
 /** @format */
 "use client";
 
-import React, { use } from "react";
 import CalendarPageDesign from "@/components/TechniciansComponents/CalendarPageDesign";
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
