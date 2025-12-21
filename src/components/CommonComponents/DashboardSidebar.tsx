@@ -122,35 +122,51 @@ export default function DashboardSidebar() {
     <>
       {/* Sidebar content goes here */}
       <Sidebar
-        className="border-r-2 border-gray-300 bg-white rounded-r-2xl shadow-none"
+        className="shadow-none px-3 py-4 md:px-2 bg-white border-r border-gray-200"
         collapsible="icon"
       >
         <SidebarContent className="bg-white rounded-tr-xl shadow-none">
           <div
-            className={`flex items-center justify-center px-0 md:px-2 py-6 relative ${
-              isCollapsed ? "px-2" : "gap-2"
+            className={`mb-2 flex h-20 items-end justify-start rounded-md bg-[#9E2729] md:h-40 ${
+              isCollapsed
+                ? " flex items-center w-full justify-center mx-auto p-1 "
+                : "gap-2"
             }`}
           >
-            <div className="flex gap-2">
+            <Link href="/overview" className="flex gap-2 ">
               {isCollapsed ? (
-                <h1 className="mt-2 font-bold text-xl text-red-800 rounded-full px-2 border-2 border-red-800">
+                <h1 className="mt-2 mb-3 font-bold text-sm text-white rounded-full px-1 border-2 border-gray-200">
                   B
                 </h1>
               ) : (
-                <div className="mt-2 flex items-center gap-2">
-                  <Image src="/logo.png" alt="Logo" width={70} height={70} />
+                // <div className="mt-2 flex items-center gap-2">
+                //   <Image src="/logo.png" alt="Logo" width={70} height={70} />
+                // </div>
+                <div className="pl-4 flex flex-col justify-center items-center">
+                  {/* Logo dots */}
+                  <div className="flex gap-0.5 sm:gap-1 justify-center mb-1 ">
+                    <div className="w-8 h-4 sm:w-6 sm:h-3 rounded-full bg-white"></div>
+                    <div className="w-4 h-4 sm:w-3 sm:h-3 rounded-full bg-white"></div>
+                    <div className="w-4 h-4 sm:w-3 sm:h-3 rounded-full bg-white"></div>
+                    <div className="w-4 h-4 sm:w-3 sm:h-3 rounded-full bg-white"></div>
+                  </div>
+
+                  {/* Beebeeh text */}
+                  <h1 className="text-xl  font-bold text-white mb-3 sm:mb-4">
+                    Beebeeh
+                  </h1>
                 </div>
               )}
-            </div>
+            </Link>
             {/* Toggle button for mobile */}
 
             {/* Collapse button for desktop */}
             <div
-              className={`absolute top-2 hidden md:block ${
-                isCollapsed ? "right-0" : "right-0"
+              className={`absolute top-6 hidden md:block ${
+                isCollapsed ? "right-2" : "right-2"
               }`}
             >
-              <SidebarTrigger />
+              <SidebarTrigger className="text-white hover:bg-transparent hover:text-white" />
             </div>
           </div>
           <SidebarMenu
@@ -183,15 +199,21 @@ export default function DashboardSidebar() {
             <Button
               variant="default"
               size="sm"
-              className="bg-red-800 text-white hover:bg-red-700! hover:text-white!"
+              className={cn(
+                "flex text-black grow items-center justify-center bg-gray-50 font-medium hover:bg-[#F5E9EA] hover:text-[#9E2729]",
+                isCollapsed
+                  ? "rounded-md w-8 h-8 p-0"
+                  : "h-10 md:h-12 w-full gap-2 rounded-md p-3"
+              )}
               onClick={() => setIsLogoutModalOpen(true)}
             >
               {isCollapsed ? (
-                <LogOut />
+                <LogOut size={20} />
               ) : (
-                <div className="flex justify-center items-center gap-2 px-3">
-                  <LogOut /> Log Out
-                </div>
+                <>
+                  <LogOut size={18} />
+                  <span className="text-base">Log Out</span>
+                </>
               )}
             </Button>
           </div>
@@ -230,10 +252,10 @@ function NavItem({
           className={cn(
             collapsed
               ? "flex items-center justify-center px-2 py-3 transition-colors rounded-full w-12 h-12 mx-auto"
-              : "flex items-center gap-3 px-4 py-3 transition-colors rounded-md",
+              : "flex items-center gap-3 h-10 md:h-12 rounded-md p-3 transition-colors text-sm",
             active
-              ? "bg-red-800 text-white hover:bg-red-700! hover:text-white! font-medium"
-              : "bg-transparent text-black hover:bg-red-100!  font-medium"
+              ? "bg-[#9E2729]  text-white hover:bg-[#9E2729]! hover:text-white! font-medium"
+              : "text-gray-700  hover:bg-[#F5E9EA]! hover:text-[#9E2729]!  font-medium"
           )}
         >
           <Icon size={collapsed ? 20 : 18} />

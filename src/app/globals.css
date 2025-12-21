@@ -123,3 +123,132 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* React Big Calendar Custom Styles */
+.rbc-calendar {
+  font-family: inherit;
+}
+
+.rbc-header {
+  padding: 12px 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #4b5563;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rbc-month-view {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rbc-day-bg {
+  border-left: 1px solid #e5e7eb;
+}
+
+.rbc-off-range-bg {
+  background: #f9fafb;
+}
+
+.rbc-today {
+  background-color: #fef3c7;
+}
+
+.rbc-date-cell {
+  padding: 4px 8px;
+  text-align: right;
+}
+
+.rbc-event {
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: move;
+  outline: none !important;
+}
+
+.rbc-event:focus {
+  outline: 2px solid #3b82f6 !important;
+  outline-offset: 2px;
+}
+
+.rbc-event-label {
+  display: none;
+}
+
+.rbc-event-content {
+  width: 100%;
+}
+
+.rbc-toolbar {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.rbc-toolbar button {
+  padding: 8px 16px;
+  border: 1px solid #e5e7eb;
+  background: white;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.rbc-toolbar button:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.rbc-toolbar button.rbc-active {
+  background: #dc2626;
+  color: white;
+  border-color: #dc2626;
+}
+
+.rbc-toolbar button.rbc-active:hover {
+  background: #b91c1c;
+  border-color: #b91c1c;
+}
+
+.rbc-toolbar-label {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.rbc-month-row {
+  border-top: 1px solid #e5e7eb;
+  min-height: 100px;
+}
+
+.rbc-day-bg + .rbc-day-bg {
+  border-left: 1px solid #e5e7eb;
+}
+
+.rbc-addons-dnd-resizable {
+  cursor: move;
+}
+
+.rbc-addons-dnd .rbc-addons-dnd-resizable {
+  position: relative;
+}
+
+.rbc-addons-dnd .rbc-event {
+  transition: opacity 0.2s;
+}
+
+.rbc-addons-dnd-dragging {
+  opacity: 0.5;
+}
+
+.rbc-addons-dnd-drag-preview {
+  opacity: 0.8;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
