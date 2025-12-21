@@ -33,8 +33,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={` ${geistSans.variable} ${geistMono.variable} ${zillaSlab.variable} antialiased bg-[#f3f3f3] font-sans`}
         style={{ fontFamily: "var(--font-zilla-slab)" }}
       >
