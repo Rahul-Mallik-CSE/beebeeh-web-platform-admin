@@ -37,7 +37,11 @@ const CalendarPageDesign = () => {
 
   // Handle event drop (drag and drop)
   const onEventDrop: withDragAndDropProps["onEventDrop"] = useCallback(
-    ({ event, start, end }) => {
+    ({
+      event,
+      start,
+      end,
+    }: Parameters<NonNullable<withDragAndDropProps["onEventDrop"]>>[0]) => {
       setEvents((prevEvents) =>
         prevEvents.map((ev) =>
           ev === event
@@ -110,15 +114,17 @@ const CalendarPageDesign = () => {
         <div className="bg-white rounded-lg border border-gray-200 p-4">
           <DnDCalendar
             localizer={localizer}
-            events={events}
+            events={events as any}
             onEventDrop={onEventDrop}
             defaultView="month"
             defaultDate={new Date(2025, 1, 1)}
             style={{ height: 700 }}
-            eventPropGetter={eventStyleGetter}
-            components={{
-              event: EventComponent,
-            }}
+            eventPropGetter={eventStyleGetter as any}
+            components={
+              {
+                event: EventComponent as any,
+              } as any
+            }
             draggableAccessor={() => true}
             resizable={false}
             popup
